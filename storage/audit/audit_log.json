@@ -1,0 +1,186 @@
+[
+  {
+    "seq": 0,
+    "timestamp": "2026-03-19T16:25:22.465258+00:00",
+    "event": "CA_INITIALIZED",
+    "data": {
+      "subject": "1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US"
+    },
+    "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "hash": "504bd83fdfe07554a19e249f2319bca6b301b09b0ae5b4f1fbd42895890fd69d"
+  },
+  {
+    "seq": 1,
+    "timestamp": "2026-03-19T16:25:22.645944+00:00",
+    "event": "CERT_ISSUED",
+    "data": {
+      "subject": "1.2.840.113549.1.9.1=alice@example.com,CN=Alice Example,OU=Engineering,O=Example Corp,L=San Francisco,ST=California,C=US",
+      "serial": 655354019037779340154650769466738928489542214425,
+      "valid_from": "2026-03-19T16:25:22+00:00",
+      "valid_until": "2027-03-19T16:25:22+00:00",
+      "saved_to": "c:\\Users\\richa\\OneDrive\\CYS\\digital_ca\\storage\\certs\\alice_655354019037779340154650769466738928489542214425.pem"
+    },
+    "prev_hash": "504bd83fdfe07554a19e249f2319bca6b301b09b0ae5b4f1fbd42895890fd69d",
+    "hash": "c93f8ca1a2ceeda4ab83e53e23205f5f976c4c0e793d8b84e10c40cde587deef"
+  },
+  {
+    "seq": 2,
+    "timestamp": "2026-03-19T16:27:10.598355+00:00",
+    "event": "CA_INITIALIZED",
+    "data": {
+      "subject": "1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US"
+    },
+    "prev_hash": "c93f8ca1a2ceeda4ab83e53e23205f5f976c4c0e793d8b84e10c40cde587deef",
+    "hash": "28061c3395956f3a6218003bd48c9d4900a6ea97aeccad68eb288ad2a38940d6"
+  },
+  {
+    "seq": 3,
+    "timestamp": "2026-03-19T16:27:10.698568+00:00",
+    "event": "CERT_ISSUED",
+    "data": {
+      "subject": "1.2.840.113549.1.9.1=alice@example.com,CN=Alice Example,OU=Engineering,O=Example Corp,L=San Francisco,ST=California,C=US",
+      "serial": 354652508058902065894457468585506618993804311869,
+      "valid_from": "2026-03-19T16:27:10+00:00",
+      "valid_until": "2027-03-19T16:27:10+00:00",
+      "saved_to": "c:\\Users\\richa\\OneDrive\\CYS\\digital_ca\\storage\\certs\\alice_354652508058902065894457468585506618993804311869.pem"
+    },
+    "prev_hash": "28061c3395956f3a6218003bd48c9d4900a6ea97aeccad68eb288ad2a38940d6",
+    "hash": "aefbaa0e39d6921a86bc77b7d8bfc0b59207a5021355136b1c7b1cf15c0139ca"
+  },
+  {
+    "seq": 4,
+    "timestamp": "2026-03-19T16:30:06.572887+00:00",
+    "event": "CA_INITIALIZED",
+    "data": {
+      "subject": "1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US"
+    },
+    "prev_hash": "aefbaa0e39d6921a86bc77b7d8bfc0b59207a5021355136b1c7b1cf15c0139ca",
+    "hash": "1ad5311f525f93a3e2cf371bef2ca16c058e07511e210c9c591b79e133ef14cb"
+  },
+  {
+    "seq": 5,
+    "timestamp": "2026-03-19T16:30:06.623682+00:00",
+    "event": "CERT_ISSUED",
+    "data": {
+      "subject": "1.2.840.113549.1.9.1=alice@example.com,CN=Alice Example,OU=Engineering,O=Example Corp,L=San Francisco,ST=California,C=US",
+      "serial": 531807278030162895464320698342874491038445212517,
+      "valid_from": "2026-03-19T16:30:06+00:00",
+      "valid_until": "2027-03-19T16:30:06+00:00",
+      "saved_to": "c:\\Users\\richa\\OneDrive\\CYS\\digital_ca\\storage\\certs\\alice_531807278030162895464320698342874491038445212517.pem"
+    },
+    "prev_hash": "1ad5311f525f93a3e2cf371bef2ca16c058e07511e210c9c591b79e133ef14cb",
+    "hash": "aff7e7d3ad5a74e97de143af99d4b9f2e96d7d69f416bad87a388c9e026e5462"
+  },
+  {
+    "seq": 6,
+    "timestamp": "2026-03-19T16:30:06.710537+00:00",
+    "event": "CERT_ISSUED",
+    "data": {
+      "subject": "1.2.840.113549.1.9.1=bob@example.com,CN=Bob Example,OU=Finance,O=Example Corp,L=New York City,ST=New York,C=US",
+      "serial": 248309439625626319166349129208488198543141530390,
+      "valid_from": "2026-03-19T16:30:06+00:00",
+      "valid_until": "2027-03-19T16:30:06+00:00",
+      "saved_to": "c:\\Users\\richa\\OneDrive\\CYS\\digital_ca\\storage\\certs\\bob_248309439625626319166349129208488198543141530390.pem"
+    },
+    "prev_hash": "aff7e7d3ad5a74e97de143af99d4b9f2e96d7d69f416bad87a388c9e026e5462",
+    "hash": "4f52cc53b80f48a3c20e1588e2b400b7422f26c6d60e660be185d36b1820f5cc"
+  },
+  {
+    "seq": 7,
+    "timestamp": "2026-03-19T16:30:06.712863+00:00",
+    "event": "CERT_VERIFIED",
+    "data": {
+      "serial": 531807278030162895464320698342874491038445212517,
+      "subject": "1.2.840.113549.1.9.1=alice@example.com,CN=Alice Example,OU=Engineering,O=Example Corp,L=San Francisco,ST=California,C=US",
+      "valid": true,
+      "checks": {
+        "signature": true,
+        "expiry": true,
+        "not_revoked": true
+      },
+      "reason": ""
+    },
+    "prev_hash": "4f52cc53b80f48a3c20e1588e2b400b7422f26c6d60e660be185d36b1820f5cc",
+    "hash": "3146a647b69262568a8381fd53983672c084842931ba0af669fbfe5e2163d48d"
+  },
+  {
+    "seq": 8,
+    "timestamp": "2026-03-19T16:30:06.715144+00:00",
+    "event": "CERT_VERIFIED",
+    "data": {
+      "serial": 248309439625626319166349129208488198543141530390,
+      "subject": "1.2.840.113549.1.9.1=bob@example.com,CN=Bob Example,OU=Finance,O=Example Corp,L=New York City,ST=New York,C=US",
+      "valid": true,
+      "checks": {
+        "signature": true,
+        "expiry": true,
+        "not_revoked": true
+      },
+      "reason": ""
+    },
+    "prev_hash": "3146a647b69262568a8381fd53983672c084842931ba0af669fbfe5e2163d48d",
+    "hash": "a7a6afd96c0f2ab64302c731eb26142439f38ed946cafd535def188034e17fc7"
+  },
+  {
+    "seq": 9,
+    "timestamp": "2026-03-19T16:30:06.734487+00:00",
+    "event": "CERT_REVOKED",
+    "data": {
+      "serial": 531807278030162895464320698342874491038445212517,
+      "reason": "key_compromise",
+      "revoked_at": "2026-03-19T16:30:06.717167+00:00"
+    },
+    "prev_hash": "a7a6afd96c0f2ab64302c731eb26142439f38ed946cafd535def188034e17fc7",
+    "hash": "5b60da936a2fa99e773904c7e50d2a7f8270e5606bb1c92ba872b534b03246d4"
+  },
+  {
+    "seq": 10,
+    "timestamp": "2026-03-19T16:30:06.737615+00:00",
+    "event": "CERT_VERIFIED",
+    "data": {
+      "serial": 531807278030162895464320698342874491038445212517,
+      "subject": "1.2.840.113549.1.9.1=alice@example.com,CN=Alice Example,OU=Engineering,O=Example Corp,L=San Francisco,ST=California,C=US",
+      "valid": false,
+      "checks": {
+        "signature": true,
+        "expiry": true,
+        "not_revoked": false
+      },
+      "reason": "revoked \u2014 key_compromise at 2026-03-19T16:30:06.717167+00:00"
+    },
+    "prev_hash": "5b60da936a2fa99e773904c7e50d2a7f8270e5606bb1c92ba872b534b03246d4",
+    "hash": "d953954eea0d268436304f4bf8a9bc768e6ce11145f86ee4a4112261a2b3bbc0"
+  },
+  {
+    "seq": 11,
+    "timestamp": "2026-03-19T16:30:06.740914+00:00",
+    "event": "CERT_VERIFIED",
+    "data": {
+      "serial": 248309439625626319166349129208488198543141530390,
+      "subject": "1.2.840.113549.1.9.1=bob@example.com,CN=Bob Example,OU=Finance,O=Example Corp,L=New York City,ST=New York,C=US",
+      "valid": true,
+      "checks": {
+        "signature": true,
+        "expiry": true,
+        "not_revoked": true
+      },
+      "reason": ""
+    },
+    "prev_hash": "d953954eea0d268436304f4bf8a9bc768e6ce11145f86ee4a4112261a2b3bbc0",
+    "hash": "66afa87347ef8e3a981cf859378cf0352a416788ba404951c78a76037839915f"
+  },
+  {
+    "seq": 12,
+    "timestamp": "2026-03-19T16:35:40.880608+00:00",
+    "event": "CERT_ISSUED",
+    "data": {
+      "subject": "1.2.840.113549.1.9.1=alice@example.com,CN=Alice Smith,OU=Engineering,O=Example Corp,L=San Francisco,ST=California,C=US",
+      "serial": 21799364000062521545196163683617161018051072375,
+      "valid_from": "2026-03-19T16:35:40+00:00",
+      "valid_until": "2027-03-19T16:35:40+00:00",
+      "saved_to": "c:\\Users\\richa\\OneDrive\\CYS\\digital_ca\\storage\\certs\\alice_smith_21799364000062521545196163683617161018051072375.pem"
+    },
+    "prev_hash": "66afa87347ef8e3a981cf859378cf0352a416788ba404951c78a76037839915f",
+    "hash": "79d15261faca178233f0fe7abe48da294c5b14fe8f72e2a551faa40b9200ca0b"
+  }
+]

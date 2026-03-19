@@ -1,0 +1,268 @@
+2026-03-19 22:05:21,749 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmp3g72nq9l\ca_key.pem
+2026-03-19 22:05:21,750 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmp3g72nq9l\ca_cert.pem
+2026-03-19 22:05:21,750 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 644627009375147749293880296227933971540054441048
+2026-03-19 22:05:22,093 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmp3ur9qn87\ca_key.pem
+2026-03-19 22:05:22,094 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmp3ur9qn87\ca_cert.pem
+2026-03-19 22:05:22,094 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 416067846927557471589617614361047546296296403118
+2026-03-19 22:05:22,171 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmp2r97a8t3\ca_key.pem
+2026-03-19 22:05:22,171 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmp2r97a8t3\ca_cert.pem
+2026-03-19 22:05:22,171 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 86283919857376865993867193556141471869888917133
+2026-03-19 22:05:22,314 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmpijt22rc2\ca_key.pem
+2026-03-19 22:05:22,314 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmpijt22rc2\ca_cert.pem
+2026-03-19 22:05:22,315 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 278969849652548125148147739082694531256152378284
+2026-03-19 22:05:22,365 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmpcskvqld9\ca_key.pem
+2026-03-19 22:05:22,365 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmpcskvqld9\ca_cert.pem
+2026-03-19 22:05:22,366 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 440624349250100760215365606696937084997469758866
+2026-03-19 22:05:22,511 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmpk_mye9sa\ca_key.pem
+2026-03-19 22:05:22,511 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmpk_mye9sa\ca_cert.pem
+2026-03-19 22:05:22,511 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 252620187100780061058822950182731412320814582127
+2026-03-19 22:05:22,636 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=test@ca.local,CN=Test Root CA,OU=Testing,O=Test CA,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:22,688 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmp_gz62umj\ca_key.pem
+2026-03-19 22:05:22,689 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmp_gz62umj\ca_cert.pem
+2026-03-19 22:05:22,689 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 411769762151464321276844907512582179147314094093
+2026-03-19 22:05:22,875 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmpuassijox\ca_key.pem
+2026-03-19 22:05:22,875 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmpuassijox\ca_cert.pem
+2026-03-19 22:05:22,876 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 486023383345242036427128141486565426279805022412
+2026-03-19 22:05:22,949 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Carol'
+2026-03-19 22:05:22,952 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Carol
+2026-03-19 22:05:22,956 [[36mINFO[0m] ca.csr_generator — Saved key  → C:\Users\richa\AppData\Local\Temp\tmpuassijox\csr\carol_private_key.pem
+2026-03-19 22:05:22,957 [[36mINFO[0m] ca.csr_generator — Saved CSR  → C:\Users\richa\AppData\Local\Temp\tmpuassijox\csr\carol_csr.pem
+2026-03-19 22:05:23,011 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmpkwxn_7e8\ca_key.pem
+2026-03-19 22:05:23,012 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmpkwxn_7e8\ca_cert.pem
+2026-03-19 22:05:23,012 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 424830642127196416408032403551438922220507143315
+2026-03-19 22:05:23,229 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmp4d8o8eai\ca_key.pem
+2026-03-19 22:05:23,229 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmp4d8o8eai\ca_cert.pem
+2026-03-19 22:05:23,230 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 450620418384690107921724987242089634322256438897
+2026-03-19 22:05:23,286 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Alice'
+2026-03-19 22:05:23,290 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Alice
+2026-03-19 22:05:23,377 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmpujbq225o\ca_key.pem
+2026-03-19 22:05:23,378 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmpujbq225o\ca_cert.pem
+2026-03-19 22:05:23,378 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 630170220617126932019038448822842018160347212732
+2026-03-19 22:05:23,532 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Bob Smith'
+2026-03-19 22:05:23,535 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Bob Smith
+2026-03-19 22:05:23,609 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmpfp0nnple\ca_key.pem
+2026-03-19 22:05:23,609 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmpfp0nnple\ca_cert.pem
+2026-03-19 22:05:23,609 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 416944311501631151775323864676789164455644190814
+2026-03-19 22:05:23,658 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Eve'
+2026-03-19 22:05:23,661 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Eve
+2026-03-19 22:05:23,662 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=eve@test.com,CN=Eve,OU=Engineering,O=Test Org,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:23,667 [[36mINFO[0m] audit.audit_log — Audit [0] CERT_ISSUED
+2026-03-19 22:05:23,667 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 632462722123645659955385841149964512617815773802 → C:\Users\richa\AppData\Local\Temp\tmpfp0nnple\certs\eve_632462722123645659955385841149964512617815773802.pem
+2026-03-19 22:05:23,758 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmpi8qrirav\ca_key.pem
+2026-03-19 22:05:23,759 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmpi8qrirav\ca_cert.pem
+2026-03-19 22:05:23,759 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 563331996372679487014882185075575559050587996094
+2026-03-19 22:05:23,793 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Alice'
+2026-03-19 22:05:23,796 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Alice
+2026-03-19 22:05:23,796 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=alice@test.com,CN=Alice,OU=Engineering,O=Test Org,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:23,801 [[36mINFO[0m] audit.audit_log — Audit [0] CERT_ISSUED
+2026-03-19 22:05:23,801 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 442607046640944619641741856014314680956108498202 → C:\Users\richa\AppData\Local\Temp\tmpi8qrirav\certs\alice_442607046640944619641741856014314680956108498202.pem
+2026-03-19 22:05:23,878 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmp36tigciw\ca_key.pem
+2026-03-19 22:05:23,879 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmp36tigciw\ca_cert.pem
+2026-03-19 22:05:23,879 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 327233035542121337029077352329598165953982259986
+2026-03-19 22:05:23,974 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Dave'
+2026-03-19 22:05:23,977 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Dave
+2026-03-19 22:05:23,978 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=dave@test.com,CN=Dave,OU=Engineering,O=Test Org,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:23,983 [[36mINFO[0m] audit.audit_log — Audit [0] CERT_ISSUED
+2026-03-19 22:05:23,983 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 471011810166427272361251712698845733886800779722 → C:\Users\richa\AppData\Local\Temp\tmp36tigciw\certs\dave_471011810166427272361251712698845733886800779722.pem
+2026-03-19 22:05:24,170 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmp2xtk473b\ca_key.pem
+2026-03-19 22:05:24,171 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmp2xtk473b\ca_cert.pem
+2026-03-19 22:05:24,171 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 688378165464438832452174143819656559230109963334
+2026-03-19 22:05:24,269 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Alice'
+2026-03-19 22:05:24,272 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Alice
+2026-03-19 22:05:24,273 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=alice@test.com,CN=Alice,OU=Engineering,O=Test Org,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:24,278 [[36mINFO[0m] audit.audit_log — Audit [0] CERT_ISSUED
+2026-03-19 22:05:24,278 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 723441914118167115918342334571086469182283033909 → C:\Users\richa\AppData\Local\Temp\tmp2xtk473b\certs\alice_723441914118167115918342334571086469182283033909.pem
+2026-03-19 22:05:24,439 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmp2gn9vqh0\ca_key.pem
+2026-03-19 22:05:24,440 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmp2gn9vqh0\ca_cert.pem
+2026-03-19 22:05:24,440 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 336614266978495183305121325567225956712595024038
+2026-03-19 22:05:24,582 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Alice'
+2026-03-19 22:05:24,586 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Alice
+2026-03-19 22:05:24,587 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=alice@test.com,CN=Alice,OU=Engineering,O=Test Org,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:24,603 [[36mINFO[0m] audit.audit_log — Audit [0] CERT_ISSUED
+2026-03-19 22:05:24,604 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 716391831702411578363288878789503475756084309161 → C:\Users\richa\AppData\Local\Temp\tmp2gn9vqh0\certs\alice_716391831702411578363288878789503475756084309161.pem
+2026-03-19 22:05:24,771 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmpwns6bg2n\ca_key.pem
+2026-03-19 22:05:24,771 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmpwns6bg2n\ca_cert.pem
+2026-03-19 22:05:24,771 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 40671051645487694055704667962781894313885152774
+2026-03-19 22:05:24,839 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Alice'
+2026-03-19 22:05:24,842 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Alice
+2026-03-19 22:05:24,842 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=alice@test.com,CN=Alice,OU=Engineering,O=Test Org,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:24,847 [[36mINFO[0m] audit.audit_log — Audit [0] CERT_ISSUED
+2026-03-19 22:05:24,847 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 691589882573747468931877895148526856769264558611 → C:\Users\richa\AppData\Local\Temp\tmpwns6bg2n\certs\alice_691589882573747468931877895148526856769264558611.pem
+2026-03-19 22:05:24,853 [[36mINFO[0m] ca.crl_manager — CRL saved → C:\Users\richa\AppData\Local\Temp\tmpwns6bg2n\crl\ca.crl.pem  (1 revoked)
+2026-03-19 22:05:24,854 [[36mINFO[0m] audit.audit_log — Audit [1] CERT_REVOKED
+2026-03-19 22:05:24,854 [[36mINFO[0m] ca.crl_manager — Revoked serial 691589882573747468931877895148526856769264558611 — reason: key_compromise
+2026-03-19 22:05:24,856 [[36mINFO[0m] audit.audit_log — Audit [2] CERT_VERIFIED
+2026-03-19 22:05:24,856 [[36mINFO[0m] ca.cert_verifier — Verification result: [INVALID (revoked — key_compromise at 2026-03-19T16:35:24.847939+00:00)] 1.2.840.113549.1.9.1=alice@test.com,CN=Alice,OU=Engineering,O=Test Org,L=San Francisco,ST=California,C=US | signature=OK, expiry=OK, not_revoked=FAIL
+2026-03-19 22:05:24,957 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmp6wgcmgsi\ca_key.pem
+2026-03-19 22:05:24,957 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmp6wgcmgsi\ca_cert.pem
+2026-03-19 22:05:24,958 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 287060596258305081027290636522698758634189145959
+2026-03-19 22:05:25,018 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Alice'
+2026-03-19 22:05:25,022 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Alice
+2026-03-19 22:05:25,022 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=alice@test.com,CN=Alice,OU=Engineering,O=Test Org,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:25,027 [[36mINFO[0m] audit.audit_log — Audit [0] CERT_ISSUED
+2026-03-19 22:05:25,028 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 45195278453281311233303104111701428620834851151 → C:\Users\richa\AppData\Local\Temp\tmp6wgcmgsi\certs\alice_45195278453281311233303104111701428620834851151.pem
+2026-03-19 22:05:25,029 [[36mINFO[0m] audit.audit_log — Audit [1] CERT_VERIFIED
+2026-03-19 22:05:25,030 [[36mINFO[0m] ca.cert_verifier — Verification result: [VALID] 1.2.840.113549.1.9.1=alice@test.com,CN=Alice,OU=Engineering,O=Test Org,L=San Francisco,ST=California,C=US | signature=OK, expiry=OK, not_revoked=OK
+2026-03-19 22:05:25,108 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmpx5061lt2\ca_key.pem
+2026-03-19 22:05:25,109 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmpx5061lt2\ca_cert.pem
+2026-03-19 22:05:25,109 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 608252061231032904735896116045024172501598708835
+2026-03-19 22:05:25,183 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Alice'
+2026-03-19 22:05:25,186 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Alice
+2026-03-19 22:05:25,187 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=alice@test.com,CN=Alice,OU=Engineering,O=Test Org,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:25,191 [[36mINFO[0m] audit.audit_log — Audit [0] CERT_ISSUED
+2026-03-19 22:05:25,191 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 124096582004164798317946987850913413523372439338 → C:\Users\richa\AppData\Local\Temp\tmpx5061lt2\certs\alice_124096582004164798317946987850913413523372439338.pem
+2026-03-19 22:05:25,193 [[36mINFO[0m] audit.audit_log — Audit [1] CERT_VERIFIED
+2026-03-19 22:05:25,193 [[36mINFO[0m] ca.cert_verifier — Verification result: [VALID] 1.2.840.113549.1.9.1=alice@test.com,CN=Alice,OU=Engineering,O=Test Org,L=San Francisco,ST=California,C=US | signature=OK, expiry=OK, not_revoked=OK
+2026-03-19 22:05:25,311 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmpiqxsja8k\ca_key.pem
+2026-03-19 22:05:25,311 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmpiqxsja8k\ca_cert.pem
+2026-03-19 22:05:25,312 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 500872611902331363434296669039025171548806381222
+2026-03-19 22:05:25,540 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmpj9b_2_f3\ca_key.pem
+2026-03-19 22:05:25,540 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmpj9b_2_f3\ca_cert.pem
+2026-03-19 22:05:25,540 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 426437086426889896076063923687826264579856282741
+2026-03-19 22:05:25,696 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Fake'
+2026-03-19 22:05:25,700 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Fake
+2026-03-19 22:05:25,700 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=fake@test.com,CN=Fake,OU=Engineering,O=Test Org,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:25,717 [[36mINFO[0m] audit.audit_log — Audit [0] CERT_ISSUED
+2026-03-19 22:05:25,717 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 26156253504071311729213895254537587426250809369 → C:\Users\richa\AppData\Local\Temp\tmpiqxsja8k\certs\fake_26156253504071311729213895254537587426250809369.pem
+2026-03-19 22:05:25,718 [[33mWARNING[0m] ca.cert_verifier — Signature check FAILED for serial 26156253504071311729213895254537587426250809369
+2026-03-19 22:05:25,719 [[36mINFO[0m] audit.audit_log — Audit [1] CERT_VERIFIED
+2026-03-19 22:05:25,719 [[36mINFO[0m] ca.cert_verifier — Verification result: [INVALID (signature verification failed)] 1.2.840.113549.1.9.1=fake@test.com,CN=Fake,OU=Engineering,O=Test Org,L=San Francisco,ST=California,C=US | signature=FAIL
+2026-03-19 22:05:25,787 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmplqqwuwze\ca_key.pem
+2026-03-19 22:05:25,787 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmplqqwuwze\ca_cert.pem
+2026-03-19 22:05:25,788 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 482811073432346082891325164217060231906388910440
+2026-03-19 22:05:25,877 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Alice'
+2026-03-19 22:05:25,881 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Alice
+2026-03-19 22:05:25,882 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=alice@test.com,CN=Alice,OU=Engineering,O=Test Org,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:25,888 [[36mINFO[0m] audit.audit_log — Audit [0] CERT_ISSUED
+2026-03-19 22:05:25,888 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 535111055831068268652396464355340148812924649187 → C:\Users\richa\AppData\Local\Temp\tmplqqwuwze\certs\alice_535111055831068268652396464355340148812924649187.pem
+2026-03-19 22:05:25,916 [[36mINFO[0m] ca.crl_manager — CRL saved → C:\Users\richa\AppData\Local\Temp\tmplqqwuwze\crl\ca.crl.pem  (1 revoked)
+2026-03-19 22:05:25,918 [[36mINFO[0m] audit.audit_log — Audit [1] CERT_REVOKED
+2026-03-19 22:05:25,918 [[36mINFO[0m] ca.crl_manager — Revoked serial 535111055831068268652396464355340148812924649187 — reason: unspecified
+2026-03-19 22:05:26,029 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmpmkwpf6g4\ca_key.pem
+2026-03-19 22:05:26,030 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmpmkwpf6g4\ca_cert.pem
+2026-03-19 22:05:26,030 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 625568119331959065130363316815489151408232050618
+2026-03-19 22:05:26,062 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Alice'
+2026-03-19 22:05:26,065 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Alice
+2026-03-19 22:05:26,065 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=alice@test.com,CN=Alice,OU=Engineering,O=Test Org,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:26,070 [[36mINFO[0m] audit.audit_log — Audit [0] CERT_ISSUED
+2026-03-19 22:05:26,070 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 166704752709182930729039588277999504805672619762 → C:\Users\richa\AppData\Local\Temp\tmpmkwpf6g4\certs\alice_166704752709182930729039588277999504805672619762.pem
+2026-03-19 22:05:26,074 [[36mINFO[0m] ca.crl_manager — CRL saved → C:\Users\richa\AppData\Local\Temp\tmpmkwpf6g4\crl\ca.crl.pem  (1 revoked)
+2026-03-19 22:05:26,076 [[36mINFO[0m] audit.audit_log — Audit [1] CERT_REVOKED
+2026-03-19 22:05:26,076 [[36mINFO[0m] ca.crl_manager — Revoked serial 166704752709182930729039588277999504805672619762 — reason: unspecified
+2026-03-19 22:05:26,076 [[33mWARNING[0m] ca.crl_manager — Serial 166704752709182930729039588277999504805672619762 already revoked.
+2026-03-19 22:05:26,153 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmpl6_udl9g\ca_key.pem
+2026-03-19 22:05:26,153 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmpl6_udl9g\ca_cert.pem
+2026-03-19 22:05:26,153 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 523236447952564795263979078565223359703660687391
+2026-03-19 22:05:26,300 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Alice'
+2026-03-19 22:05:26,303 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Alice
+2026-03-19 22:05:26,304 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=alice@test.com,CN=Alice,OU=Engineering,O=Test Org,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:26,309 [[36mINFO[0m] audit.audit_log — Audit [0] CERT_ISSUED
+2026-03-19 22:05:26,309 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 688518834321127198637837152719473384259428816952 → C:\Users\richa\AppData\Local\Temp\tmpl6_udl9g\certs\alice_688518834321127198637837152719473384259428816952.pem
+2026-03-19 22:05:26,470 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmp3eleaq0i\ca_key.pem
+2026-03-19 22:05:26,471 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmp3eleaq0i\ca_cert.pem
+2026-03-19 22:05:26,471 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 487925922318143906894357191040068810950031294882
+2026-03-19 22:05:26,603 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Alice'
+2026-03-19 22:05:26,605 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Alice
+2026-03-19 22:05:26,606 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=alice@test.com,CN=Alice,OU=Engineering,O=Test Org,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:26,610 [[36mINFO[0m] audit.audit_log — Audit [0] CERT_ISSUED
+2026-03-19 22:05:26,611 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 626802272834034847362551132319511992056108685094 → C:\Users\richa\AppData\Local\Temp\tmp3eleaq0i\certs\alice_626802272834034847362551132319511992056108685094.pem
+2026-03-19 22:05:26,615 [[36mINFO[0m] ca.crl_manager — CRL saved → C:\Users\richa\AppData\Local\Temp\tmp3eleaq0i\crl\ca.crl.pem  (1 revoked)
+2026-03-19 22:05:26,616 [[36mINFO[0m] audit.audit_log — Audit [1] CERT_REVOKED
+2026-03-19 22:05:26,616 [[36mINFO[0m] ca.crl_manager — Revoked serial 626802272834034847362551132319511992056108685094 — reason: key_compromise
+2026-03-19 22:05:26,697 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmp_djr_f08\ca_key.pem
+2026-03-19 22:05:26,698 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmp_djr_f08\ca_cert.pem
+2026-03-19 22:05:26,698 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 625318183054788077779322969120275539310980599345
+2026-03-19 22:05:26,781 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Alice'
+2026-03-19 22:05:26,784 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Alice
+2026-03-19 22:05:26,785 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=alice@test.com,CN=Alice,OU=Engineering,O=Test Org,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:26,789 [[36mINFO[0m] audit.audit_log — Audit [0] CERT_ISSUED
+2026-03-19 22:05:26,789 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 565808452483939865721685489402589164123975277240 → C:\Users\richa\AppData\Local\Temp\tmp_djr_f08\certs\alice_565808452483939865721685489402589164123975277240.pem
+2026-03-19 22:05:26,794 [[36mINFO[0m] ca.crl_manager — CRL saved → C:\Users\richa\AppData\Local\Temp\tmp_djr_f08\crl\ca.crl.pem  (1 revoked)
+2026-03-19 22:05:26,795 [[36mINFO[0m] audit.audit_log — Audit [1] CERT_REVOKED
+2026-03-19 22:05:26,795 [[36mINFO[0m] ca.crl_manager — Revoked serial 565808452483939865721685489402589164123975277240 — reason: unspecified
+2026-03-19 22:05:26,958 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmp9zizj70a\ca_key.pem
+2026-03-19 22:05:26,959 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmp9zizj70a\ca_cert.pem
+2026-03-19 22:05:26,959 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 346784922860700421849654309471697116588040668872
+2026-03-19 22:05:27,164 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Alice'
+2026-03-19 22:05:27,167 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Alice
+2026-03-19 22:05:27,167 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=alice@test.com,CN=Alice,OU=Engineering,O=Test Org,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:27,172 [[36mINFO[0m] audit.audit_log — Audit [0] CERT_ISSUED
+2026-03-19 22:05:27,172 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 313840214497977074477727727267115879621493972509 → C:\Users\richa\AppData\Local\Temp\tmp9zizj70a\certs\alice_313840214497977074477727727267115879621493972509.pem
+2026-03-19 22:05:27,176 [[36mINFO[0m] ca.crl_manager — CRL saved → C:\Users\richa\AppData\Local\Temp\tmp9zizj70a\crl\ca.crl.pem  (1 revoked)
+2026-03-19 22:05:27,177 [[36mINFO[0m] audit.audit_log — Audit [1] CERT_REVOKED
+2026-03-19 22:05:27,178 [[36mINFO[0m] ca.crl_manager — Revoked serial 313840214497977074477727727267115879621493972509 — reason: superseded
+2026-03-19 22:05:27,292 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmp9gx1yycp\ca_key.pem
+2026-03-19 22:05:27,292 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmp9gx1yycp\ca_cert.pem
+2026-03-19 22:05:27,293 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 151285030027487295574964888147052657852372703238
+2026-03-19 22:05:27,336 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Alice'
+2026-03-19 22:05:27,339 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Alice
+2026-03-19 22:05:27,340 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=alice@test.com,CN=Alice,OU=Engineering,O=Test Org,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:27,345 [[36mINFO[0m] audit.audit_log — Audit [0] CERT_ISSUED
+2026-03-19 22:05:27,346 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 161906079554076591713199771545283810171286601391 → C:\Users\richa\AppData\Local\Temp\tmp9gx1yycp\certs\alice_161906079554076591713199771545283810171286601391.pem
+2026-03-19 22:05:27,382 [[31mERROR[0m] audit.audit_log — Chain broken at seq 0 — hash mismatch
+2026-03-19 22:05:27,547 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmpg7m77ye5\ca_key.pem
+2026-03-19 22:05:27,547 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmpg7m77ye5\ca_cert.pem
+2026-03-19 22:05:27,548 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 143367590447534972444796700225564979950480519566
+2026-03-19 22:05:27,669 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Alice'
+2026-03-19 22:05:27,672 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Alice
+2026-03-19 22:05:27,672 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=alice@test.com,CN=Alice,OU=Engineering,O=Test Org,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:27,677 [[36mINFO[0m] audit.audit_log — Audit [0] CERT_ISSUED
+2026-03-19 22:05:27,677 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 35049249050378661052253934494072977881678579284 → C:\Users\richa\AppData\Local\Temp\tmpg7m77ye5\certs\alice_35049249050378661052253934494072977881678579284.pem
+2026-03-19 22:05:27,763 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Bob'
+2026-03-19 22:05:27,766 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Bob
+2026-03-19 22:05:27,767 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=bob@test.com,CN=Bob,OU=Engineering,O=Test Org,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:27,771 [[36mINFO[0m] audit.audit_log — Audit [1] CERT_ISSUED
+2026-03-19 22:05:27,771 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 577134599630053251035164182365153857358127441874 → C:\Users\richa\AppData\Local\Temp\tmpg7m77ye5\certs\bob_577134599630053251035164182365153857358127441874.pem
+2026-03-19 22:05:27,772 [[36mINFO[0m] audit.audit_log — Audit chain verified — 2 entries intact
+2026-03-19 22:05:27,888 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmptnw8g7wz\ca_key.pem
+2026-03-19 22:05:27,889 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmptnw8g7wz\ca_cert.pem
+2026-03-19 22:05:27,889 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 169429495471385642018175222873028712494625971015
+2026-03-19 22:05:27,890 [[36mINFO[0m] audit.audit_log — Audit [0] TEST_EVENT
+2026-03-19 22:05:28,247 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmpsi5ot5v2\ca_key.pem
+2026-03-19 22:05:28,248 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmpsi5ot5v2\ca_cert.pem
+2026-03-19 22:05:28,248 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 587098531011018414177363368470153668507996410249
+2026-03-19 22:05:28,250 [[36mINFO[0m] audit.audit_log — Audit [0] EVENT_0
+2026-03-19 22:05:28,251 [[36mINFO[0m] audit.audit_log — Audit [1] EVENT_1
+2026-03-19 22:05:28,252 [[36mINFO[0m] audit.audit_log — Audit [2] EVENT_2
+2026-03-19 22:05:28,254 [[36mINFO[0m] audit.audit_log — Audit [3] EVENT_3
+2026-03-19 22:05:28,255 [[36mINFO[0m] audit.audit_log — Audit [4] EVENT_4
+2026-03-19 22:05:28,358 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmpwjq2a7va\ca_key.pem
+2026-03-19 22:05:28,359 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmpwjq2a7va\ca_cert.pem
+2026-03-19 22:05:28,359 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 654034674498094326657465330296802645239415673535
+2026-03-19 22:05:28,477 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Alice'
+2026-03-19 22:05:28,481 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Alice
+2026-03-19 22:05:28,481 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=alice@test.com,CN=Alice,OU=Engineering,O=Test Org,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:28,485 [[36mINFO[0m] audit.audit_log — Audit [0] CERT_ISSUED
+2026-03-19 22:05:28,485 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 587803636582658860153602702576881687685946823494 → C:\Users\richa\AppData\Local\Temp\tmpwjq2a7va\certs\alice_587803636582658860153602702576881687685946823494.pem
+2026-03-19 22:05:28,502 [[36mINFO[0m] audit.audit_log — Audit chain verified — 1 entries intact
+2026-03-19 22:05:28,569 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmphn67b21f\ca_key.pem
+2026-03-19 22:05:28,570 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmphn67b21f\ca_cert.pem
+2026-03-19 22:05:28,570 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 518414664186313140166042234220226727158403047940
+2026-03-19 22:05:28,573 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-19 22:05:28,720 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=test@ca.local,CN=Test Root CA,OU=Testing,O=Test CA,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:28,797 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\AppData\Local\Temp\tmped1rbd3b\ca_key.pem
+2026-03-19 22:05:28,798 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\AppData\Local\Temp\tmped1rbd3b\ca_cert.pem
+2026-03-19 22:05:28,798 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 98601960857046418871541126763591375855574478244
+2026-03-19 22:05:28,801 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-19 22:05:28,912 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=test@ca.local,CN=Test Root CA,OU=Testing,O=Test CA,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:29,012 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'CLI User'
+2026-03-19 22:05:29,015 [[36mINFO[0m] ca.csr_generator — CSR built for subject: CLI User
+2026-03-19 22:05:29,018 [[36mINFO[0m] ca.csr_generator — Saved key  → C:\Users\richa\AppData\Local\Temp\tmped1rbd3b\csr\cli_user_private_key.pem
+2026-03-19 22:05:29,019 [[36mINFO[0m] ca.csr_generator — Saved CSR  → C:\Users\richa\AppData\Local\Temp\tmped1rbd3b\csr\cli_user_csr.pem
+2026-03-19 22:05:29,019 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=cli@test.com,CN=CLI User,OU=Engineering,O=Example Corp,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:29,037 [[36mINFO[0m] audit.audit_log — Audit [0] CERT_ISSUED
+2026-03-19 22:05:29,037 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 335617674784633653002478637113227163471602838868 → C:\Users\richa\AppData\Local\Temp\tmped1rbd3b\certs\cli_user_335617674784633653002478637113227163471602838868.pem
+2026-03-19 22:05:40,177 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-19 22:05:40,264 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:40,661 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-19 22:05:40,755 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:40,862 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Alice Smith'
+2026-03-19 22:05:40,866 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Alice Smith
+2026-03-19 22:05:40,872 [[36mINFO[0m] ca.csr_generator — Saved key  → c:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\alice_smith_private_key.pem
+2026-03-19 22:05:40,872 [[36mINFO[0m] ca.csr_generator — Saved CSR  → c:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\alice_smith_csr.pem
+2026-03-19 22:05:40,873 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=alice@example.com,CN=Alice Smith,OU=Engineering,O=Example Corp,L=San Francisco,ST=California,C=US
+2026-03-19 22:05:40,883 [[36mINFO[0m] audit.audit_log — Audit [12] CERT_ISSUED
+2026-03-19 22:05:40,884 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 21799364000062521545196163683617161018051072375 → c:\Users\richa\OneDrive\CYS\digital_ca\storage\certs\alice_smith_21799364000062521545196163683617161018051072375.pem
+2026-03-19 22:05:41,312 [[36mINFO[0m] audit.audit_log — Audit chain verified — 13 entries intact
+2026-03-19 22:08:57,125 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-19 22:08:57,214 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
