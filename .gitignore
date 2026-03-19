@@ -1,0 +1,77 @@
+# ============================================================
+# SECURITY — Never commit these
+# ============================================================
+
+# Private keys (CA + requesters)
+*.pem
+*.key
+*.p12
+*.pfx
+*.der
+
+# Specifically block storage directory sensitive files
+storage/ca_private_key.pem
+storage/ca_certificate.pem
+storage/certs/
+storage/csr/
+storage/crl/
+storage/audit/
+
+# Block entire storage directory
+storage/
+
+# ============================================================
+# Python
+# ============================================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+ENV/
+
+# ============================================================
+# Testing
+# ============================================================
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+
+# ============================================================
+# IDE / Editor
+# ============================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ============================================================
+# Logs
+# ============================================================
+*.log
+logs/

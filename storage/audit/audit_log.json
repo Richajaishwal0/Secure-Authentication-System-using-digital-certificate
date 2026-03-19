@@ -182,5 +182,67 @@
     },
     "prev_hash": "66afa87347ef8e3a981cf859378cf0352a416788ba404951c78a76037839915f",
     "hash": "79d15261faca178233f0fe7abe48da294c5b14fe8f72e2a551faa40b9200ca0b"
+  },
+  {
+    "seq": 13,
+    "timestamp": "2026-03-19T16:58:03.414605+00:00",
+    "event": "CERT_ISSUED",
+    "data": {
+      "subject": "1.2.840.113549.1.9.1=richa@test.com,CN=Richa Jaishwal,OU=Engineering,O=Example Corp,L=San Francisco,ST=California,C=US",
+      "serial": 411423275051455045852634021279448867388167828581,
+      "valid_from": "2026-03-19T16:58:03+00:00",
+      "valid_until": "2027-03-19T16:58:03+00:00",
+      "saved_to": "C:\\Users\\richa\\OneDrive\\CYS\\digital_ca\\storage\\certs\\richa_jaishwal_411423275051455045852634021279448867388167828581.pem"
+    },
+    "prev_hash": "79d15261faca178233f0fe7abe48da294c5b14fe8f72e2a551faa40b9200ca0b",
+    "hash": "9f51957a58244ae8d7747b734db14070b9a134a6aa1dde0cf5eac1f0d19fbdb5"
+  },
+  {
+    "seq": 14,
+    "timestamp": "2026-03-19T17:00:25.820930+00:00",
+    "event": "CERT_VERIFIED",
+    "data": {
+      "serial": 411423275051455045852634021279448867388167828581,
+      "subject": "1.2.840.113549.1.9.1=richa@test.com,CN=Richa Jaishwal,OU=Engineering,O=Example Corp,L=San Francisco,ST=California,C=US",
+      "valid": true,
+      "checks": {
+        "signature": true,
+        "expiry": true,
+        "not_revoked": true
+      },
+      "reason": ""
+    },
+    "prev_hash": "9f51957a58244ae8d7747b734db14070b9a134a6aa1dde0cf5eac1f0d19fbdb5",
+    "hash": "e4adb88d3524c2846adb08c24fe7bc2a620b93da9b5ce2b44a94cec504fb57da"
+  },
+  {
+    "seq": 15,
+    "timestamp": "2026-03-19T17:02:11.302466+00:00",
+    "event": "CERT_REVOKED",
+    "data": {
+      "serial": 411423275051455045852634021279448867388167828581,
+      "reason": "key_compromise",
+      "revoked_at": "2026-03-19T17:02:11.288599+00:00"
+    },
+    "prev_hash": "e4adb88d3524c2846adb08c24fe7bc2a620b93da9b5ce2b44a94cec504fb57da",
+    "hash": "f7c46d2b71b1c19fbd1def32123ee62df0ed293e03f37405ca13ba60e34e2f51"
+  },
+  {
+    "seq": 16,
+    "timestamp": "2026-03-19T17:03:18.786893+00:00",
+    "event": "CERT_VERIFIED",
+    "data": {
+      "serial": 411423275051455045852634021279448867388167828581,
+      "subject": "1.2.840.113549.1.9.1=richa@test.com,CN=Richa Jaishwal,OU=Engineering,O=Example Corp,L=San Francisco,ST=California,C=US",
+      "valid": false,
+      "checks": {
+        "signature": true,
+        "expiry": true,
+        "not_revoked": false
+      },
+      "reason": "revoked \u2014 key_compromise at 2026-03-19T17:02:11.288599+00:00"
+    },
+    "prev_hash": "f7c46d2b71b1c19fbd1def32123ee62df0ed293e03f37405ca13ba60e34e2f51",
+    "hash": "cf404bb2f9adc391bdb7038456a87ce183636dc69382cebee0f7a3a1e11b6cb6"
   }
 ]

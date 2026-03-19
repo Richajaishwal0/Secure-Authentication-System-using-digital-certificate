@@ -266,3 +266,31 @@
 2026-03-19 22:05:41,312 [[36mINFO[0m] audit.audit_log — Audit chain verified — 13 entries intact
 2026-03-19 22:08:57,125 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
 2026-03-19 22:08:57,214 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-19 22:27:31,004 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-19 22:27:31,091 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-19 22:28:03,189 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-19 22:28:03,291 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-19 22:28:03,390 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Richa Jaishwal'
+2026-03-19 22:28:03,396 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Richa Jaishwal
+2026-03-19 22:28:03,402 [[36mINFO[0m] ca.csr_generator — Saved key  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\richa_jaishwal_private_key.pem
+2026-03-19 22:28:03,404 [[36mINFO[0m] ca.csr_generator — Saved CSR  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\richa_jaishwal_csr.pem
+2026-03-19 22:28:03,406 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=richa@test.com,CN=Richa Jaishwal,OU=Engineering,O=Example Corp,L=San Francisco,ST=California,C=US
+2026-03-19 22:28:03,418 [[36mINFO[0m] audit.audit_log — Audit [13] CERT_ISSUED
+2026-03-19 22:28:03,419 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 411423275051455045852634021279448867388167828581 → C:\Users\richa\OneDrive\CYS\digital_ca\storage\certs\richa_jaishwal_411423275051455045852634021279448867388167828581.pem
+2026-03-19 22:30:25,676 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-19 22:30:25,767 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-19 22:30:25,823 [[36mINFO[0m] audit.audit_log — Audit [14] CERT_VERIFIED
+2026-03-19 22:30:25,825 [[36mINFO[0m] ca.cert_verifier — Verification result: [VALID] 1.2.840.113549.1.9.1=richa@test.com,CN=Richa Jaishwal,OU=Engineering,O=Example Corp,L=San Francisco,ST=California,C=US | signature=OK, expiry=OK, not_revoked=OK
+2026-03-19 22:32:11,171 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-19 22:32:11,259 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-19 22:32:11,301 [[36mINFO[0m] ca.crl_manager — CRL saved → C:\Users\richa\OneDrive\CYS\digital_ca\storage\crl\ca.crl.pem  (2 revoked)
+2026-03-19 22:32:11,305 [[36mINFO[0m] audit.audit_log — Audit [15] CERT_REVOKED
+2026-03-19 22:32:11,306 [[36mINFO[0m] ca.crl_manager — Revoked serial 411423275051455045852634021279448867388167828581 — reason: key_compromise
+2026-03-19 22:33:18,644 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-19 22:33:18,731 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-19 22:33:18,791 [[36mINFO[0m] audit.audit_log — Audit [16] CERT_VERIFIED
+2026-03-19 22:33:18,792 [[36mINFO[0m] ca.cert_verifier — Verification result: [INVALID (revoked — key_compromise at 2026-03-19T17:02:11.288599+00:00)] 1.2.840.113549.1.9.1=richa@test.com,CN=Richa Jaishwal,OU=Engineering,O=Example Corp,L=San Francisco,ST=California,C=US | signature=OK, expiry=OK, not_revoked=FAIL
+2026-03-19 22:33:36,813 [[36mINFO[0m] audit.audit_log — Audit chain verified — 17 entries intact
+2026-03-19 22:33:49,051 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-19 22:33:49,141 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-19 22:33:49,152 [[36mINFO[0m] ca.crl_manager — CRL saved → C:\Users\richa\OneDrive\CYS\digital_ca\storage\crl\ca.crl.pem  (2 revoked)
