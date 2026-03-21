@@ -244,5 +244,137 @@
     },
     "prev_hash": "f7c46d2b71b1c19fbd1def32123ee62df0ed293e03f37405ca13ba60e34e2f51",
     "hash": "cf404bb2f9adc391bdb7038456a87ce183636dc69382cebee0f7a3a1e11b6cb6"
+  },
+  {
+    "seq": 17,
+    "timestamp": "2026-03-19T17:24:03.788705+00:00",
+    "event": "CERT_ISSUED",
+    "data": {
+      "subject": "1.2.840.113549.1.9.1=Richa@gmail.com,CN=Richa Jaishwal,OU=Engineering,O=Example Corp,L=Chennai,ST=Tamilnadu,C=ID",
+      "serial": 351222665363633777988562745827621469702053382967,
+      "valid_from": "2026-03-19T17:24:03+00:00",
+      "valid_until": "2027-03-19T17:24:03+00:00",
+      "saved_to": "C:\\Users\\richa\\OneDrive\\CYS\\digital_ca\\storage\\certs\\richa_jaishwal_351222665363633777988562745827621469702053382967.pem"
+    },
+    "prev_hash": "cf404bb2f9adc391bdb7038456a87ce183636dc69382cebee0f7a3a1e11b6cb6",
+    "hash": "48782adf8896663cd10feb1745c97e7040bfac7106cfbde71728e05edd7948ec"
+  },
+  {
+    "seq": 18,
+    "timestamp": "2026-03-19T17:25:24.705968+00:00",
+    "event": "CERT_VERIFIED",
+    "data": {
+      "serial": 351222665363633777988562745827621469702053382967,
+      "subject": "1.2.840.113549.1.9.1=Richa@gmail.com,CN=Richa Jaishwal,OU=Engineering,O=Example Corp,L=Chennai,ST=Tamilnadu,C=ID",
+      "valid": true,
+      "checks": {
+        "signature": true,
+        "expiry": true,
+        "not_revoked": true
+      },
+      "reason": ""
+    },
+    "prev_hash": "48782adf8896663cd10feb1745c97e7040bfac7106cfbde71728e05edd7948ec",
+    "hash": "34becfb04bebecfa8f675cc62c1bae2414bf2ac85683b9a233439761792abc88"
+  },
+  {
+    "seq": 19,
+    "timestamp": "2026-03-19T17:25:45.082003+00:00",
+    "event": "CERT_REVOKED",
+    "data": {
+      "serial": 351222665363633777988562745827621469702053382967,
+      "reason": "key_compromise",
+      "revoked_at": "2026-03-19T17:25:45.061652+00:00"
+    },
+    "prev_hash": "34becfb04bebecfa8f675cc62c1bae2414bf2ac85683b9a233439761792abc88",
+    "hash": "30adcfc5b6584e634d26f90d63629fad216a31840de32f1988c9d2c8a27bee68"
+  },
+  {
+    "seq": 20,
+    "timestamp": "2026-03-19T17:28:44.615436+00:00",
+    "event": "CERT_ISSUED",
+    "data": {
+      "subject": "1.2.840.113549.1.9.1=Richa@gmail.com,CN=Richa Jaishwal,OU=Engineering,O=Example Corp,L=San Francisco,ST=California,C=US",
+      "serial": 527637081974140913287504990937153585149389775174,
+      "valid_from": "2026-03-19T17:28:44+00:00",
+      "valid_until": "2026-03-21T17:28:44+00:00",
+      "saved_to": "C:\\Users\\richa\\OneDrive\\CYS\\digital_ca\\storage\\certs\\richa_jaishwal_527637081974140913287504990937153585149389775174.pem"
+    },
+    "prev_hash": "30adcfc5b6584e634d26f90d63629fad216a31840de32f1988c9d2c8a27bee68",
+    "hash": "5757152412876db2ec325cf910b916c3345a00ed78845d051949fd4af6824fd2"
+  },
+  {
+    "seq": 21,
+    "timestamp": "2026-03-19T17:30:00.224976+00:00",
+    "event": "CERT_VERIFIED",
+    "data": {
+      "serial": 527637081974140913287504990937153585149389775174,
+      "subject": "1.2.840.113549.1.9.1=Richa@gmail.com,CN=Richa Jaishwal,OU=Engineering,O=Example Corp,L=San Francisco,ST=California,C=US",
+      "valid": true,
+      "checks": {
+        "signature": true,
+        "expiry": true,
+        "not_revoked": true
+      },
+      "reason": ""
+    },
+    "prev_hash": "5757152412876db2ec325cf910b916c3345a00ed78845d051949fd4af6824fd2",
+    "hash": "e28e0a37b9f6c8f4d1bd48838cd4ebc396a79ac2ba27e0fc3373509a19ed20bc"
+  },
+  {
+    "seq": 22,
+    "timestamp": "2026-03-19T17:30:13.661422+00:00",
+    "event": "CERT_REVOKED",
+    "data": {
+      "serial": 527637081974140913287504990937153585149389775174,
+      "reason": "key_compromise",
+      "revoked_at": "2026-03-19T17:30:13.651952+00:00"
+    },
+    "prev_hash": "e28e0a37b9f6c8f4d1bd48838cd4ebc396a79ac2ba27e0fc3373509a19ed20bc",
+    "hash": "4eb134304372c009d4ac05adf702e6bf40e432d3dd9fc0544ad5e5b9c2499710"
+  },
+  {
+    "seq": 23,
+    "timestamp": "2026-03-21T07:09:26.027008+00:00",
+    "event": "CERT_ISSUED",
+    "data": {
+      "subject": "1.2.840.113549.1.9.1=Rahul@gmail.com,CN=Rahul,OU=Engineering,O=Example Corp,L=San Francisco,ST=California,C=US",
+      "serial": 585908389174085439266935189417333941573201993886,
+      "valid_from": "2026-03-21T07:09:26+00:00",
+      "valid_until": "2027-03-21T07:09:26+00:00",
+      "saved_to": "C:\\Users\\richa\\OneDrive\\CYS\\digital_ca\\storage\\certs\\rahul_585908389174085439266935189417333941573201993886.pem"
+    },
+    "prev_hash": "4eb134304372c009d4ac05adf702e6bf40e432d3dd9fc0544ad5e5b9c2499710",
+    "hash": "17e6e69581cd1877dc8784552ff9a79f499c4f4d4648a3d99e636be29628bd49"
+  },
+  {
+    "seq": 24,
+    "timestamp": "2026-03-21T07:09:35.485432+00:00",
+    "event": "CERT_VERIFIED",
+    "data": {
+      "serial": 585908389174085439266935189417333941573201993886,
+      "subject": "1.2.840.113549.1.9.1=Rahul@gmail.com,CN=Rahul,OU=Engineering,O=Example Corp,L=San Francisco,ST=California,C=US",
+      "valid": true,
+      "checks": {
+        "signature": true,
+        "expiry": true,
+        "not_revoked": true
+      },
+      "reason": ""
+    },
+    "prev_hash": "17e6e69581cd1877dc8784552ff9a79f499c4f4d4648a3d99e636be29628bd49",
+    "hash": "5a3c5e5fdb925c04f26d5bf53438644676182861c4196edc941ad37af6e07b9d"
+  },
+  {
+    "seq": 25,
+    "timestamp": "2026-03-21T07:09:58.180976+00:00",
+    "event": "CERT_REVOKED",
+    "data": {
+      "serial": 585908389174085439266935189417333941573201993886,
+      "reason": "key_compromise",
+      "revoked_at": "2026-03-21T07:09:58.177178+00:00"
+    },
+    "prev_hash": "5a3c5e5fdb925c04f26d5bf53438644676182861c4196edc941ad37af6e07b9d",
+    "hash": "103c8dc1dda7df96874324aac89086439b380ed231684ac639a6598dce8826c2"
   }
 ]
