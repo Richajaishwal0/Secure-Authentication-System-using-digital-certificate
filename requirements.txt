@@ -1,1 +1,23 @@
+# Core cryptography
 cryptography>=42.0.0
+
+# REST API
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+python-multipart>=0.0.9      # for UploadFile in FastAPI
+
+# Database
+sqlalchemy>=2.0.0
+# For PostgreSQL (optional — SQLite works out of the box):
+# psycopg2-binary>=2.9.0
+
+# Data validation
+pydantic>=2.0.0
+pydantic[email]
+
+# LDAP integration (optional)
+# ldap3>=2.9.0
+
+# Testing
+pytest>=8.0.0
+httpx>=0.27.0                # for FastAPI TestClient

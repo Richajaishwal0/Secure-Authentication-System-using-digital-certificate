@@ -117,7 +117,7 @@ class CAApp(tk.Tk):
         tk.Label(hdr, text="  Digital Certificate Authority",
                  font=("Segoe UI", 14, "bold"),
                  fg=BTN_FG, bg=ACCENT).pack(side="left", padx=16)
-        tk.Label(hdr, text="PKI Prototype  |  RSA-2048  |  X.509 v3  |  SHA-256",
+        tk.Label(hdr, text="PKI v2  |  RSA-2048  |  X.509 v3  |  OCSP  |  ACME  |  Intermediate CA  |  Templates",
                  font=("Segoe UI", 9), fg="#ddd6fe", bg=ACCENT).pack(side="right", padx=16)
 
     # ── Notebook tabs ──────────────────────────────────────────────────────────
@@ -135,12 +135,15 @@ class CAApp(tk.Tk):
         self.nb.pack(fill="both", expand=True, padx=10, pady=(8, 0))
 
         tabs = [
-            ("  Init CA  ",    self._tab_init),
-            ("  Issue Cert  ", self._tab_issue),
-            ("  Verify  ",     self._tab_verify),
-            ("  Revoke  ",     self._tab_revoke),
-            ("  Audit Log  ",  self._tab_audit),
-            ("  CRL  ",        self._tab_crl),
+            ("  Init CA  ",        self._tab_init),
+            ("  Issue Cert  ",     self._tab_issue),
+            ("  Verify  ",         self._tab_verify),
+            ("  Revoke  ",         self._tab_revoke),
+            ("  Audit Log  ",      self._tab_audit),
+            ("  CRL  ",            self._tab_crl),
+            ("  Intermediate CA ", self._tab_intermediate),
+            ("  Templates  ",      self._tab_templates),
+            ("  ACME Renewal  ",   self._tab_acme),
         ]
         for title, builder in tabs:
             frame = tk.Frame(self.nb, bg=BG)
@@ -273,6 +276,21 @@ class CAApp(tk.Tk):
             e.grid(row=row*2+1, column=col*2, sticky="w", padx=(0, 20))
             self._issue_vars[key] = e
 
+        # Template + SAN row
+        from ca.cert_templates import TEMPLATES
+        tpl_row = tk.Frame(inner, bg=PANEL)
+        tpl_row.pack(fill="x", pady=(8, 0))
+        tk.Label(tpl_row, text="Template:", font=("Segoe UI", 9),
+                 fg=TEXT_DIM, bg=PANEL).pack(side="left")
+        self._issue_template = ttk.Combobox(tpl_row, values=list(TEMPLATES.keys()),
+                                            state="readonly", width=18, font=("Segoe UI", 10))
+        self._issue_template.set("client_auth")
+        self._issue_template.pack(side="left", padx=(4, 16))
+        tk.Label(tpl_row, text="SAN (comma-sep, TLS only):", font=("Segoe UI", 9),
+                 fg=TEXT_DIM, bg=PANEL).pack(side="left")
+        self._issue_san = _entry(tpl_row, width=26)
+        self._issue_san.pack(side="left", padx=4)
+
         self._issue_result = _result_box(inner, height=9)
         self._issue_result.pack(fill="x", pady=(12, 0))
 
@@ -310,6 +328,10 @@ class CAApp(tk.Tk):
                 }
                 days = int(v["days"]) if v["days"].isdigit() else 365
 
+                template_name = self._issue_template.get() or "client_auth"
+                san_raw   = self._issue_san.get().strip()
+                san_names = [s.strip() for s in san_raw.split(",") if s.strip()] or None
+
                 ca = CertificateAuthority()
                 ca_key, ca_cert = ca.initialize()
                 audit   = AuditLog(CA_CONFIG["audit_log_path"])
@@ -320,7 +342,8 @@ class CAApp(tk.Tk):
                 csr  = gen.build_csr(key)
                 safe = v["name"].lower().replace(" ", "_")
                 gen.save(key, csr, name=safe)
-                cert = issuer.issue(csr, validity_days=days, name=safe)
+                cert = issuer.issue(csr, validity_days=days, name=safe,
+                                    template_name=template_name, san_names=san_names)
 
                 serial = cert.serial_number
                 path   = os.path.join(CA_CONFIG["certs_dir"], f"{safe}_{serial}.pem")
@@ -331,6 +354,8 @@ class CAApp(tk.Tk):
                     "=" * 52,
                     f"  Name        : {v['name']}",
                     f"  Email       : {v['email']}",
+                    f"  Template    : {template_name}",
+                    f"  SANs        : {san_names or 'none'}",
                     f"  Serial      : {serial}",
                     f"  Valid From  : {cert.not_valid_before_utc}",
                     f"  Valid Until : {cert.not_valid_after_utc}",
@@ -621,6 +646,248 @@ class CAApp(tk.Tk):
 
             except Exception as e:
                 _show(self._crl_result, f"[ERROR] {e}", DANGER)
+        self._run(task)
+
+
+    # ══════════════════════════════════════════════════════════════════════════
+    # TAB 7 — Intermediate CA
+    # ══════════════════════════════════════════════════════════════════════════
+    def _tab_intermediate(self, parent):
+        wrap = tk.Frame(parent, bg=BG)
+        wrap.pack(fill="both", expand=True, padx=20, pady=16)
+
+        card, inner = _section(wrap, "Intermediate Certificate Authority")
+        card.pack(fill="x")
+
+        _label(inner,
+               "Real PKI hierarchy: Root CA → Intermediate CA → End-entity cert.\n"
+               "The Root CA stays offline. The Intermediate CA signs day-to-day certs.\n"
+               "If the Intermediate is compromised, Root revokes it without replacing the trust anchor.",
+               color=TEXT_DIM).pack(anchor="w", pady=(0, 12))
+
+        # Issue via intermediate
+        _label(inner, "Issue certificate via Intermediate CA:", bold=True).pack(anchor="w", pady=(8, 4))
+
+        grid = tk.Frame(inner, bg=PANEL)
+        grid.pack(fill="x")
+        self._int_vars = {}
+        fields = [("Full Name *", "name"), ("Email *", "email"),
+                  ("Template", "template"), ("SAN (comma-separated)", "san"),
+                  ("Validity (days)", "days")]
+        defaults = {"days": "365", "template": "tls_server", "san": ""}
+        for i, (lbl, key) in enumerate(fields):
+            tk.Label(grid, text=lbl, font=("Segoe UI", 9), fg=TEXT_DIM, bg=PANEL).grid(
+                row=i*2, column=0, sticky="w", pady=(6, 0))
+            e = _entry(grid, width=50)
+            e.insert(0, defaults.get(key, ""))
+            e.grid(row=i*2+1, column=0, sticky="w")
+            self._int_vars[key] = e
+
+        self._int_result = _result_box(inner, height=10)
+        self._int_result.pack(fill="x", pady=(12, 0))
+
+        btn_row = tk.Frame(inner, bg=PANEL)
+        btn_row.pack(fill="x", pady=(10, 0))
+        _btn(btn_row, "Init Intermediate CA", self._do_init_intermediate, color=ACCENT).pack(side="left")
+        _btn(btn_row, "Issue via Intermediate", self._do_issue_intermediate, color=SUCCESS).pack(side="left", padx=10)
+
+    def _do_init_intermediate(self):
+        def task():
+            try:
+                from ca.ca_setup import CertificateAuthority
+                from ca.intermediate_ca import IntermediateCA
+                from audit.audit_log import AuditLog
+                from config import CA_CONFIG
+                ca = CertificateAuthority()
+                ca_key, ca_cert = ca.initialize()
+                audit = AuditLog(CA_CONFIG["audit_log_path"])
+                int_ca = IntermediateCA(ca_key, ca_cert, audit)
+                _, cert = int_ca.initialize()
+                lines = [
+                    "=" * 52, "  INTERMEDIATE CA READY", "=" * 52,
+                    f"  Subject     : {cert.subject.rfc4514_string()}",
+                    f"  Issuer      : {cert.issuer.rfc4514_string()}",
+                    f"  Serial      : {cert.serial_number}",
+                    f"  Valid From  : {cert.not_valid_before_utc}",
+                    f"  Valid Until : {cert.not_valid_after_utc}",
+                    f"  path_length : 0 (can only sign end-entity certs)",
+                    "=" * 52,
+                ]
+                _show(self._int_result, "\n".join(lines), SUCCESS)
+            except Exception as e:
+                _show(self._int_result, f"[ERROR] {e}", DANGER)
+        self._run(task)
+
+    def _do_issue_intermediate(self):
+        def task():
+            try:
+                from ca.ca_setup import CertificateAuthority
+                from ca.intermediate_ca import IntermediateCA
+                from ca.csr_generator import CSRGenerator
+                from audit.audit_log import AuditLog
+                from config import CA_CONFIG
+                v = {k: e.get().strip() for k, e in self._int_vars.items()}
+                if not v["name"] or not v["email"]:
+                    _show(self._int_result, "[ERROR] Name and Email required.", DANGER)
+                    return
+                ca = CertificateAuthority()
+                ca_key, ca_cert = ca.initialize()
+                audit  = AuditLog(CA_CONFIG["audit_log_path"])
+                int_ca = IntermediateCA(ca_key, ca_cert, audit)
+                int_ca.initialize()
+                subject = {"common_name": v["name"], "email": v["email"],
+                           "org": "Example Corp", "org_unit": "Engineering",
+                           "country": "US", "state": "California", "locality": "San Francisco"}
+                gen  = CSRGenerator(subject)
+                key  = gen.generate_key_pair()
+                csr  = gen.build_csr(key)
+                safe = v["name"].lower().replace(" ", "_")
+                gen.save(key, csr, name=safe)
+                san  = [s.strip() for s in v["san"].split(",") if s.strip()] or None
+                days = int(v["days"]) if v["days"].isdigit() else 365
+                cert = int_ca.issue(csr, days, safe, v["template"] or "tls_server", san)
+                lines = [
+                    "=" * 52, "  CERT ISSUED (via Intermediate CA)", "=" * 52,
+                    f"  Subject  : {cert.subject.rfc4514_string()}",
+                    f"  Serial   : {cert.serial_number}",
+                    f"  Issuer   : {cert.issuer.rfc4514_string()}",
+                    f"  Template : {v['template']}",
+                    f"  SANs     : {san}",
+                    f"  Expires  : {cert.not_valid_after_utc}",
+                    "=" * 52,
+                ]
+                _show(self._int_result, "\n".join(lines), SUCCESS)
+            except Exception as e:
+                _show(self._int_result, f"[ERROR] {e}", DANGER)
+        self._run(task)
+
+    # ══════════════════════════════════════════════════════════════════════════
+    # TAB 8 — Certificate Templates
+    # ══════════════════════════════════════════════════════════════════════════
+    def _tab_templates(self, parent):
+        wrap = tk.Frame(parent, bg=BG)
+        wrap.pack(fill="both", expand=True, padx=20, pady=16)
+
+        card, inner = _section(wrap, "Certificate Templates")
+        card.pack(fill="both", expand=True)
+
+        _label(inner,
+               "Issue a certificate using a specific template profile.\n"
+               "Each template sets the correct X.509 extensions for its use case.",
+               color=TEXT_DIM).pack(anchor="w", pady=(0, 10))
+
+        from ca.cert_templates import TEMPLATES
+        self._tpl_result = _result_box(inner, height=20)
+        self._tpl_result.pack(fill="both", expand=True)
+
+        lines = ["=" * 60, "  AVAILABLE CERTIFICATE TEMPLATES", "=" * 60, ""]
+        for name, tpl in TEMPLATES.items():
+            lines.append(f"  Template    : {tpl.name}")
+            lines.append(f"  Description : {tpl.description}")
+            lines.append(f"  Default Days: {tpl.default_days}")
+            ku = [k for k, v in tpl.key_usage.items() if v]
+            lines.append(f"  Key Usage   : {', '.join(ku)}")
+            eku = [str(e).split('.')[-1] for e in tpl.extended_usages]
+            lines.append(f"  Ext KU      : {', '.join(eku)}")
+            lines.append("")
+        lines.append("=" * 60)
+        lines.append("")
+        lines.append("  Use the 'Issue Cert' tab and select a template,")
+        lines.append("  or use the REST API: POST /api/certs/issue with \"template\": \"tls_server\"")
+        _show(self._tpl_result, "\n".join(lines), ACCENT2)
+
+    # ══════════════════════════════════════════════════════════════════════════
+    # TAB 9 — ACME Auto-Renewal
+    # ══════════════════════════════════════════════════════════════════════════
+    def _tab_acme(self, parent):
+        wrap = tk.Frame(parent, bg=BG)
+        wrap.pack(fill="both", expand=True, padx=20, pady=16)
+
+        card, inner = _section(wrap, "ACME Protocol — Automated Certificate Renewal")
+        card.pack(fill="x")
+
+        _label(inner,
+               "ACME (RFC 8555) is the protocol Let's Encrypt uses to automate\n"
+               "certificate issuance and renewal without human interaction.\n"
+               "Start the API server first: uvicorn api.main:app --reload --port 8000",
+               color=TEXT_DIM).pack(anchor="w", pady=(0, 12))
+
+        _label(inner, "Domain:", color=TEXT_DIM).pack(anchor="w")
+        self._acme_domain = _entry(inner, width=40)
+        self._acme_domain.insert(0, "example.com")
+        self._acme_domain.pack(anchor="w", pady=(4, 8))
+
+        _label(inner, "Email:", color=TEXT_DIM).pack(anchor="w")
+        self._acme_email = _entry(inner, width=40)
+        self._acme_email.insert(0, "admin@example.com")
+        self._acme_email.pack(anchor="w", pady=(4, 8))
+
+        self._acme_result = _result_box(inner, height=14)
+        self._acme_result.pack(fill="x", pady=(8, 0))
+
+        btn_row = tk.Frame(inner, bg=PANEL)
+        btn_row.pack(fill="x", pady=(10, 0))
+        _btn(btn_row, "Simulate ACME Order", self._do_acme_order, color=WARNING).pack(side="left")
+        _btn(btn_row, "Check Renewals Due",  self._do_acme_renewals, color=ACCENT2).pack(side="left", padx=10)
+
+    def _do_acme_order(self):
+        def task():
+            try:
+                import urllib.request, json
+                domain = self._acme_domain.get().strip() or "example.com"
+                email  = self._acme_email.get().strip() or "admin@example.com"
+                payload = json.dumps({"domain": domain, "email": email, "account_key": "demo-key"}).encode()
+                req = urllib.request.Request(
+                    "http://localhost:8000/acme/order",
+                    data=payload, method="POST",
+                    headers={"Content-Type": "application/json"}
+                )
+                with urllib.request.urlopen(req, timeout=5) as resp:
+                    data = json.loads(resp.read())
+                lines = [
+                    "=" * 56, "  ACME ORDER CREATED", "=" * 56,
+                    f"  Order ID      : {data.get('order_id')}",
+                    f"  Domain        : {data.get('domain')}",
+                    f"  Status        : {data.get('status')}",
+                    f"  Token         : {data.get('token', '')[:20]}...",
+                    f"  Challenge URL : {data.get('challenge_url')}",
+                    f"  Validate URL  : {data.get('validate_url')}",
+                    f"  Finalize URL  : {data.get('finalize_url')}",
+                    f"  Expires At    : {data.get('expires_at')}",
+                    "=" * 56, "",
+                    "  Next: client places key_auth at the challenge URL,",
+                    "  then calls validate, then submits CSR to finalize.",
+                ]
+                _show(self._acme_result, "\n".join(lines), SUCCESS)
+            except Exception as e:
+                _show(self._acme_result,
+                      f"[ERROR] {e}\n\nMake sure the API server is running:\n"
+                      "  uvicorn api.main:app --reload --port 8000", DANGER)
+        self._run(task)
+
+    def _do_acme_renewals(self):
+        def task():
+            try:
+                import urllib.request, json
+                url = "http://localhost:8000/acme/renewals/due?days_ahead=30"
+                with urllib.request.urlopen(url, timeout=5) as resp:
+                    data = json.loads(resp.read())
+                if not data:
+                    _show(self._acme_result, "  No certificates expiring in the next 30 days.", SUCCESS)
+                    return
+                lines = ["=" * 56, f"  {len(data)} CERTIFICATE(S) DUE FOR RENEWAL", "=" * 56, ""]
+                for c in data:
+                    lines.append(f"  Serial    : {c['serial']}")
+                    lines.append(f"  Name      : {c['common_name']}")
+                    lines.append(f"  Email     : {c['email']}")
+                    lines.append(f"  Expires   : {c['not_after']}")
+                    lines.append(f"  Days Left : {c['days_left']}")
+                    lines.append("")
+                _show(self._acme_result, "\n".join(lines), WARNING)
+            except Exception as e:
+                _show(self._acme_result,
+                      f"[ERROR] {e}\n\nMake sure the API server is running:\n"
+                      "  uvicorn api.main:app --reload --port 8000", DANGER)
         self._run(task)
 
 
