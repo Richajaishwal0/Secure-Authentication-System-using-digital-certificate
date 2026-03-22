@@ -45,8 +45,13 @@ lib64/
 venv/
 .venv/
 env/
-.env/
 ENV/
+
+# Environment variable files (contain secrets)
+.env
+.env.*
+!.env.example
+
 
 # ============================================================
 # Testing
