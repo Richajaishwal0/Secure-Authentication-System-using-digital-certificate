@@ -849,3 +849,4 @@
 2026-03-22 17:45:18,490 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
 2026-03-22 17:45:18,524 [[36mINFO[0m] ca.crl_manager — CRL saved → C:\Users\richa\OneDrive\CYS\digital_ca\storage\crl\ca.crl.pem  (5 revoked)
 2026-03-22 17:45:32,541 [[36mINFO[0m] audit.audit_log — Audit chain verified — 28 entries intact
+2026-03-22 17:48:26,847 [[36mINFO[0m] audit.audit_log — Audit chain verified — 28 entries intact

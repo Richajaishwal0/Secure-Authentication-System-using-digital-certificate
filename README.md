@@ -1,4 +1,4 @@
-# Digital Certificate Authority (Digital CA)
+# DigitalCA: A Lightweight PKI System with Automated Lifecycle Management and Tamper-Evident Auditing for Small Organizations
 
 ## The Problem
 
