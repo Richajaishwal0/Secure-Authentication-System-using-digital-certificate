@@ -23,6 +23,7 @@ Small organizations — startups, clinics, schools, small IT teams — face a re
 - Issues X.509 v3 certificates using 4 purpose-specific templates
 - Verifies certificates — checks signature validity, expiry, and revocation status
 - Revokes certificates with reason codes and maintains a signed Certificate Revocation List (CRL)
+- Exports certificates as password-protected PKCS#12 (.p12) bundles for direct import into Windows/macOS certificate stores, browsers, VPN clients, and email clients
 
 ### 2. Automated Certificate Renewal
 - A background scheduler runs daily and scans all active certificates
@@ -40,6 +41,7 @@ Small organizations — startups, clinics, schools, small IT teams — face a re
 - They choose what they need (VPN, email, web, code signing) in plain English
 - Requests go into an admin approval queue; policies can auto-approve low-risk templates
 - Admins approve or reject with a reason from the same interface
+- Real-time notifications via Firebase Firestore when requests are approved or rejected
 
 ### 5. Two Distinct User Interfaces
 - **Employee Portal** — simplified 3-screen view: request a certificate, view my certificates, check a certificate
@@ -51,14 +53,16 @@ Small organizations — startups, clinics, schools, small IT teams — face a re
 - Returns DER-encoded signed OCSP responses
 
 ### 7. ACME Protocol for Internal Servers
-- Implements a simplified RFC 8555 ACME flow
+- Implements a simplified RFC 8555 ACME flow (order → challenge → validate → finalize)
 - Internal servers can automatically request and renew TLS certificates without manual admin involvement
+- Challenge validation is auto-approved in this prototype — in production it would fetch the domain to verify
 - Same protocol used by Let's Encrypt — adapted for internal/private CA use
 
 ### 8. Tamper-Evident Audit Log
 - Every CA operation (issue, revoke, verify, renew) is recorded in a hash-chained log
 - Each entry contains a SHA-256 hash of the previous entry — any modification breaks the chain
 - Chain integrity can be verified at any time from the admin panel
+- Audit log can be cleared by the admin when needed
 
 ### 9. LDAP / Active Directory Integration
 - Before issuing a certificate, the CA can verify the requester exists in the company's employee directory
@@ -96,7 +100,7 @@ Low-risk templates like `client_auth` are auto-approved by policy — your certi
 <!-- screenshot: request submitted / pending status -->
 
 **Step 4 — Download Your Certificate**
-Once approved, the certificate appears under "My Certificates". You can view details or download the PEM file.
+Once approved, the certificate appears under "My Certificates". You can view details, download the PEM file, or download a password-protected .p12 bundle ready to import into your system.
 
 <!-- screenshot: my certificates view -->
 
@@ -117,7 +121,7 @@ See live counts of total, active, revoked, expired, and expiring-soon certificat
 <!-- screenshot: admin dashboard -->
 
 **Approving / Rejecting Requests**
-The Request Queue lists all pending employee requests. Admin can approve (certificate is issued instantly) or reject with a reason. The requester's status updates immediately.
+The Request Queue lists all pending employee requests. Admin can approve (certificate is issued instantly) or reject with a reason. The requester's status updates immediately via Firebase notification.
 
 <!-- screenshot: request queue with approve/reject -->
 
@@ -142,7 +146,7 @@ View the current Certificate Revocation List and force-rebuild it at any time. T
 <!-- screenshot: CRL page -->
 
 **Audit Log**
-Every CA operation is recorded in a hash-chained log. The chain integrity status is shown at the top — green means untampered. Each entry shows timestamp, action, subject, serial, and the SHA-256 chain hash.
+Every CA operation is recorded in a hash-chained log. The chain integrity status is shown at the top — green means untampered. Each entry shows timestamp, action, subject, serial, and the SHA-256 chain hash. The log can be cleared by the admin.
 
 <!-- screenshot: audit log with chain integrity -->
 
@@ -172,6 +176,7 @@ The OCSP page lets you query real-time revocation status for any serial. The ACM
 | Internal servers need HTTPS without paying for certs | Self-hosted CA issues TLS certs for internal domains via ACME |
 | No way to instantly check if a cert is still valid | OCSP responder answers real-time status queries |
 | High-risk cert types need human review | Per-template approval policies — some auto-approve, some require admin sign-off |
+| Importing certificates into Windows/macOS/browsers | PKCS#12 (.p12) export with password protection, ready to double-click and import |
 
 ---
 
@@ -190,115 +195,37 @@ The OCSP page lets you query real-time revocation status for any serial. The ACM
 
 | Layer | Technology |
 |---|---|
-| Frontend | React 18, Vite, Axios |
+| Frontend | React 18, Vite, Axios, Lucide React |
+| Auth & Notifications | Firebase (Authentication + Firestore) |
 | Backend | Python, FastAPI, Uvicorn |
-| Cryptography | Python `cryptography` library — RSA-2048, X.509 v3, SHA-256 |
+| Cryptography | Python `cryptography` library — RSA-2048, X.509 v3, SHA-256, PKCS#12 |
 | Database | SQLite (default) / PostgreSQL (optional) |
 | ORM | SQLAlchemy |
 | Scheduler | APScheduler |
+| Email Delivery | SendGrid REST API |
 | Testing | pytest, httpx |
-
----
-
-## Project Structure
-
-```
-digital_ca/
-├── backend/
-│   ├── api/
-│   │   ├── routes/
-│   │   │   ├── ca.py           ← POST /api/ca/init, GET /api/ca/status
-│   │   │   ├── certs.py        ← Issue, list, verify, revoke
-│   │   │   ├── crl.py          ← CRL get + rebuild
-│   │   │   ├── audit.py        ← Audit log endpoints
-│   │   │   ├── ocsp.py         ← OCSP responder (RFC 6960)
-│   │   │   ├── acme.py         ← ACME protocol (RFC 8555)
-│   │   │   ├── policy.py       ← Certificate policy management
-│   │   │   ├── requests.py     ← Self-service request + admin approval queue
-│   │   │   └── dashboard.py    ← Stats, expiring certs, renewal log
-│   │   └── main.py             ← FastAPI app, router registration, scheduler startup
-│   ├── ca/
-│   │   ├── ca_setup.py         ← Root CA initialisation
-│   │   ├── cert_issuer.py      ← Signs CSRs → X.509 v3 certificates
-│   │   ├── cert_verifier.py    ← Signature / expiry / revocation checks
-│   │   ├── cert_templates.py   ← client_auth, tls_server, email_signing, code_signing
-│   │   ├── crl_manager.py      ← Certificate Revocation List
-│   │   ├── csr_generator.py    ← RSA key pair + PKCS#10 CSR generation
-│   │   └── intermediate_ca.py  ← Root → Intermediate → End-entity hierarchy
-│   ├── audit/
-│   │   └── audit_log.py        ← Hash-chained tamper-evident audit log
-│   ├── automation/
-│   │   └── scheduler.py        ← APScheduler jobs: expiry_check, auto_renew
-│   ├── db/
-│   │   ├── models.py           ← Certificate, RevokedCert, CertPolicy, CertRequest, RenewalLog, AcmeChallenge
-│   │   └── database.py         ← SQLite engine + session factory
-│   ├── integrations/
-│   │   └── ldap_client.py      ← Optional LDAP / Active Directory identity lookup
-│   ├── utils/
-│   │   └── crypto_utils.py     ← Shared crypto helpers
-│   ├── tests/
-│   │   └── test_ca.py          ← pytest test suite
-│   ├── config.py               ← CA configuration and paths
-│   ├── logger.py               ← Rotating file + coloured console logger
-│   ├── cli.py                  ← Command-line interface
-│   ├── main.py                 ← CLI entry point
-│   └── requirements.txt
-│
-├── frontend/
-│   └── src/
-│       ├── pages/
-│       │   ├── Dashboard.jsx       ← Live stats, expiring certs, automation controls
-│       │   ├── InitCA.jsx          ← Initialise Root CA
-│       │   ├── IssueCert.jsx       ← Issue certificate (all templates + SAN)
-│       │   ├── Certificates.jsx    ← List all certs + detail lookup
-│       │   ├── VerifyCert.jsx      ← Upload + verify a PEM file
-│       │   ├── RevokeCert.jsx      ← Revoke by serial + reason
-│       │   ├── AuditLog.jsx        ← Hash-chain audit log viewer
-│       │   ├── CRL.jsx             ← CRL rebuild + revoked list
-│       │   ├── IntermediateCA.jsx  ← Issue via Intermediate CA
-│       │   ├── PolicyManager.jsx   ← Per-template policy rules
-│       │   ├── RequestPortal.jsx   ← Self-service request form + admin approval queue
-│       │   ├── EmployeeView.jsx    ← Simplified employee-facing portal
-│       │   ├── Templates.jsx       ← Certificate template reference
-│       │   ├── ACME.jsx            ← ACME order + renewal check
-│       │   ├── OCSP.jsx            ← Real-time certificate status check
-│       │   └── Guide.jsx           ← Plain-English guide for non-technical users
-│       ├── api.js              ← Axios wrapper for all API calls
-│       ├── App.jsx             ← Role-based routing: landing → employee / admin
-│       ├── index.css           ← Dark purple/cyan theme
-│       └── main.jsx            ← React entry point
-│
-└── storage/                    ← Runtime-generated data (gitignored)
-    ├── certs/                  ← Issued certificate PEM files
-    ├── csr/                    ← CSR + private key PEM files
-    ├── crl/                    ← CRL PEM + revocation registry JSON
-    ├── audit/                  ← Audit log JSON + system log
-    ├── ca_certificate.pem      ← Root CA certificate
-    ├── ca_private_key.pem      ← Root CA private key (encrypted)
-    ├── intermediate_certificate.pem
-    ├── intermediate_private_key.pem
-    └── ca_database.db          ← SQLite database
-```
 
 ---
 
 ## Running the Project
 
-### 1. Start the Backend
+### 1. Backend
 
 ```bash
 cd backend
 pip install -r requirements.txt
+cp .env.example .env        # fill in your values
 uvicorn api.main:app --reload --port 8000
 ```
 
 Interactive API docs: http://localhost:8000/docs
 
-### 2. Start the Frontend
+### 2. Frontend
 
 ```bash
 cd frontend
 npm install
+cp .env.example .env        # fill in your Firebase config
 npm run dev
 ```
 
@@ -334,12 +261,16 @@ python main.py crl
 | POST | `/api/certs/issue` | Issue a new certificate |
 | GET | `/api/certs/` | List all issued certificates |
 | GET | `/api/certs/{serial}` | Get certificate details by serial |
+| GET | `/api/certs/{serial}/download/p12` | Download certificate as PKCS#12 (.p12) bundle |
 | POST | `/api/certs/verify` | Verify a PEM certificate (file upload) |
 | POST | `/api/certs/revoke` | Revoke a certificate |
+| POST | `/api/certs/send` | Log certificate delivery + send via SendGrid |
+| DELETE | `/api/certs/{serial}` | Delete a certificate record |
 | GET | `/api/crl` | Get current CRL as PEM |
 | POST | `/api/crl/rebuild` | Force-rebuild the CRL |
 | GET | `/api/audit` | Get full audit log + chain integrity |
 | GET | `/api/audit/verify` | Verify audit chain integrity only |
+| DELETE | `/api/audit/clear` | Clear the audit log |
 | GET | `/api/dashboard/stats` | Certificate counts + CA health |
 | GET | `/api/dashboard/expiring` | Certificates expiring within N days |
 | GET | `/api/dashboard/renewals` | Recent auto-renewal log |
@@ -358,17 +289,52 @@ python main.py crl
 | POST | `/acme/challenge/{token}/validate` | Validate ACME challenge |
 | POST | `/acme/finalize/{order_id}` | Submit CSR and receive certificate |
 | GET | `/acme/renewals/due` | List certificates expiring soon |
+| GET | `/api/settings/smtp` | Get current email config |
+| POST | `/api/settings/smtp` | Save email config |
+| POST | `/api/settings/smtp/test` | Send a test email |
 
 ---
 
-## Environment Variables (Optional)
+## Environment Variables
+
+### Backend (`backend/.env`)
 
 | Variable | Default | Description |
 |---|---|---|
+| `CA_COUNTRY` | `IN` | Country code embedded in Root CA certificate |
+| `CA_STATE`, `CA_LOCALITY`, `CA_ORG`, `CA_ORG_UNIT`, `CA_COMMON_NAME`, `CA_EMAIL` | _(see .env.example)_ | Root CA identity fields |
+| `CA_KEY_PASSWORD` | `change-this-in-production` | Encryption password for Root CA private key |
+| `INT_KEY_PASSWORD` | `intermediate-key-password` | Encryption password for Intermediate CA private key |
 | `OCSP_URL` | `http://localhost:8000/ocsp` | OCSP URL embedded in issued certificates |
+| `CRL_URL` | `http://localhost:8000/api/crl` | CRL distribution point URL embedded in issued certificates |
+| `SENDGRID_ENABLED` | `false` | Enable certificate delivery emails via SendGrid |
+| `SENDGRID_API_KEY` | _(empty)_ | SendGrid API key |
+| `SENDGRID_FROM_EMAIL` | _(empty)_ | Sender address for certificate emails |
 | `LDAP_ENABLED` | `false` | Enable LDAP identity verification |
 | `LDAP_SERVER` | `ldap://localhost:389` | LDAP server URL |
 | `LDAP_BASE_DN` | `dc=example,dc=com` | LDAP base DN |
 | `LDAP_BIND_DN` | `cn=admin,dc=example,dc=com` | LDAP bind DN |
 | `LDAP_BIND_PASS` | _(empty)_ | LDAP bind password |
 | `LDAP_USER_ATTR` | `uid` | LDAP user attribute (`uid` or `mail` for AD) |
+
+### Frontend (`frontend/.env`)
+
+| Variable | Description |
+|---|---|
+| `VITE_FIREBASE_API_KEY` | Firebase project API key |
+| `VITE_FIREBASE_AUTH_DOMAIN` | Firebase auth domain |
+| `VITE_FIREBASE_PROJECT_ID` | Firebase project ID |
+| `VITE_FIREBASE_STORAGE_BUCKET` | Firebase storage bucket |
+| `VITE_FIREBASE_MESSAGING_SENDER_ID` | Firebase messaging sender ID |
+| `VITE_FIREBASE_APP_ID` | Firebase app ID |
+| `VITE_ADMIN_EMAIL` | Admin email for Firebase role check |
+
+---
+
+## Security Notes
+
+- CA private keys are AES-encrypted on disk using the password from `.env`
+- The `storage/` directory is gitignored — keys and certificates never leave your machine
+- Never commit `.env` files — use the provided `.env.example` templates as a starting point
+- The audit log is hash-chained — integrity is verified and displayed live in the admin panel
+- Revoked certificates are reflected instantly in both the CRL and OCSP responder
