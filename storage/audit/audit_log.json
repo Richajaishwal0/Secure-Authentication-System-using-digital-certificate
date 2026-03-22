@@ -376,5 +376,31 @@
     },
     "prev_hash": "5a3c5e5fdb925c04f26d5bf53438644676182861c4196edc941ad37af6e07b9d",
     "hash": "103c8dc1dda7df96874324aac89086439b380ed231684ac639a6598dce8826c2"
+  },
+  {
+    "seq": 26,
+    "timestamp": "2026-03-22T11:24:44.552372+00:00",
+    "event": "CERT_ISSUED",
+    "data": {
+      "subject": "1.2.840.113549.1.9.1=richajaiswalhome@gmail.com,CN=Richa Kumari Jaishwal,OU=Engineering,O=Example Corp,L=Chennai,ST=Tamilnadu,C=ID",
+      "serial": 201407243425981997627474327737117943506227537830,
+      "template": "client_auth",
+      "valid_from": "2026-03-22T11:24:44+00:00",
+      "valid_until": "2026-03-25T11:24:44+00:00",
+      "saved_to": "C:\\Users\\richa\\OneDrive\\CYS\\digital_ca\\storage\\certs\\richa_kumari_jaishwal_201407243425981997627474327737117943506227537830.pem"
+    },
+    "prev_hash": "103c8dc1dda7df96874324aac89086439b380ed231684ac639a6598dce8826c2",
+    "hash": "2871da3d907d850b9db0b4a58426ba924b9e422710c75a5fa9c25ec52a14fa66"
+  },
+  {
+    "seq": 27,
+    "timestamp": "2026-03-22T11:35:08.237177+00:00",
+    "event": "INTERMEDIATE_CA_INITIALIZED",
+    "data": {
+      "subject": "1.2.840.113549.1.9.1=intermediate@myca.local,CN=MyCA Intermediate CA,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US",
+      "serial": 519136190607117322165024312066194949872495840950
+    },
+    "prev_hash": "2871da3d907d850b9db0b4a58426ba924b9e422710c75a5fa9c25ec52a14fa66",
+    "hash": "9fc5a794c8d4b52c2c7db72016a8866c750aa62a01d5b30d6e163d3982ffb546"
   }
 ]

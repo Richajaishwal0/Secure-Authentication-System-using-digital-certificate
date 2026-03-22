@@ -70,6 +70,57 @@ class AuditEntry(Base):
     __table_args__ = (Index("ix_audit_event", "event"),)
 
 
+class CertPolicy(Base):
+    """Per-template policy rules enforced at issuance and by the scheduler."""
+    __tablename__ = "cert_policies"
+
+    id                        = Column(Integer, primary_key=True, autoincrement=True)
+    template                  = Column(String(64), unique=True, nullable=False, index=True)
+    max_validity_days         = Column(Integer, default=365)
+    auto_renew                = Column(Boolean, default=False)
+    renew_days_before_expiry  = Column(Integer, default=30)
+    warn_days_before_expiry   = Column(Integer, default=30)
+    require_approval          = Column(Boolean, default=False)
+    allowed_sans              = Column(Boolean, default=True)
+    description               = Column(String(256), default="")
+
+
+class CertRequest(Base):
+    """Self-service certificate request submitted by a user, pending admin approval."""
+    __tablename__ = "cert_requests"
+
+    id            = Column(Integer, primary_key=True, autoincrement=True)
+    common_name   = Column(String(256), nullable=False)
+    email         = Column(String(256), nullable=False)
+    org           = Column(String(256))
+    org_unit      = Column(String(256))
+    country       = Column(String(4))
+    state         = Column(String(128))
+    locality      = Column(String(128))
+    template      = Column(String(64), default="client_auth")
+    san_names     = Column(String(512), default="")   # comma-separated
+    purpose       = Column(String(512), default="")   # plain-English reason
+    status        = Column(String(32), default="pending")  # pending|approved|rejected
+    reject_reason = Column(String(512))
+    issued_serial = Column(String(80))
+    created_at    = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
+    reviewed_at   = Column(DateTime(timezone=True))
+
+    __table_args__ = (Index("ix_request_status", "status"),)
+
+
+class RenewalLog(Base):
+    """Record of every auto-renewal performed by the scheduler."""
+    __tablename__ = "renewal_logs"
+
+    id          = Column(Integer, primary_key=True, autoincrement=True)
+    old_serial  = Column(String(80), nullable=False)
+    new_serial  = Column(String(80), nullable=False)
+    common_name = Column(String(256))
+    trigger     = Column(String(32), default="auto")   # auto | manual
+    renewed_at  = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
+
+
 class AcmeChallenge(Base):
     __tablename__ = "acme_challenges"
 

@@ -18,6 +18,9 @@ pydantic[email]
 # LDAP integration (optional)
 # ldap3>=2.9.0
 
+# Automation scheduler
+apscheduler>=3.10.0
+
 # Testing
 pytest>=8.0.0
 httpx>=0.27.0                # for FastAPI TestClient

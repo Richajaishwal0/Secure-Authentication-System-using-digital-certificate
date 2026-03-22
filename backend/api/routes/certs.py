@@ -69,8 +69,8 @@ def _bootstrap(db: Session):
 def issue_certificate(req: IssueRequest, db: Session = Depends(get_db)):
     if req.template not in TEMPLATES:
         raise HTTPException(400, f"Unknown template. Choose from: {list(TEMPLATES)}")
-    if req.reason if hasattr(req, "reason") else False:
-        pass
+    if len(req.country) != 2:
+        raise HTTPException(400, "Country must be exactly 2 letters (e.g. US, IN, GB).")
 
     ca_key, ca_cert, audit, crl_mgr = _bootstrap(db)
 
@@ -98,7 +98,7 @@ def issue_certificate(req: IssueRequest, db: Session = Depends(get_db)):
     gen.save(key, csr, name=safe)
 
     if req.use_intermediate:
-        int_ca = IntermediateCA(ca_key, ca_cert, audit)
+        int_ca = IntermediateCA(ca_key, ca_cert, audit, db=db)
         int_ca.initialize()
         cert = int_ca.issue(csr, req.days, safe, req.template, req.san_names or None)
         issued_by = "intermediate"

@@ -25,6 +25,11 @@ export default function IssueCert() {
       setStatus('danger')
       return
     }
+    if (form.country.length !== 2) {
+      setResult('Country must be exactly 2 letters (e.g. US, IN, GB).')
+      setStatus('danger')
+      return
+    }
     setLoading(true)
     setResult('')
     setStatus('')
@@ -74,7 +79,6 @@ export default function IssueCert() {
             ['Email Address *',    'email',    'email'],
             ['Organization',       'org',      'text'],
             ['Org Unit',           'org_unit', 'text'],
-            ['Country (2-letter)', 'country',  'text'],
             ['State / Province',   'state',    'text'],
             ['City / Locality',    'locality', 'text'],
             ['Validity (days)',    'days',     'number'],
@@ -84,6 +88,10 @@ export default function IssueCert() {
               <input type={type} value={form[key]} onChange={set(key)} />
             </div>
           ))}
+          <div className="form-group">
+            <label>Country (2-letter code)</label>
+            <input type="text" value={form.country} onChange={set('country')} maxLength={2} placeholder="US" style={{ textTransform: 'uppercase' }} />
+          </div>
         </div>
       </div>
 

@@ -33,4 +33,21 @@ export const api = {
   acmeRenewals:  (days)   => http.get(`/acme/renewals/due?days_ahead=${days}`),
   acmeValidate:  (token)  => http.post(`/acme/challenge/${token}/validate`),
   acmeFinalize:  (id, data) => http.post(`/acme/finalize/${id}`, data),
+
+  // Dashboard
+  dashStats:     ()       => http.get('/api/dashboard/stats'),
+  dashExpiring:  (days)   => http.get(`/api/dashboard/expiring?days=${days}`),
+  dashRenewals:  ()       => http.get('/api/dashboard/renewals'),
+
+  // Policy
+  listPolicies:  ()       => http.get('/api/policy/'),
+  upsertPolicy:  (data)   => http.post('/api/policy/', data),
+  deletePolicy:  (tmpl)   => http.delete(`/api/policy/${tmpl}`),
+  triggerJob:    (job)    => http.post(`/api/policy/trigger/${job}`),
+
+  // Self-service requests
+  submitRequest: (data)   => http.post('/api/requests/', data),
+  listRequests:  (status) => http.get('/api/requests/', { params: status ? { status } : {} }),
+  approveRequest:(id)     => http.post(`/api/requests/${id}/approve`),
+  rejectRequest: (id, reason) => http.post(`/api/requests/${id}/reject`, { reason }),
 }

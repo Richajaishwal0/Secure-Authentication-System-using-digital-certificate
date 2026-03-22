@@ -23,13 +23,16 @@ from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 
 from db.database import init_db
-from api.routes import certs, crl, audit, ocsp, acme, ca
+from api.routes import certs, crl, audit, ocsp, acme, ca, dashboard, policy, requests
+from automation.scheduler import start_scheduler, stop_scheduler
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     init_db()
+    start_scheduler()
     yield
+    stop_scheduler()
 
 
 app = FastAPI(
@@ -46,12 +49,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(ca.router,     prefix="/api/ca",    tags=["CA"])
-app.include_router(certs.router,  prefix="/api/certs", tags=["Certificates"])
-app.include_router(crl.router,    prefix="/api",       tags=["CRL"])
-app.include_router(audit.router,  prefix="/api",       tags=["Audit"])
-app.include_router(ocsp.router,   prefix="",           tags=["OCSP"])
-app.include_router(acme.router,   prefix="/acme",      tags=["ACME"])
+app.include_router(ca.router,        prefix="/api/ca",        tags=["CA"])
+app.include_router(certs.router,     prefix="/api/certs",     tags=["Certificates"])
+app.include_router(crl.router,       prefix="/api",           tags=["CRL"])
+app.include_router(audit.router,     prefix="/api",           tags=["Audit"])
+app.include_router(ocsp.router,      prefix="",               tags=["OCSP"])
+app.include_router(acme.router,      prefix="/acme",          tags=["ACME"])
+app.include_router(dashboard.router, prefix="/api/dashboard", tags=["Dashboard"])
+app.include_router(policy.router,    prefix="/api/policy",    tags=["Policy"])
+app.include_router(requests.router,  prefix="/api/requests",  tags=["Requests"])
 
 
 @app.get("/", tags=["Health"])

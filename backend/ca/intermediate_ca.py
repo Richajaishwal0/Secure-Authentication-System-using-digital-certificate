@@ -39,11 +39,12 @@ class IntermediateCA:
       - Issue end-entity certificates using the intermediate key
     """
 
-    def __init__(self, root_key, root_cert, audit: AuditLog, config: dict = None):
+    def __init__(self, root_key, root_cert, audit: AuditLog, config: dict = None, db=None):
         self.root_key   = root_key
         self.root_cert  = root_cert
         self.audit      = audit
         self.config     = config or INTERMEDIATE_CONFIG
+        self.db         = db
         self.int_key    = None
         self.int_cert   = None
 
@@ -77,6 +78,9 @@ class IntermediateCA:
         template = get_template(template_name)
         cert = self._build_cert(csr, validity_days, template, san_names)
         path = self._save(cert, name)
+
+        if self.db is not None:
+            self._save_to_db(cert, template_name)
 
         self.audit.log("CERT_ISSUED", {
             "subject":    cert.subject.rfc4514_string(),
@@ -185,6 +189,42 @@ class IntermediateCA:
     # ------------------------------------------------------------------
     # Persistence
     # ------------------------------------------------------------------
+
+    def _save(self, cert: x509.Certificate, name: str) -> str:
+        """Save issued end-entity certificate to the certs directory."""
+        path = os.path.join(CA_CONFIG["certs_dir"], f"{name}_{cert.serial_number}.pem")
+        save_file(path, serialize_cert(cert), mode=0o644)
+        return path
+
+    def _save_to_db(self, cert: x509.Certificate, template_name: str) -> None:
+        from db.models import Certificate
+        from cryptography.x509.oid import NameOID
+        from cryptography.hazmat.primitives.serialization import Encoding
+
+        def _attr(name_obj, oid):
+            try:
+                return name_obj.get_attributes_for_oid(oid)[0].value
+            except IndexError:
+                return ""
+
+        subj = cert.subject
+        row  = Certificate(
+            serial      = str(cert.serial_number),
+            common_name = _attr(subj, NameOID.COMMON_NAME),
+            email       = _attr(subj, NameOID.EMAIL_ADDRESS),
+            org         = _attr(subj, NameOID.ORGANIZATION_NAME),
+            org_unit    = _attr(subj, NameOID.ORGANIZATIONAL_UNIT_NAME),
+            country     = _attr(subj, NameOID.COUNTRY_NAME),
+            state       = _attr(subj, NameOID.STATE_OR_PROVINCE_NAME),
+            locality    = _attr(subj, NameOID.LOCALITY_NAME),
+            template    = template_name,
+            issued_by   = "intermediate",
+            not_before  = cert.not_valid_before_utc.replace(tzinfo=None),
+            not_after   = cert.not_valid_after_utc.replace(tzinfo=None),
+            pem         = cert.public_bytes(Encoding.PEM).decode(),
+        )
+        self.db.add(row)
+        self.db.commit()
 
     def _persist(self):
         save_file(self.config["key_path"],  serialize_private_key(self.int_key, self.config["key_password"]), mode=0o600)
