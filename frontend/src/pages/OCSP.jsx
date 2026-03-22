@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { api } from '../api'
+import { Search, Info } from 'lucide-react'
 
 export default function OCSP() {
   const [serial, setSerial] = useState('')
@@ -35,10 +36,10 @@ export default function OCSP() {
         <div className="page-desc">Online Certificate Status Protocol — real-time revocation check without downloading the full CRL.</div>
       </div>
       <div className="card">
-        <div className="card-title"><span className="card-title-icon">🔍</span>Certificate Status</div>
+        <div className="card-title" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Search size={15} /> Certificate Status</div>
         <div className="card-divider" />
         <div className="info-box">
-          <span className="info-box-icon">ℹ️</span>
+          <Info size={14} style={{ flexShrink: 0 }} />
           The OCSP responder is also available at <code style={{ color: 'var(--accent2)' }}>POST /ocsp</code> in DER format (RFC 6960),
           which is what browsers and TLS libraries use automatically.
         </div>
@@ -49,7 +50,7 @@ export default function OCSP() {
         </div>
         <div className="btn-row">
           <button className="btn btn-cyan" onClick={handleCheck} disabled={loading || !serial.trim()}>
-            {loading ? <><span className="btn-spinner" /> Checking…</> : '🔍  Check OCSP Status'}
+            {loading ? <><span className="btn-spinner" /> Checking…</> : <><Search size={14} style={{ marginRight: 6 }} />Check OCSP Status</>}
           </button>
         </div>
         {result && <pre className={`result-box ${status}`}>{result}</pre>}

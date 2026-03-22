@@ -1,86 +1,174 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { api } from '../api'
+import { Building2, Pencil, AlertTriangle, RotateCcw } from 'lucide-react'
+
+const extract = (subject, key) => subject?.match(new RegExp(`${key}=([^,]+)`))?.[1] || ''
 
 export default function InitCA() {
-  const [data, setData]     = useState(null)
-  const [result, setResult] = useState('')
-  const [status, setStatus] = useState('')
-  const [loading, setLoading] = useState(false)
+  const [ca, setCa]           = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError]     = useState('')
+  const [editing, setEditing] = useState(false)
+  const [saving, setSaving]   = useState(false)
+  const [saveErr, setSaveErr] = useState('')
+  const [form, setForm]       = useState(null)
+  const [certCount, setCertCount] = useState(0)
 
-  async function handleInit() {
-    setLoading(true)
-    setResult('')
-    setStatus('')
-    setData(null)
+  useEffect(() => {
+    Promise.all([api.initCA(), api.listCerts()])
+      .then(([caRes, certsRes]) => {
+        setCa(caRes.data)
+        setCertCount(certsRes.data.filter(c => !c.revoked).length)
+      })
+      .catch(e => setError(e.response?.data?.detail || 'Backend unavailable.'))
+      .finally(() => setLoading(false))
+  }, [])
+
+  const openEdit = () => {
+    setForm({
+      common_name:   extract(ca.subject, 'CN'),
+      org:           extract(ca.subject, 'O'),
+      org_unit:      extract(ca.subject, 'OU'),
+      country:       extract(ca.subject, 'C'),
+      state:         extract(ca.subject, 'ST'),
+      locality:      extract(ca.subject, 'L'),
+      validity_days: Math.round((new Date(ca.not_after) - new Date(ca.not_before)) / 86400000),
+    })
+    setSaveErr('')
+    setEditing(true)
+  }
+
+  const handleSave = async () => {
+    if (!form.common_name || !form.org || !form.country) { setSaveErr('Common Name, Organisation and Country are required.'); return }
+    if (form.country.length !== 2) { setSaveErr('Country must be exactly 2 letters.'); return }
+    setSaving(true); setSaveErr('')
     try {
-      const { data: d } = await api.initCA()
-      setData(d)
-      setResult(
-        `Subject     : ${d.subject}\n` +
-        `Issuer      : ${d.issuer}\n` +
-        `Serial      : ${d.serial}\n` +
-        `Valid From  : ${d.not_before}\n` +
-        `Valid Until : ${d.not_after}\n` +
-        `Key Size    : ${d.key_size} bits (RSA)\n` +
-        `Algorithm   : ${d.algorithm}\n\n` +
-        `✓  CA is ready to issue certificates.`
-      )
-      setStatus('success')
+      const { data } = await api.regenerateCA({ ...form, validity_days: parseInt(form.validity_days) || 3650 })
+      setCa(data)
+      setEditing(false)
     } catch (e) {
-      setResult(`Error: ${e.response?.data?.detail || e.message}`)
-      setStatus('danger')
+      setSaveErr(e.response?.data?.detail || 'Regeneration failed.')
     } finally {
-      setLoading(false)
+      setSaving(false)
     }
   }
+
+  const set = (k) => (e) => setForm(f => ({ ...f, [k]: e.target.value }))
+
+  const daysLeft = ca ? Math.floor((new Date(ca.not_after) - new Date()) / 86400000) : null
+  const healthy  = daysLeft !== null && daysLeft > 365
 
   return (
     <>
       <div className="page-header">
-        <div className="page-title">Root Certificate Authority</div>
-        <div className="page-desc">Initialize and manage the Root CA — the trust anchor of your PKI system.</div>
+        <div className="page-title">CA Status</div>
+        <div className="page-desc">Root Certificate Authority — trust anchor for all issued certificates.</div>
       </div>
 
-      {data && (
-        <div className="stat-grid">
-          {[
-            { label: 'Key Algorithm', value: 'RSA-2048',   sub: 'Asymmetric' },
-            { label: 'Signature',     value: 'SHA-256',    sub: 'Hash algorithm' },
-            { label: 'Certificate',   value: 'X.509 v3',  sub: 'Standard' },
-            { label: 'Status',        value: 'Active',     sub: 'CA is ready' },
-          ].map(s => (
-            <div className="stat-card" key={s.label}>
-              <div className="stat-label">{s.label}</div>
-              <div className="stat-value">{s.value}</div>
-              <div className="stat-sub">{s.sub}</div>
-            </div>
-          ))}
+      {loading && <div className="spinner" />}
+
+      {error && (
+        <div style={{ background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.3)', borderRadius: '10px', padding: '14px 18px', color: '#f87171', fontSize: '13px' }}>
+          <AlertTriangle size={14} style={{ flexShrink: 0 }} /> {error}
         </div>
       )}
 
-      <div className="card">
-        <div className="card-title">
-          <span className="card-title-icon">🏛️</span>
-          Initialize Root CA
-        </div>
-        <div className="card-divider" />
-        <div className="info-box">
-          <span className="info-box-icon">ℹ️</span>
-          Generates an RSA-2048 key pair and a self-signed X.509 v3 certificate.
-          Safe to run multiple times — loads the existing CA if already initialized.
-        </div>
-        <div className="btn-row">
-          <button className="btn btn-accent" onClick={handleInit} disabled={loading}>
-            {loading ? <><span className="btn-spinner" /> Initializing…</> : '🏛️  Initialize CA'}
-          </button>
-          {status && (
-            <span className={`badge badge-${status}`}>
-              {status === 'success' ? '✓ CA READY' : '✗ FAILED'}
-            </span>
+      {ca && !editing && (
+        <>
+          {/* Status bar */}
+          <div style={{
+            background: healthy ? 'rgba(16,185,129,0.08)' : 'rgba(245,158,11,0.08)',
+            border: `1px solid ${healthy ? 'rgba(16,185,129,0.3)' : 'rgba(245,158,11,0.3)'}`,
+            borderRadius: '10px', padding: '14px 18px', marginBottom: '1.5rem',
+            display: 'flex', alignItems: 'center', gap: '12px',
+          }}>
+            <div style={{ width: 10, height: 10, borderRadius: '50%', flexShrink: 0, background: healthy ? '#4ade80' : '#fbbf24', boxShadow: `0 0 6px ${healthy ? '#4ade80' : '#fbbf24'}` }} />
+            <span style={{ color: '#fff', fontWeight: 600, fontSize: '13px' }}>{healthy ? 'Operational' : 'Expiring Soon'}</span>
+            <span style={{ color: 'var(--text-muted)', fontSize: '12px' }}>·</span>
+            <span style={{ color: 'var(--text-muted)', fontSize: '12px' }}>{daysLeft} days remaining</span>
+            <button className="btn btn-secondary btn-sm" onClick={openEdit} style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '6px' }}><Pencil size={13} /> Edit</button>
+          </div>
+
+          {/* Certificate details */}
+          <div className="card">
+            <div className="card-title" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Building2 size={15} /> Root CA Certificate</div>
+            <div className="card-divider" />
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              {[
+                ['Common Name',  extract(ca.subject, 'CN')],
+                ['Organisation', extract(ca.subject, 'O')],
+                ['Org Unit',     extract(ca.subject, 'OU')],
+                ['Country',      extract(ca.subject, 'C')],
+                ['State',        extract(ca.subject, 'ST')],
+                ['Locality',     extract(ca.subject, 'L')],
+                ['Type',         'Self-Signed Root CA'],
+                ['Valid From',   ca.not_before?.slice(0, 10)],
+                ['Valid Until',  ca.not_after?.slice(0, 10)],
+              ].map(([k, v]) => (
+                <div key={k} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '11px 0', borderBottom: '1px solid var(--border)' }}>
+                  <span style={{ color: 'var(--text-muted)', fontSize: '13px' }}>{k}</span>
+                  <span style={{ color: '#fff', fontSize: '13px', fontWeight: 600 }}>{v || '—'}</span>
+                </div>
+              ))}
+              <div style={{ paddingTop: '12px' }}>
+                <div style={{ color: 'var(--text-muted)', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '6px' }}>Serial Number</div>
+                <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '11px', color: 'var(--text-dim)', background: '#080812', border: '1px solid var(--border)', borderRadius: '6px', padding: '8px 12px', wordBreak: 'break-all' }}>
+                  {ca.serial}
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* Edit form */}
+      {editing && form && (
+        <div className="card">
+          <div className="card-title" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Pencil size={15} /> Edit CA Details</div>
+          <div className="card-divider" />
+
+          {/* Warning — only if certs already issued */}
+          {certCount > 0 && (
+            <div style={{ background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.25)', borderRadius: '8px', padding: '12px 16px', marginBottom: '1.2rem', color: '#f87171', fontSize: '13px', lineHeight: 1.6 }}>
+              <AlertTriangle size={14} style={{ flexShrink: 0 }} /> {certCount} certificate{certCount > 1 ? 's have' : ' has'} already been issued. Regenerating the CA will invalidate them all.
+            </div>
           )}
+
+          <div className="form-grid">
+            {[
+              ['Common Name *',    'common_name', 'text'],
+              ['Organisation *',   'org',         'text'],
+              ['Org Unit',         'org_unit',    'text'],
+              ['State / Province', 'state',       'text'],
+              ['City / Locality',  'locality',    'text'],
+              ['Validity (days)',  'validity_days','number'],
+            ].map(([label, key, type]) => (
+              <div className="form-group" key={key}>
+                <label>{label}</label>
+                <input type={type} value={form[key]} onChange={set(key)} />
+              </div>
+            ))}
+            <div className="form-group">
+              <label>Country (2-letter code) *</label>
+              <input type="text" value={form.country} onChange={set('country')} maxLength={2} placeholder="US" style={{ textTransform: 'uppercase' }} />
+            </div>
+          </div>
+
+          {saveErr && (
+            <div style={{ background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.3)', borderRadius: '8px', padding: '10px 14px', color: '#f87171', fontSize: '13px', margin: '0.8rem 0' }}>
+              <AlertTriangle size={14} style={{ flexShrink: 0 }} /> {saveErr}
+            </div>
+          )}
+
+          <div className="btn-row" style={{ marginTop: '1rem' }}>
+            <button className="btn" onClick={handleSave} disabled={saving}
+              style={{ background: 'linear-gradient(135deg, #dc2626, #b91c1c)', color: '#fff' }}>
+              {saving ? <><span className="btn-spinner" /> Regenerating…</> : <><RotateCcw size={14} style={{ marginRight: 6 }} />Regenerate CA</>}
+            </button>
+            <button className="btn btn-secondary" onClick={() => setEditing(false)} disabled={saving}>Cancel</button>
+          </div>
         </div>
-        {result && <pre className={`result-box ${status}`}>{result}</pre>}
-      </div>
+      )}
     </>
   )
 }

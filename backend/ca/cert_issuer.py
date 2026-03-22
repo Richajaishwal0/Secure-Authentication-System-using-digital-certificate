@@ -4,19 +4,20 @@ ca/cert_issuer.py — Signs CSRs and issues X.509 v3 end-entity certificates.
 Supports:
   - Certificate templates (client_auth, tls_server, email_signing, code_signing)
   - Subject Alternative Names (for TLS server certs)
+  - OCSP AIA + CRL Distribution Point extensions embedded in every cert
   - Optional DB persistence alongside PEM file storage
 """
 
 import datetime
 
 from cryptography import x509
-from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import rsa
 
 from audit.audit_log import AuditLog
 from ca.cert_templates import get_template, apply_template, CertTemplate
 from utils.crypto_utils import serialize_cert, save_file
-from config import CA_CONFIG
+from config import CA_CONFIG, OCSP_URL, CRL_URL
 from logger import get_logger
 
 logger = get_logger(__name__)
@@ -52,10 +53,12 @@ class CertificateIssuer:
         name: str = "certificate",
         template_name: str = "client_auth",
         san_names: list[str] | None = None,
+        private_key: rsa.RSAPrivateKey | None = None,
     ) -> x509.Certificate:
         """
         Validate CSR, build and sign the certificate, persist it,
         optionally store in DB, and write an audit entry.
+        Returns the certificate. private_key is stored in DB if provided.
         """
         self._verify_csr_signature(csr)
 
@@ -67,7 +70,7 @@ class CertificateIssuer:
         cert_path = self._save(cert, name)
 
         if self.db is not None:
-            self._save_to_db(cert, template_name, issued_by="root")
+            self._save_to_db(cert, template_name, issued_by="root", private_key=private_key)
 
         self.audit.log("CERT_ISSUED", {
             "subject":    cert.subject.rfc4514_string(),
@@ -110,7 +113,7 @@ class CertificateIssuer:
                 critical=False,
             )
         )
-        builder = apply_template(builder, template, san_names)
+        builder = apply_template(builder, template, san_names, ocsp_url=OCSP_URL, crl_url=CRL_URL)
         return builder.sign(self.ca_key, hashes.SHA256())
 
     # ------------------------------------------------------------------
@@ -127,7 +130,7 @@ class CertificateIssuer:
         save_file(path, serialize_cert(cert), mode=0o644)
         return path
 
-    def _save_to_db(self, cert: x509.Certificate, template_name: str, issued_by: str) -> None:
+    def _save_to_db(self, cert: x509.Certificate, template_name: str, issued_by: str, private_key=None) -> None:
         from db.models import Certificate
         from cryptography.x509.oid import NameOID
 
@@ -137,22 +140,32 @@ class CertificateIssuer:
             except IndexError:
                 return ""
 
+        # Serialize private key as unencrypted PEM so employee can use it directly
+        key_pem = None
+        if private_key is not None:
+            key_pem = private_key.private_bytes(
+                serialization.Encoding.PEM,
+                serialization.PrivateFormat.TraditionalOpenSSL,
+                serialization.NoEncryption(),
+            ).decode()
+
         subj = cert.subject
         row  = Certificate(
-            serial      = str(cert.serial_number),
-            common_name = _attr(subj, NameOID.COMMON_NAME),
-            email       = _attr(subj, NameOID.EMAIL_ADDRESS),
-            org         = _attr(subj, NameOID.ORGANIZATION_NAME),
-            org_unit    = _attr(subj, NameOID.ORGANIZATIONAL_UNIT_NAME),
-            country     = _attr(subj, NameOID.COUNTRY_NAME),
-            state       = _attr(subj, NameOID.STATE_OR_PROVINCE_NAME),
-            locality    = _attr(subj, NameOID.LOCALITY_NAME),
-            template    = template_name,
-            issued_by   = issued_by,
-            not_before  = cert.not_valid_before_utc,
-            not_after   = cert.not_valid_after_utc,
-            pem         = cert.public_bytes(__import__("cryptography.hazmat.primitives.serialization",
-                          fromlist=["Encoding"]).Encoding.PEM).decode(),
+            serial          = str(cert.serial_number),
+            common_name     = _attr(subj, NameOID.COMMON_NAME),
+            email           = _attr(subj, NameOID.EMAIL_ADDRESS),
+            org             = _attr(subj, NameOID.ORGANIZATION_NAME),
+            org_unit        = _attr(subj, NameOID.ORGANIZATIONAL_UNIT_NAME),
+            country         = _attr(subj, NameOID.COUNTRY_NAME),
+            state           = _attr(subj, NameOID.STATE_OR_PROVINCE_NAME),
+            locality        = _attr(subj, NameOID.LOCALITY_NAME),
+            template        = template_name,
+            issued_by       = issued_by,
+            not_before      = cert.not_valid_before_utc,
+            not_after       = cert.not_valid_after_utc,
+            pem             = cert.public_bytes(__import__("cryptography.hazmat.primitives.serialization",
+                              fromlist=["Encoding"]).Encoding.PEM).decode(),
+            private_key_pem = key_pem,
         )
         self.db.add(row)
         self.db.commit()

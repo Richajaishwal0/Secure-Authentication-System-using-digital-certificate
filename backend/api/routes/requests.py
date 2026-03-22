@@ -44,9 +44,8 @@ class RejectIn(BaseModel):
 
 @router.post("/")
 def submit_request(body: RequestIn, db: Session = Depends(get_db)):
-    # Check if policy requires approval — if not, auto-approve
     policy = db.query(CertPolicy).filter(CertPolicy.template == body.template).first()
-    auto_approve = not (policy and policy.require_approval)
+    auto_approve = policy is not None and policy.require_approval == False
 
     req = CertRequest(
         common_name = body.common_name,
@@ -65,16 +64,17 @@ def submit_request(body: RequestIn, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(req)
 
-    # If auto-approved, issue immediately
-    issued = None
+    issued_serial = None
+    key_pem = None
     if auto_approve:
-        issued = _issue_for_request(db, req, policy)
+        issued_serial, key_pem = _issue_for_request(db, req, policy)
 
     return {
-        "id":           req.id,
-        "status":       req.status,
-        "auto_approved": auto_approve,
-        "cert_serial":  issued,
+        "id":              req.id,
+        "status":          req.status,
+        "auto_approved":   auto_approve,
+        "cert_serial":     issued_serial,
+        "private_key_pem": key_pem,
     }
 
 
@@ -108,8 +108,19 @@ def approve_request(req_id: int, db: Session = Depends(get_db)):
     db.commit()
 
     policy = db.query(CertPolicy).filter(CertPolicy.template == req.template).first()
-    serial = _issue_for_request(db, req, policy)
-    return {"approved": True, "cert_serial": serial}
+    serial, key_pem = _issue_for_request(db, req, policy)
+
+    cert_row = db.query(Certificate).filter(Certificate.serial == serial).first()
+    return {
+        "approved":        True,
+        "cert_serial":     serial,
+        "cert_pem":        cert_row.pem if cert_row else None,
+        "private_key_pem": key_pem,
+        "not_after":       cert_row.not_after.isoformat() if cert_row and cert_row.not_after else None,
+        "recipient_name":  req.common_name,
+        "recipient_email": req.email,
+        "template":        req.template,
+    }
 
 
 @router.post("/{req_id}/reject")
@@ -129,7 +140,7 @@ def reject_request(req_id: int, body: RejectIn, db: Session = Depends(get_db)):
 
 # ── Internal ───────────────────────────────────────────────────────────────────
 
-def _issue_for_request(db: Session, req: CertRequest, policy) -> str:
+def _issue_for_request(db: Session, req: CertRequest, policy) -> tuple[str, str | None]:
     ca = CertificateAuthority()
     ca_key, ca_cert = ca.initialize()
     audit = AuditLog(CA_CONFIG["audit_log_path"])
@@ -149,15 +160,22 @@ def _issue_for_request(db: Session, req: CertRequest, policy) -> str:
     csr = gen.build_csr(key)
     gen.save(key, csr, name=safe_name)
 
-    validity = policy.max_validity_days if policy else 365
+    validity = policy.max_validity_days if (policy and policy.max_validity_days and policy.max_validity_days >= 30) else 365
     san_list = [s for s in (req.san_names or "").split(",") if s]
 
     issuer = CertificateIssuer(ca_key, ca_cert, audit, db=db)
-    cert = issuer.issue(csr, validity, safe_name, req.template, san_list or None)
+    cert = issuer.issue(csr, validity, safe_name, req.template, san_list or None, private_key=key)
+
+    from cryptography.hazmat.primitives import serialization as _ser
+    key_pem = key.private_bytes(
+        _ser.Encoding.PEM,
+        _ser.PrivateFormat.TraditionalOpenSSL,
+        _ser.NoEncryption(),
+    ).decode()
 
     req.issued_serial = str(cert.serial_number)
     db.commit()
-    return str(cert.serial_number)
+    return str(cert.serial_number), key_pem
 
 
 def _serialize(r: CertRequest):
@@ -166,7 +184,10 @@ def _serialize(r: CertRequest):
         "common_name":   r.common_name,
         "email":         r.email,
         "org":           r.org,
+        "org_unit":      r.org_unit,
+        "country":       r.country,
         "template":      r.template,
+        "san_names":     r.san_names,
         "purpose":       r.purpose,
         "status":        r.status,
         "reject_reason": r.reject_reason,

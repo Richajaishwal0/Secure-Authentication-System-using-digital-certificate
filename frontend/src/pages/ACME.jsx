@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { api } from '../api'
+import { RefreshCw, Bell, Info } from 'lucide-react'
 
 export default function ACME() {
   const [domain, setDomain] = useState('example.com')
@@ -67,10 +68,10 @@ export default function ACME() {
       </div>
 
       <div className="card">
-        <div className="card-title"><span className="card-title-icon">♻️</span>ACME Certificate Order</div>
+        <div className="card-title" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><RefreshCw size={15} /> ACME Certificate Order</div>
         <div className="card-divider" />
         <div className="info-box">
-          <span className="info-box-icon">ℹ️</span>
+          <Info size={14} style={{ flexShrink: 0 }} />
           ACME automates certificate issuance and renewal without human interaction.
           The CA issues a challenge token the client must serve at a well-known URL to prove domain ownership.
         </div>
@@ -86,10 +87,10 @@ export default function ACME() {
         </div>
         <div className="btn-row">
           <button className="btn btn-warning" onClick={handleOrder} disabled={!!loading}>
-            {loading === 'order' ? <><span className="btn-spinner" /> Ordering…</> : '♻️  Simulate ACME Order'}
+            {loading === 'order' ? <><span className="btn-spinner" /> Ordering…</> : <><RefreshCw size={14} style={{ marginRight: 6 }} />Simulate ACME Order</>}
           </button>
           <button className="btn btn-cyan" onClick={handleRenewals} disabled={!!loading}>
-            {loading === 'renewals' ? <><span className="btn-spinner" /> Checking…</> : '🔔  Check Renewals Due'}
+            {loading === 'renewals' ? <><span className="btn-spinner" /> Checking…</> : <><Bell size={14} style={{ marginRight: 6 }} />Check Renewals Due</>}
           </button>
         </div>
         {result && <pre className={`result-box ${status}`}>{result}</pre>}

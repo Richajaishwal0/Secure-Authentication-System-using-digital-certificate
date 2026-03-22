@@ -74,6 +74,91 @@ Small organizations — startups, clinics, schools, small IT teams — face a re
 
 ---
 
+## How It Works
+
+### Client: Requesting a Certificate
+
+Employees interact through a simplified portal — no PKI knowledge needed.
+
+**Step 1 — Open the Employee Portal**
+Navigate to the app and select "I'm an Employee". You land on a 3-screen view: Request, My Certificates, Check a Certificate.
+
+<!-- screenshot: employee portal landing -->
+
+**Step 2 — Submit a Request**
+Fill in your name, email, and choose what you need in plain English (VPN Access, Email Signing, Web Server, Code Signing). Optionally add a hostname/SAN if needed. Hit Submit.
+
+<!-- screenshot: request form -->
+
+**Step 3 — Wait for Approval (or get auto-approved)**
+Low-risk templates like `client_auth` are auto-approved by policy — your certificate is issued immediately. Higher-risk templates like `code_signing` go into the admin queue.
+
+<!-- screenshot: request submitted / pending status -->
+
+**Step 4 — Download Your Certificate**
+Once approved, the certificate appears under "My Certificates". You can view details or download the PEM file.
+
+<!-- screenshot: my certificates view -->
+
+**Step 5 — Check / Verify a Certificate**
+Upload any PEM file to the "Check a Certificate" screen. The system checks signature validity, expiry, and revocation status and shows a clear valid / revoked / expired result.
+
+<!-- screenshot: verify certificate result -->
+
+---
+
+### Admin: Managing the CA
+
+Admins get a full-featured panel covering every aspect of the CA lifecycle.
+
+**Dashboard**
+See live counts of total, active, revoked, expired, and expiring-soon certificates. CA health shows days until root CA expiry. Manually trigger the expiry check or auto-renew job from here.
+
+<!-- screenshot: admin dashboard -->
+
+**Approving / Rejecting Requests**
+The Request Queue lists all pending employee requests. Admin can approve (certificate is issued instantly) or reject with a reason. The requester's status updates immediately.
+
+<!-- screenshot: request queue with approve/reject -->
+
+**Issuing Certificates Directly**
+Admins can issue certificates directly — choose a template, fill in subject details, add SANs, set validity, and toggle auto-renew. The signed PEM is stored and available immediately.
+
+<!-- screenshot: issue certificate form -->
+
+**Revoking a Certificate**
+Enter the serial number and select a reason code (key compromise, affiliation changed, superseded, etc.). The certificate is added to the CRL and its OCSP status flips to revoked instantly.
+
+<!-- screenshot: revoke certificate -->
+
+**Policy Manager**
+Per-template rules control max validity, auto-renewal window (days before expiry to renew), expiry warning window, and whether admin approval is required. Changes take effect on the next issuance or renewal cycle.
+
+<!-- screenshot: policy manager -->
+
+**CRL Management**
+View the current Certificate Revocation List and force-rebuild it at any time. The CRL is signed by the CA and can be downloaded as PEM.
+
+<!-- screenshot: CRL page -->
+
+**Audit Log**
+Every CA operation is recorded in a hash-chained log. The chain integrity status is shown at the top — green means untampered. Each entry shows timestamp, action, subject, serial, and the SHA-256 chain hash.
+
+<!-- screenshot: audit log with chain integrity -->
+
+**Intermediate CA**
+Issue end-entity certificates via the Intermediate CA instead of the Root CA directly — following the two-tier PKI hierarchy best practice.
+
+<!-- screenshot: intermediate CA page -->
+
+**OCSP & ACME**
+The OCSP page lets you query real-time revocation status for any serial. The ACME page shows active orders and lets internal servers automate certificate renewal using the same protocol as Let's Encrypt.
+
+<!-- screenshot: OCSP status check -->
+<!-- screenshot: ACME orders -->
+
+---
+
 ## Problems Solved
 
 | Problem | Solution |

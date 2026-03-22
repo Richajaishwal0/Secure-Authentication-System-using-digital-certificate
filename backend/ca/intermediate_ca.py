@@ -25,7 +25,7 @@ from utils.crypto_utils import (
 )
 from ca.cert_templates import get_template, apply_template, CertTemplate
 from audit.audit_log import AuditLog
-from config import CA_CONFIG, INTERMEDIATE_CONFIG
+from config import CA_CONFIG, INTERMEDIATE_CONFIG, OCSP_URL, CRL_URL
 from logger import get_logger
 
 logger = get_logger(__name__)
@@ -67,6 +67,7 @@ class IntermediateCA:
         name: str = "certificate",
         template_name: str = "client_auth",
         san_names: list[str] | None = None,
+        private_key=None,
     ) -> x509.Certificate:
         """
         Issue an end-entity certificate signed by the Intermediate CA.
@@ -80,7 +81,7 @@ class IntermediateCA:
         path = self._save(cert, name)
 
         if self.db is not None:
-            self._save_to_db(cert, template_name)
+            self._save_to_db(cert, template_name, private_key=private_key)
 
         self.audit.log("CERT_ISSUED", {
             "subject":    cert.subject.rfc4514_string(),
@@ -157,7 +158,7 @@ class IntermediateCA:
         builder = (
             x509.CertificateBuilder()
             .subject_name(csr.subject)
-            .issuer_name(self.int_cert.subject)     # issuer = intermediate
+            .issuer_name(self.int_cert.subject)
             .public_key(csr.public_key())
             .serial_number(x509.random_serial_number())
             .not_valid_before(now)
@@ -171,8 +172,8 @@ class IntermediateCA:
                 critical=False,
             )
         )
-        builder = apply_template(builder, template, san_names)
-        return builder.sign(self.int_key, hashes.SHA256())  # signed by INTERMEDIATE
+        builder = apply_template(builder, template, san_names, ocsp_url=OCSP_URL, crl_url=CRL_URL)
+        return builder.sign(self.int_key, hashes.SHA256())
 
     def _build_subject(self) -> x509.Name:
         cfg = self.config
@@ -196,9 +197,10 @@ class IntermediateCA:
         save_file(path, serialize_cert(cert), mode=0o644)
         return path
 
-    def _save_to_db(self, cert: x509.Certificate, template_name: str) -> None:
+    def _save_to_db(self, cert: x509.Certificate, template_name: str, private_key=None) -> None:
         from db.models import Certificate
         from cryptography.x509.oid import NameOID
+        from cryptography.hazmat.primitives import serialization
         from cryptography.hazmat.primitives.serialization import Encoding
 
         def _attr(name_obj, oid):
@@ -207,21 +209,30 @@ class IntermediateCA:
             except IndexError:
                 return ""
 
+        key_pem = None
+        if private_key is not None:
+            key_pem = private_key.private_bytes(
+                serialization.Encoding.PEM,
+                serialization.PrivateFormat.TraditionalOpenSSL,
+                serialization.NoEncryption(),
+            ).decode()
+
         subj = cert.subject
         row  = Certificate(
-            serial      = str(cert.serial_number),
-            common_name = _attr(subj, NameOID.COMMON_NAME),
-            email       = _attr(subj, NameOID.EMAIL_ADDRESS),
-            org         = _attr(subj, NameOID.ORGANIZATION_NAME),
-            org_unit    = _attr(subj, NameOID.ORGANIZATIONAL_UNIT_NAME),
-            country     = _attr(subj, NameOID.COUNTRY_NAME),
-            state       = _attr(subj, NameOID.STATE_OR_PROVINCE_NAME),
-            locality    = _attr(subj, NameOID.LOCALITY_NAME),
-            template    = template_name,
-            issued_by   = "intermediate",
-            not_before  = cert.not_valid_before_utc.replace(tzinfo=None),
-            not_after   = cert.not_valid_after_utc.replace(tzinfo=None),
-            pem         = cert.public_bytes(Encoding.PEM).decode(),
+            serial          = str(cert.serial_number),
+            common_name     = _attr(subj, NameOID.COMMON_NAME),
+            email           = _attr(subj, NameOID.EMAIL_ADDRESS),
+            org             = _attr(subj, NameOID.ORGANIZATION_NAME),
+            org_unit        = _attr(subj, NameOID.ORGANIZATIONAL_UNIT_NAME),
+            country         = _attr(subj, NameOID.COUNTRY_NAME),
+            state           = _attr(subj, NameOID.STATE_OR_PROVINCE_NAME),
+            locality        = _attr(subj, NameOID.LOCALITY_NAME),
+            template        = template_name,
+            issued_by       = "intermediate",
+            not_before      = cert.not_valid_before_utc.replace(tzinfo=None),
+            not_after       = cert.not_valid_after_utc.replace(tzinfo=None),
+            pem             = cert.public_bytes(Encoding.PEM).decode(),
+            private_key_pem = key_pem,
         )
         self.db.add(row)
         self.db.commit()

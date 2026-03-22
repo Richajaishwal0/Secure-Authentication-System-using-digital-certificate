@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { api } from '../api'
+import { RefreshCw, ShieldCheck, Clock, XCircle, AlertTriangle, Building2, Play, RotateCcw } from 'lucide-react'
 
 export default function Dashboard() {
   const [stats, setStats]       = useState(null)
@@ -57,7 +58,9 @@ export default function Dashboard() {
           <div className="page-title">Dashboard</div>
           <div className="page-desc">Live overview of your certificate authority.</div>
         </div>
-        <button className="btn btn-secondary btn-sm" onClick={() => load(days)}>↻ Refresh</button>
+        <button className="btn btn-secondary btn-sm" onClick={() => load(days)} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <RefreshCw size={13} /> Refresh
+        </button>
       </div>
 
       {/* Stat cards */}
@@ -78,18 +81,18 @@ export default function Dashboard() {
 
       {/* CA Health */}
       <div className="card" style={{ marginTop: '1.2rem' }}>
-        <div className="card-title">🏛️ Certificate Authority Health</div>
+        <div className="card-title" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Building2 size={16} /> Certificate Authority Health</div>
         <div className="card-divider" />
         {ca?.error ? (
           <div className="output error">CA not initialised — go to Setup CA tab first.</div>
         ) : (
           <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', alignItems: 'center' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <div style={{ width: 10, height: 10, borderRadius: '50%', background: ca.healthy ? '#4ade80' : '#facc15', boxShadow: `0 0 8px ${ca.healthy ? '#4ade80' : '#facc15'}` }} />
-              <span style={{ color: ca.healthy ? '#4ade80' : '#facc15', fontWeight: 600, fontSize: '13px' }}>
-                {ca.healthy ? 'Healthy' : 'Expiring Soon'}
-              </span>
-            </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <div style={{ width: 10, height: 10, borderRadius: '50%', background: ca.healthy ? '#4ade80' : '#facc15', boxShadow: `0 0 8px ${ca.healthy ? '#4ade80' : '#facc15'}` }} />
+            <span style={{ color: ca.healthy ? '#4ade80' : '#facc15', fontWeight: 600, fontSize: '13px' }}>
+              {ca.healthy ? 'Healthy' : 'Expiring Soon'}
+            </span>
+          </div>
             <div style={{ color: 'var(--text-muted)', fontSize: '12px' }}>{ca.days_left} days until CA expires</div>
             <div style={{ color: 'var(--text-muted)', fontSize: '12px' }}>Expires: {ca.not_after?.slice(0, 10)}</div>
             <div style={{ color: 'var(--text-muted)', fontSize: '11px', fontFamily: 'monospace', flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{ca.subject}</div>
@@ -102,7 +105,7 @@ export default function Dashboard() {
         {/* Expiring certs */}
         <div className="card" style={{ margin: 0 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-            <div className="card-title" style={{ marginBottom: 0 }}>⏳ Expiring Certificates</div>
+            <div className="card-title" style={{ marginBottom: 0, display: 'flex', alignItems: 'center', gap: '8px' }}><Clock size={15} /> Expiring Certificates</div>
             <select value={days} onChange={e => setDays(Number(e.target.value))} style={{
               background: 'var(--input-bg)', color: 'var(--text)', border: '1px solid var(--border)',
               borderRadius: '6px', padding: '4px 8px', fontSize: '12px',
@@ -112,8 +115,7 @@ export default function Dashboard() {
           </div>
           {expiring.length === 0 ? (
             <div style={{ color: 'var(--text-muted)', fontSize: '13px', padding: '1rem 0', textAlign: 'center' }}>
-              ✅ No certificates expiring within {days} days
-            </div>
+              ✅ No certificates expiring within {days} days            </div>
           ) : (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
               {expiring.map(c => (
@@ -138,18 +140,18 @@ export default function Dashboard() {
 
         {/* Automation controls */}
         <div className="card" style={{ margin: 0 }}>
-          <div className="card-title" style={{ marginBottom: '0.8rem' }}>⚙️ Automation</div>
+          <div className="card-title" style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '8px' }}><RotateCcw size={15} /> Automation</div>
           <div style={{ color: 'var(--text-dim)', fontSize: '12px', lineHeight: 1.7, marginBottom: '1rem' }}>
             The scheduler runs daily and auto-renews certificates based on your Policy Rules. Trigger manually to run immediately.
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
             <button className="btn" onClick={() => triggerJob('expiry_check')}
-              style={{ background: 'linear-gradient(135deg, var(--accent), #6d28d9)', color: '#fff', justifyContent: 'center' }}>
-              ▶ Run Expiry Check Now
+              style={{ background: 'linear-gradient(135deg, var(--accent), #6d28d9)', color: '#fff', justifyContent: 'center', display: 'flex', alignItems: 'center', gap: '7px' }}>
+              <Play size={13} /> Run Expiry Check Now
             </button>
             <button className="btn" onClick={() => triggerJob('auto_renew')}
-              style={{ background: 'linear-gradient(135deg, var(--success), #059669)', color: '#fff', justifyContent: 'center' }}>
-              ▶ Run Auto-Renew Now
+              style={{ background: 'linear-gradient(135deg, var(--success), #059669)', color: '#fff', justifyContent: 'center', display: 'flex', alignItems: 'center', gap: '7px' }}>
+              <Play size={13} /> Run Auto-Renew Now
             </button>
           </div>
           {renewals.length > 0 && (

@@ -14,6 +14,8 @@ Available templates:
 from dataclasses import dataclass, field
 from cryptography import x509
 from cryptography.x509.oid import ExtendedKeyUsageOID
+from cryptography.x509 import AuthorityInformationAccess, AccessDescription, CRLDistributionPoints, DistributionPoint
+from cryptography.x509.oid import AuthorityInformationAccessOID
 
 
 @dataclass
@@ -101,6 +103,8 @@ def apply_template(
     builder: x509.CertificateBuilder,
     template: CertTemplate,
     san_names: list[str] | None = None,
+    ocsp_url: str | None = None,
+    crl_url: str | None = None,
 ) -> x509.CertificateBuilder:
     """
     Apply a template's extensions to a CertificateBuilder.
@@ -109,6 +113,8 @@ def apply_template(
         builder:   partially-built CertificateBuilder
         template:  CertTemplate to apply
         san_names: list of DNS names / IP strings for TLS server certs
+        ocsp_url:  OCSP responder URL to embed in AIA extension
+        crl_url:   CRL distribution point URL to embed
     """
     builder = builder.add_extension(
         x509.BasicConstraints(ca=False, path_length=None), critical=True
@@ -132,6 +138,32 @@ def apply_template(
                 san_list.append(x509.DNSName(name))
         builder = builder.add_extension(
             x509.SubjectAlternativeName(san_list), critical=False
+        )
+
+    # Authority Information Access — OCSP URL so clients can check revocation in real time
+    if ocsp_url:
+        builder = builder.add_extension(
+            AuthorityInformationAccess([
+                AccessDescription(
+                    AuthorityInformationAccessOID.OCSP,
+                    x509.UniformResourceIdentifier(ocsp_url),
+                )
+            ]),
+            critical=False,
+        )
+
+    # CRL Distribution Points — where clients can download the full CRL
+    if crl_url:
+        builder = builder.add_extension(
+            CRLDistributionPoints([
+                DistributionPoint(
+                    full_name=[x509.UniformResourceIdentifier(crl_url)],
+                    relative_name=None,
+                    reasons=None,
+                    crl_issuer=None,
+                )
+            ]),
+            critical=False,
         )
 
     # Any extra extensions defined on the template

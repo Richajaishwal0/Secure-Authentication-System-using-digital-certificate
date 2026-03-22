@@ -1,5 +1,94 @@
 import { useEffect, useState } from 'react'
 import { api } from '../api'
+import { RefreshCw, Download, Key, Copy, Mail, Trash2, CheckCircle2, XCircle, AlertTriangle, Clock, ChevronRight, Search } from 'lucide-react'
+
+/* ── Send Modal (reused from IssueCert) ── */
+function SendModal({ cert, onClose }) {
+  const [email, setEmail]     = useState(cert.email || '')
+  const [message, setMessage] = useState(`Hi,\n\nPlease find your digital certificate attached below.\n\nSerial: ${cert.serial}\nValid Until: ${cert.not_after?.slice(0, 10)}\nTemplate: ${cert.template}\n\nTo use this certificate, save the PEM content to a .pem file.\n\nRegards,\nIT Admin`)
+  const [status, setStatus]   = useState('')
+  const [errMsg, setErrMsg]   = useState('')
+
+  async function handleSend() {
+    if (!email) { setErrMsg('Email is required.'); return }
+    setStatus('sending'); setErrMsg('')
+    try {
+      await api.sendCert({ serial: cert.serial, email, message })
+      setStatus('sent')
+    } catch (e) {
+      setErrMsg(e.response?.data?.detail || e.message)
+      setStatus('error')
+    }
+  }
+
+  function downloadPem() {
+    const blob = new Blob([cert.pem], { type: 'application/x-pem-file' })
+    const url  = URL.createObjectURL(blob)
+    const a    = document.createElement('a')
+    a.href = url
+    a.download = `${cert.common_name?.replace(/\s+/g, '_') || 'cert'}_${cert.serial?.slice(0, 8)}.pem`
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
+  return (
+    <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: '1rem' }}>
+      <div style={{ background: 'var(--panel)', border: '1px solid var(--border)', borderRadius: '16px', padding: '2rem', width: '100%', maxWidth: '540px', maxHeight: '90vh', overflowY: 'auto' }}>
+        {status === 'sent' ? (
+          <div style={{ textAlign: 'center', padding: '1rem 0' }}>
+            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>✅</div>
+            <div style={{ color: '#4ade80', fontWeight: 700, fontSize: '16px', marginBottom: '0.5rem' }}>Certificate Delivered</div>
+            <div style={{ color: 'var(--text-dim)', fontSize: '13px', marginBottom: '0.5rem' }}>Delivery logged to audit trail for <strong style={{ color: '#fff' }}>{email}</strong>.</div>
+            <div style={{ background: 'rgba(245,158,11,0.1)', border: '1px solid rgba(245,158,11,0.3)', borderRadius: '8px', padding: '12px', margin: '1.2rem 0', fontSize: '12px', color: '#fbbf24', lineHeight: 1.6 }}>
+              ℹ️ Download the .pem file and attach it to your email client to deliver it.
+            </div>
+            <div style={{ display: 'flex', gap: '0.8rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <button className="btn" onClick={downloadPem} style={{ background: 'linear-gradient(135deg, var(--success), #059669)', color: '#fff' }}>⬇ Download .pem</button>
+              <button className="btn btn-secondary" onClick={onClose}>Close</button>
+            </div>
+          </div>
+        ) : (
+          <>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.5rem' }}>
+              <div>
+                <div style={{ color: '#fff', fontWeight: 700, fontSize: '16px' }}>📧 Send Certificate to User</div>
+                <div style={{ color: 'var(--text-muted)', fontSize: '12px', marginTop: '4px' }}>Logs delivery to audit trail · <code style={{ color: 'var(--accent2)' }}>{cert.serial?.slice(0, 16)}…</code></div>
+              </div>
+              <button onClick={onClose} style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', fontSize: '18px' }}>✕</button>
+            </div>
+            <div style={{ background: 'var(--panel2)', border: '1px solid var(--border)', borderRadius: '10px', padding: '12px 16px', marginBottom: '1.2rem', display: 'flex', gap: '12px', alignItems: 'center' }}>
+              <span style={{ fontSize: '1.5rem' }}>📜</span>
+              <div>
+                <div style={{ color: '#fff', fontWeight: 600, fontSize: '13px' }}>{cert.common_name}</div>
+                <div style={{ color: 'var(--text-muted)', fontSize: '11px', marginTop: '2px' }}>{cert.template} · Valid until {cert.not_after?.slice(0, 10)}</div>
+              </div>
+            </div>
+            <div className="form-group" style={{ marginBottom: '1rem' }}>
+              <label>Recipient Email *</label>
+              <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="user@example.com" />
+            </div>
+            <div className="form-group" style={{ marginBottom: '1.2rem' }}>
+              <label>Message (optional)</label>
+              <textarea value={message} onChange={e => setMessage(e.target.value)} rows={7}
+                style={{ width: '100%', background: 'var(--panel2)', border: '1px solid var(--border)', borderRadius: '8px', padding: '10px 12px', color: 'var(--text-dim)', fontSize: '12px', fontFamily: 'inherit', resize: 'vertical', outline: 'none', lineHeight: 1.6 }} />
+            </div>
+            {errMsg && <div style={{ background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.3)', borderRadius: '8px', padding: '10px 14px', color: '#f87171', fontSize: '12px', marginBottom: '1rem' }}>⚠ {errMsg}</div>}
+            <div style={{ background: 'rgba(245,158,11,0.08)', border: '1px solid rgba(245,158,11,0.2)', borderRadius: '8px', padding: '10px 14px', fontSize: '12px', color: '#fbbf24', marginBottom: '1.2rem', lineHeight: 1.6 }}>
+              ℹ️ Sending logs this action to the audit trail. Download the .pem file and attach it to your email client.
+            </div>
+            <div style={{ display: 'flex', gap: '0.8rem', justifyContent: 'flex-end' }}>
+              <button className="btn btn-secondary" onClick={onClose}>Cancel</button>
+              <button className="btn" onClick={handleSend} disabled={status === 'sending'}
+                style={{ background: 'linear-gradient(135deg, #7c3aed, #0891b2)', color: '#fff' }}>
+                {status === 'sending' ? <><span className="btn-spinner" /> Sending…</> : '📧 Log & Send'}
+              </button>
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  )
+}
 
 const TEMPLATE_COLORS = {
   client_auth:   { bg: 'rgba(124,58,237,0.15)',  text: '#a78bfa' },
@@ -16,6 +105,8 @@ export default function Certificates() {
   const [detailLoading, setDetailLoading] = useState(false)
   const [search, setSearch]   = useState('')
   const [filter, setFilter]   = useState('all')  // all | active | revoked
+  const [sendTarget, setSendTarget] = useState(null)
+  const [deleteTarget, setDeleteTarget] = useState(null)  // serial to delete
 
   const load = async () => {
     setLoading(true)
@@ -86,9 +177,7 @@ export default function Certificates() {
               borderRadius: '10px', padding: '14px 18px', marginBottom: '1.5rem',
               display: 'flex', alignItems: 'center', gap: '12px',
             }}>
-              <span style={{ fontSize: '1.5rem' }}>
-                {detail.revoked ? '🚫' : days !== null && days <= 0 ? '⏰' : days !== null && days <= 30 ? '⚠️' : '✅'}
-              </span>
+              {detail.revoked ? <XCircle size={24} color='#f87171' /> : days !== null && days <= 0 ? <Clock size={24} color='#f87171' /> : days !== null && days <= 30 ? <AlertTriangle size={24} color='#facc15' /> : <CheckCircle2 size={24} color='#4ade80' />}
               <div>
                 <div style={{ color: '#fff', fontWeight: 600, fontSize: '14px' }}>
                   {detail.revoked ? 'Certificate Revoked' : days !== null && days <= 0 ? 'Certificate Expired' : days !== null && days <= 30 ? `Expiring in ${days} days` : 'Certificate Valid'}
@@ -128,20 +217,45 @@ export default function Certificates() {
 
             {/* Actions */}
             <div className="card">
-              <div className="card-title">⬇️ Download Certificate</div>
+              <div className="card-title" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Download size={15} /> Certificate Actions</div>
               <div className="card-divider" />
-              <p style={{ color: 'var(--text-dim)', fontSize: '13px', marginBottom: '1rem', lineHeight: 1.7 }}>
-                Download the certificate as a .pem file. This is the public certificate — safe to share. The private key is stored separately in <code style={{ color: 'var(--accent2)', fontSize: '12px' }}>storage/csr/</code>.
-              </p>
-              <div style={{ display: 'flex', gap: '1rem' }}>
+              <div style={{ display: 'flex', gap: '0.8rem', flexWrap: 'wrap' }}>
                 <button className="btn" onClick={() => download(detail)}
-                  style={{ background: 'linear-gradient(135deg, var(--success), #059669)', color: '#fff', boxShadow: '0 4px 14px rgba(16,185,129,0.25)' }}>
-                  ⬇ Download .pem
+                  style={{ background: 'linear-gradient(135deg, var(--success), #059669)', color: '#fff', display: 'flex', alignItems: 'center', gap: '7px' }}>
+                  <Download size={14} /> Download Certificate
                 </button>
-                <button className="btn btn-secondary" onClick={() => { navigator.clipboard.writeText(detail.pem) }}>
-                  📋 Copy PEM
+                {detail.private_key_pem && (
+                  <button className="btn" onClick={() => {
+                    const blob = new Blob([detail.private_key_pem], { type: 'application/x-pem-file' })
+                    const url  = URL.createObjectURL(blob)
+                    const a    = document.createElement('a')
+                    a.href     = url
+                    a.download = `${detail.common_name?.replace(/\s+/g,'_')}_${detail.serial?.slice(0,8)}_private_key.pem`
+                    a.click()
+                    URL.revokeObjectURL(url)
+                  }} style={{ background: 'linear-gradient(135deg, #b45309, #92400e)', color: '#fff', display: 'flex', alignItems: 'center', gap: '7px' }}>
+                    <Key size={14} /> Download Private Key
+                  </button>
+                )}
+                <button className="btn btn-secondary" onClick={() => navigator.clipboard.writeText(detail.pem)} style={{ display: 'flex', alignItems: 'center', gap: '7px' }}>
+                  <Copy size={14} /> Copy PEM
+                </button>
+                {!detail.revoked && (
+                  <button className="btn" onClick={() => setSendTarget(detail)}
+                    style={{ background: 'linear-gradient(135deg, #7c3aed, #0891b2)', color: '#fff', display: 'flex', alignItems: 'center', gap: '7px' }}>
+                    <Mail size={14} /> Send to User
+                  </button>
+                )}
+                <button className="btn" onClick={() => setDeleteTarget(detail.serial)}
+                  style={{ background: 'linear-gradient(135deg, #dc2626, #b91c1c)', color: '#fff', display: 'flex', alignItems: 'center', gap: '7px' }}>
+                  <Trash2 size={14} /> Delete
                 </button>
               </div>
+              {detail.private_key_pem && (
+                <div style={{ marginTop: '0.8rem', background: 'rgba(245,158,11,0.08)', border: '1px solid rgba(245,158,11,0.25)', borderRadius: '8px', padding: '10px 14px', fontSize: '12px', color: '#fbbf24', lineHeight: 1.6 }}>
+                  🔑 Private key is available. When sending to the user, both files will be attached to the email.
+                </div>
+              )}
             </div>
 
             {/* Raw PEM — collapsed by default */}
@@ -155,6 +269,9 @@ export default function Certificates() {
             </details>
           </>
         )}
+
+        {/* Send modal */}
+        {sendTarget && <SendModal cert={sendTarget} onClose={() => setSendTarget(null)} />}
       </div>
     )
   }
@@ -167,7 +284,9 @@ export default function Certificates() {
           <div className="page-title">All Certificates</div>
           <div className="page-desc">Click any certificate to view details and download.</div>
         </div>
-        <button className="btn btn-secondary btn-sm" onClick={load}>↻ Refresh</button>
+        <button className="btn btn-secondary btn-sm" onClick={load} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <RefreshCw size={13} /> Refresh
+        </button>
       </div>
 
       {/* Search + filter bar */}
@@ -216,10 +335,7 @@ export default function Certificates() {
                 onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(124,58,237,0.4)'; e.currentTarget.style.background = 'rgba(124,58,237,0.04)' }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.background = 'var(--panel)' }}
               >
-                {/* Status icon */}
-                <div style={{ fontSize: '1.6rem', flexShrink: 0 }}>
-                  {c.revoked ? '🚫' : days !== null && days <= 0 ? '⏰' : days !== null && days <= 30 ? '⚠️' : '✅'}
-                </div>
+                {c.revoked ? <XCircle size={22} color='#f87171' /> : days !== null && days <= 0 ? <Clock size={22} color='#f87171' /> : days !== null && days <= 30 ? <AlertTriangle size={22} color='#facc15' /> : <CheckCircle2 size={22} color='#4ade80' />}
 
                 {/* Name + email */}
                 <div style={{ flex: 1, minWidth: 0 }}>
@@ -246,12 +362,71 @@ export default function Certificates() {
                   <div style={{ color: 'var(--text-muted)', fontSize: '11px', marginTop: '2px' }}>{c.not_after?.slice(0,10)}</div>
                 </div>
 
-                <div style={{ color: 'var(--text-muted)', fontSize: '18px', flexShrink: 0 }}>›</div>
+                <ChevronRight size={18} color='var(--text-muted)' style={{ flexShrink: 0 }} />
+                <button
+                  onClick={e => { e.stopPropagation(); setDeleteTarget(c.serial) }}
+                  style={{ background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.3)', color: '#f87171', borderRadius: '6px', padding: '5px 8px', cursor: 'pointer', flexShrink: 0, display: 'flex', alignItems: 'center' }}
+                >
+                  <Trash2 size={14} />
+                </button>
               </div>
             )
           })}
         </div>
       )}
+
+      {/* Send modal (from list view — shouldn't normally open here, but just in case) */}
+      {sendTarget && <SendModal cert={sendTarget} onClose={() => setSendTarget(null)} />}
+
+      {/* Delete confirmation modal */}
+      {deleteTarget && (
+        <DeleteModal
+          serial={deleteTarget}
+          cert={list.find(c => c.serial === deleteTarget)}
+          onConfirm={async () => {
+            await api.deleteCert(deleteTarget)
+            setDeleteTarget(null)
+            setSelected(null)
+            setDetail(null)
+            load()
+          }}
+          onClose={() => setDeleteTarget(null)}
+        />
+      )}
+    </div>
+  )
+}
+
+function DeleteModal({ serial, cert, onConfirm, onClose }) {
+  const [loading, setLoading] = useState(false)
+  const [error, setError]     = useState('')
+
+  const handleDelete = async () => {
+    setLoading(true); setError('')
+    try { await onConfirm() }
+    catch (e) { setError(e.response?.data?.detail || 'Delete failed.'); setLoading(false) }
+  }
+
+  return (
+    <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: '1rem' }}>
+      <div style={{ background: 'var(--panel)', border: '1px solid rgba(239,68,68,0.3)', borderRadius: '16px', padding: '2rem', width: '100%', maxWidth: '400px' }}>
+        <div style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '1rem' }}>🗑</div>
+        <div style={{ color: '#fff', fontWeight: 700, fontSize: '16px', textAlign: 'center', marginBottom: '0.5rem' }}>Delete Certificate?</div>
+        <div style={{ color: 'var(--text-dim)', fontSize: '13px', textAlign: 'center', marginBottom: '0.8rem', lineHeight: 1.6 }}>
+          This will permanently remove <strong style={{ color: '#fff' }}>{cert?.common_name}</strong>'s certificate from the database.
+        </div>
+        <div style={{ background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.2)', borderRadius: '8px', padding: '10px 14px', fontSize: '12px', color: '#f87171', marginBottom: '1.5rem', lineHeight: 1.6 }}>
+          ⚠ This cannot be undone. If the certificate is still in use, revoke it instead.
+        </div>
+        {error && <div style={{ color: '#f87171', fontSize: '13px', marginBottom: '1rem', textAlign: 'center' }}>{error}</div>}
+        <div style={{ display: 'flex', gap: '0.8rem', justifyContent: 'center' }}>
+          <button className="btn btn-secondary" onClick={onClose} disabled={loading}>Cancel</button>
+          <button className="btn" onClick={handleDelete} disabled={loading}
+            style={{ background: 'linear-gradient(135deg, #dc2626, #b91c1c)', color: '#fff' }}>
+            {loading ? <><span className="btn-spinner" /> Deleting…</> : 'Delete Certificate'}
+          </button>
+        </div>
+      </div>
     </div>
   )
 }

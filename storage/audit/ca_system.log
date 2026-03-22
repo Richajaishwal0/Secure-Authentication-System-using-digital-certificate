@@ -850,3 +850,1443 @@
 2026-03-22 17:45:18,524 [[36mINFO[0m] ca.crl_manager — CRL saved → C:\Users\richa\OneDrive\CYS\digital_ca\storage\crl\ca.crl.pem  (5 revoked)
 2026-03-22 17:45:32,541 [[36mINFO[0m] audit.audit_log — Audit chain verified — 28 entries intact
 2026-03-22 17:48:26,847 [[36mINFO[0m] audit.audit_log — Audit chain verified — 28 entries intact
+2026-03-22 18:10:00,365 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 18:10:00,455 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 18:19:35,842 [[36mINFO[0m] audit.audit_log — Audit chain verified — 28 entries intact
+2026-03-22 18:26:20,207 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 18:26:20,293 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 18:26:20,429 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Richa Kumari Jaishwal'
+2026-03-22 18:26:20,453 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Richa Kumari Jaishwal
+2026-03-22 18:26:20,461 [[36mINFO[0m] ca.csr_generator — Saved key  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\richa_kumari_jaishwal_private_key.pem
+2026-03-22 18:26:20,463 [[36mINFO[0m] ca.csr_generator — Saved CSR  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\richa_kumari_jaishwal_csr.pem
+2026-03-22 18:26:20,469 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=richajaiswalhome@gmail.com,CN=Richa Kumari Jaishwal,OU=,O=,L=,ST=,C=In
+2026-03-22 18:26:20,503 [[36mINFO[0m] audit.audit_log — Audit [28] CERT_ISSUED
+2026-03-22 18:26:20,504 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 117886304351523899798310102787768413055361329229 → C:\Users\richa\OneDrive\CYS\digital_ca\storage\certs\richa_kumari_jaishwal_117886304351523899798310102787768413055361329229.pem
+2026-03-22 18:44:45,160 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 18:44:45,161 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 18:44:45,162 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 18:44:45,163 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 18:44:45,164 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 18:44:45,164 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 18:44:45,165 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 18:44:45,165 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 18:44:45.161603+05:30 (in 86399.996322 seconds)
+2026-03-22 18:44:45,165 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 18:44:58,305 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 18:44:58,391 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 18:45:55,800 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 18:45:55,906 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 18:46:43,843 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 18:46:43,844 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 18:46:43,845 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 18:46:43,846 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 18:46:46,847 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 18:46:46,849 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 18:46:46,850 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 18:46:46,853 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 18:46:46,854 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 18:46:46,855 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 18:46:46,857 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 18:46:46,857 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 18:46:46.848817+05:30 (in 86399.991262 seconds)
+2026-03-22 18:46:46,857 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 18:46:46,969 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 18:46:46,970 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 18:46:46,970 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 18:46:46,971 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 18:46:49,862 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 18:46:49,864 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 18:46:49,865 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 18:46:49,868 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 18:46:49,869 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 18:46:49,869 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 18:46:49,871 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 18:46:49,871 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 18:46:49.863995+05:30 (in 86399.992241 seconds)
+2026-03-22 18:46:49,871 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 18:47:13,001 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 18:47:13,106 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 18:48:54,544 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 18:48:54,646 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 18:53:07,681 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 18:53:07,682 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 18:53:07,683 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 18:53:07,684 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 18:53:10,794 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 18:53:10,796 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 18:53:10,797 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 18:53:10,800 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 18:53:10,801 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 18:53:10,803 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 18:53:10,804 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 18:53:10,805 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 18:53:10.796132+05:30 (in 86399.991075 seconds)
+2026-03-22 18:53:10,804 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 18:53:10,916 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 18:53:10,917 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 18:53:10,918 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 18:53:10,919 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 18:53:13,696 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 18:53:13,698 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 18:53:13,699 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 18:53:13,702 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 18:53:13,703 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 18:53:13,704 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 18:53:13,705 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 18:53:13,706 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 18:53:13.698018+05:30 (in 86399.991456 seconds)
+2026-03-22 18:53:13,706 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 18:53:14,689 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 18:53:14,691 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 18:53:14,691 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 18:53:14,692 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 18:53:17,472 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 18:53:17,474 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 18:53:17,475 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 18:53:17,478 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 18:53:17,478 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 18:53:17,479 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 18:53:17,480 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 18:53:17,481 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 18:53:17.474091+05:30 (in 86399.992949 seconds)
+2026-03-22 18:53:17,480 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 18:54:16,837 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 18:54:16,839 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 18:54:16,839 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 18:54:16,840 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 18:54:19,526 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 18:54:19,529 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 18:54:19,530 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 18:54:19,533 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 18:54:19,534 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 18:54:19,534 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 18:54:19,536 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 18:54:19,536 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 18:54:19.528786+05:30 (in 86399.991937 seconds)
+2026-03-22 18:54:19,536 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 18:55:13,487 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 18:55:13,580 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 18:56:02,387 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 18:56:02,473 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 18:56:38,597 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 18:56:38,693 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 18:56:41,309 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 18:56:41,311 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 18:54:19.529953+05:30 (in 86258.218355 seconds)
+2026-03-22 18:56:41,311 [[36mINFO[0m] apscheduler.executors.default — Running job "expiry_check_job (trigger: interval[1 day, 0:00:00], next run at: 2026-03-23 18:56:41 IST)" (scheduled at 2026-03-22 18:56:41.309004+05:30)
+2026-03-22 18:56:41,320 [[33mWARNING[0m] automation.scheduler — EXPIRY_WARNING serial=201407243425981997627474327737117943506227537830 cn=Richa Kumari Jaishwal days_left=2
+2026-03-22 18:56:41,322 [[33mWARNING[0m] automation.scheduler — EXPIRY_WARNING serial=117886304351523899798310102787768413055361329229 cn=Richa Kumari Jaishwal days_left=1
+2026-03-22 18:56:41,323 [[36mINFO[0m] automation.scheduler — Expiry check complete — 2 active certs scanned.
+2026-03-22 18:56:41,324 [[36mINFO[0m] apscheduler.executors.default — Job "expiry_check_job (trigger: interval[1 day, 0:00:00], next run at: 2026-03-23 18:56:41 IST)" executed successfully
+2026-03-22 18:56:42,550 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 18:56:42,639 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 18:58:22,611 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 18:58:22,700 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 18:59:17,054 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 18:59:17,153 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 18:59:21,654 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 18:59:21,738 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 19:00:07,877 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:00:07,976 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 19:00:19,714 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:00:19,800 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 19:01:10,534 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:01:10,643 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 19:03:49,271 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:03:49,359 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 19:05:32,977 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:05:32,978 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:05:32,979 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:05:32,980 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:05:36,184 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:05:36,186 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:05:36,188 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:05:36,191 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:05:36,192 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:05:36,192 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:05:36,193 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:05:36,194 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:05:36.186400+05:30 (in 86399.992052 seconds)
+2026-03-22 19:05:36,194 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:05:36,312 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:05:36,313 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:05:36,313 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:05:36,314 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:05:39,128 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:05:39,130 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:05:39,130 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:05:39,133 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:05:39,134 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:05:39,134 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:05:39,135 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:05:39,136 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:05:39.129892+05:30 (in 86399.993495 seconds)
+2026-03-22 19:05:39,136 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:05:39,150 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:05:39,241 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 19:06:22,570 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:06:22,671 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 19:07:20,118 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:07:20,209 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 19:07:25,529 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:07:25,666 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 19:07:31,833 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:07:31,935 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 19:07:57,514 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:07:57,608 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 19:08:14,534 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:08:14,621 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 19:08:14,674 [[36mINFO[0m] ca.crl_manager — CRL saved → C:\Users\richa\OneDrive\CYS\digital_ca\storage\crl\ca.crl.pem  (6 revoked)
+2026-03-22 19:08:14,681 [[36mINFO[0m] audit.audit_log — Audit [29] CERT_REVOKED
+2026-03-22 19:08:14,682 [[36mINFO[0m] ca.crl_manager — Revoked serial 402786714941099930538372428076486140923262118360 — reason: unspecified
+2026-03-22 19:08:27,712 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:08:27,803 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 19:08:32,534 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:08:32,627 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 19:08:32,671 [[36mINFO[0m] ca.crl_manager — CRL saved → C:\Users\richa\OneDrive\CYS\digital_ca\storage\crl\ca.crl.pem  (6 revoked)
+2026-03-22 19:09:24,159 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:09:24,161 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:09:24,162 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:09:24,162 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:09:27,240 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:09:27,243 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:09:27,244 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:09:27,247 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:09:27,248 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:09:27,248 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:09:27,250 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:09:27,250 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:09:27.243015+05:30 (in 86399.992092 seconds)
+2026-03-22 19:09:27,250 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:09:27,366 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:09:27,367 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:09:27,368 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:09:27,369 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:09:30,174 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:09:30,176 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:09:30,177 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:09:30,182 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:09:30,183 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:09:30,184 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:09:30,186 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:09:30,186 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:09:30.176405+05:30 (in 86399.989504 seconds)
+2026-03-22 19:09:30,186 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:10:09,857 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:10:09,968 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 19:10:09,981 [[36mINFO[0m] ca.crl_manager — CRL saved → C:\Users\richa\OneDrive\CYS\digital_ca\storage\crl\ca.crl.pem  (7 revoked)
+2026-03-22 19:10:09,987 [[36mINFO[0m] audit.audit_log — Audit [30] CERT_REVOKED
+2026-03-22 19:10:09,988 [[36mINFO[0m] ca.crl_manager — Revoked serial 201407243425981997627474327737117943506227537830 — reason: unspecified
+2026-03-22 19:10:23,914 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:10:24,014 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 19:10:24,065 [[36mINFO[0m] ca.crl_manager — CRL saved → C:\Users\richa\OneDrive\CYS\digital_ca\storage\crl\ca.crl.pem  (8 revoked)
+2026-03-22 19:10:24,071 [[36mINFO[0m] audit.audit_log — Audit [31] CERT_REVOKED
+2026-03-22 19:10:24,072 [[36mINFO[0m] ca.crl_manager — Revoked serial 117886304351523899798310102787768413055361329229 — reason: unspecified
+2026-03-22 19:10:29,057 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:10:29,154 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 19:10:35,661 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:10:35,757 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 19:10:35,804 [[36mINFO[0m] ca.crl_manager — CRL saved → C:\Users\richa\OneDrive\CYS\digital_ca\storage\crl\ca.crl.pem  (8 revoked)
+2026-03-22 19:10:38,397 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:10:38,499 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
+2026-03-22 19:11:50,474 [[36mINFO[0m] ca.ca_setup — CA key saved to: C:\Users\richa\OneDrive\CYS\digital_ca\storage\ca_private_key.pem
+2026-03-22 19:11:50,476 [[36mINFO[0m] ca.ca_setup — CA cert saved to: C:\Users\richa\OneDrive\CYS\digital_ca\storage\ca_certificate.pem
+2026-03-22 19:11:50,476 [[36mINFO[0m] ca.ca_setup — Root CA generated. Serial: 362425493503913232139657919922483879695519095508
+2026-03-22 19:12:25,108 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:12:25,255 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 19:13:27,688 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:13:27,780 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 19:13:27,837 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'Rahul'
+2026-03-22 19:13:27,853 [[36mINFO[0m] ca.csr_generator — CSR built for subject: Rahul
+2026-03-22 19:13:27,861 [[36mINFO[0m] ca.csr_generator — Saved key  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\rahul_private_key.pem
+2026-03-22 19:13:27,862 [[36mINFO[0m] ca.csr_generator — Saved CSR  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\rahul_csr.pem
+2026-03-22 19:13:27,864 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=rahul@gmail.com,CN=Rahul,OU=,O=OSCi,L=,ST=,C=IN
+2026-03-22 19:13:27,894 [[36mINFO[0m] audit.audit_log — Audit [32] CERT_ISSUED
+2026-03-22 19:13:27,895 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 101819084181694310649566299382595732179223621075 → C:\Users\richa\OneDrive\CYS\digital_ca\storage\certs\rahul_101819084181694310649566299382595732179223621075.pem
+2026-03-22 19:14:48,048 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:14:48,050 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:14:48,050 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:14:48,050 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:14:50,907 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:14:50,909 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:14:50,910 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:14:50,913 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:14:50,914 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:14:50,915 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:14:50,917 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:14:50,917 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:14:50,917 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:14:50.909597+05:30 (in 86399.991785 seconds)
+2026-03-22 19:14:51,025 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:14:51,026 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:14:51,026 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:14:51,027 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:14:53,861 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:14:53,862 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:14:53,864 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:14:53,867 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:14:53,868 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:14:53,869 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:14:53,870 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:14:53,871 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:14:53.862724+05:30 (in 86399.991466 seconds)
+2026-03-22 19:14:53,870 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:16:18,561 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:16:18,665 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 19:16:21,679 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:16:21,783 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 19:16:53,049 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:16:53,134 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 19:16:53,173 [[36mINFO[0m] audit.audit_log — Audit [33] CERT_SENT
+2026-03-22 19:18:06,705 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:18:06,799 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 19:20:24,441 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:20:24,535 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 19:20:30,130 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:20:30,226 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 19:20:30,436 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'shyam'
+2026-03-22 19:20:30,443 [[36mINFO[0m] ca.csr_generator — CSR built for subject: shyam
+2026-03-22 19:20:30,448 [[36mINFO[0m] ca.csr_generator — Saved key  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\shyam_private_key.pem
+2026-03-22 19:20:30,448 [[36mINFO[0m] ca.csr_generator — Saved CSR  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\shyam_csr.pem
+2026-03-22 19:20:30,449 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=shyam@gmail.com,CN=shyam,OU=,O=acme,L=,ST=,C=IN
+2026-03-22 19:20:30,475 [[36mINFO[0m] audit.audit_log — Audit [34] CERT_ISSUED
+2026-03-22 19:20:30,476 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 474188197389386826026427582602736511924441858803 → C:\Users\richa\OneDrive\CYS\digital_ca\storage\certs\shyam_474188197389386826026427582602736511924441858803.pem
+2026-03-22 19:23:13,913 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:23:14,007 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 19:24:16,612 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:24:16,613 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:24:16,613 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:24:16,614 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:24:19,448 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:24:19,450 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:24:19,451 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:24:19,455 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:24:19,456 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:24:19,457 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:24:19,459 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:24:19,459 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:24:19.450241+05:30 (in 86399.990371 seconds)
+2026-03-22 19:24:19,459 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:24:27,892 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:24:27,893 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:24:27,894 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:24:27,895 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:24:30,645 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:24:30,647 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:24:30,648 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:24:30,651 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:24:30,652 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:24:30,652 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:24:30,654 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:24:30,655 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:24:30.647050+05:30 (in 86399.992037 seconds)
+2026-03-22 19:24:30,654 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:24:40,504 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:24:40,505 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:24:40,505 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:24:40,506 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:24:43,539 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:24:43,541 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:24:43,542 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:24:43,550 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:24:43,551 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:24:43,552 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:24:43,553 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:24:43,554 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:24:43.541089+05:30 (in 86399.986801 seconds)
+2026-03-22 19:24:43,554 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:24:58,288 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:24:58,288 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:24:58,289 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:24:58,289 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:25:01,141 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:25:01,143 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:25:01,143 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:25:01,146 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:25:01,146 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:25:01,147 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:25:01,148 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:25:01,148 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:25:01.142952+05:30 (in 86399.994336 seconds)
+2026-03-22 19:25:01,148 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:25:03,118 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:25:03,119 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:25:03,119 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:25:03,119 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:25:06,114 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:25:06,116 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:25:06,117 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:25:06,119 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:25:06,120 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:25:06,120 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:25:06,121 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:25:06,122 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:25:06.116045+05:30 (in 86399.993725 seconds)
+2026-03-22 19:25:06,122 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:25:06,345 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:25:06,346 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:25:06,346 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:25:06,347 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:25:09,112 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:25:09,114 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:25:09,115 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:25:09,117 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:25:09,118 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:25:09,118 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:25:09,119 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:25:09,120 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:25:09.114174+05:30 (in 86399.994182 seconds)
+2026-03-22 19:25:09,119 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:25:10,658 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:25:10,659 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:25:10,659 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:25:10,660 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:25:13,505 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:25:13,507 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:25:13,508 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:25:13,511 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:25:13,512 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:25:13,513 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:25:13,514 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:25:13,514 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:25:13.507110+05:30 (in 86399.992295 seconds)
+2026-03-22 19:25:13,514 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:25:41,192 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:25:41,192 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:25:41,193 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:25:41,193 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:25:43,838 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:25:43,840 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:25:43,840 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:25:43,843 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:25:43,844 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:25:43,844 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:25:43,845 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:25:43,846 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:25:43.839852+05:30 (in 86399.993829 seconds)
+2026-03-22 19:25:43,845 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:26:15,548 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:26:15,549 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:26:15,549 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:26:15,550 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:26:18,323 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:26:18,324 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:26:18,325 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:26:18,328 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:26:18,329 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:26:18,330 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:26:18,331 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:26:18,332 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:26:18.324663+05:30 (in 86399.992633 seconds)
+2026-03-22 19:26:18,331 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:27:42,172 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:27:42,276 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 19:27:42,404 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'RichaJ'
+2026-03-22 19:27:42,412 [[36mINFO[0m] ca.csr_generator — CSR built for subject: RichaJ
+2026-03-22 19:27:42,417 [[36mINFO[0m] ca.csr_generator — Saved key  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\richaj_private_key.pem
+2026-03-22 19:27:42,418 [[36mINFO[0m] ca.csr_generator — Saved CSR  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\richaj_csr.pem
+2026-03-22 19:27:42,423 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=2023richajaiswal@gmail.com,CN=RichaJ,OU=,O=AVV,L=,ST=,C=IN
+2026-03-22 19:27:42,450 [[36mINFO[0m] audit.audit_log — Audit [35] CERT_ISSUED
+2026-03-22 19:27:42,451 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 593214039121821659473548424270925947159531481623 → C:\Users\richa\OneDrive\CYS\digital_ca\storage\certs\richaj_593214039121821659473548424270925947159531481623.pem
+2026-03-22 19:27:52,951 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:27:53,053 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 19:28:06,318 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:28:06,416 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 19:28:55,043 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:28:55,138 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 19:28:55,231 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'richa'
+2026-03-22 19:28:55,235 [[36mINFO[0m] ca.csr_generator — CSR built for subject: richa
+2026-03-22 19:28:55,242 [[36mINFO[0m] ca.csr_generator — Saved key  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\richa_private_key.pem
+2026-03-22 19:28:55,243 [[36mINFO[0m] ca.csr_generator — Saved CSR  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\richa_csr.pem
+2026-03-22 19:28:55,244 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=richajaiswalhome@gmail.com,CN=richa,OU=,O=abc,L=,ST=,C=IN
+2026-03-22 19:28:55,273 [[36mINFO[0m] audit.audit_log — Audit [36] CERT_ISSUED
+2026-03-22 19:28:55,274 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 481445128787931495843708703994582886128300702992 → C:\Users\richa\OneDrive\CYS\digital_ca\storage\certs\richa_481445128787931495843708703994582886128300702992.pem
+2026-03-22 19:30:32,115 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:30:32,197 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 19:30:32,230 [[36mINFO[0m] audit.audit_log — Audit [37] CERT_SENT
+2026-03-22 19:31:17,214 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:31:17,309 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 19:31:17,381 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'richaj'
+2026-03-22 19:31:17,386 [[36mINFO[0m] ca.csr_generator — CSR built for subject: richaj
+2026-03-22 19:31:17,391 [[36mINFO[0m] ca.csr_generator — Saved key  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\richaj_private_key.pem
+2026-03-22 19:31:17,392 [[36mINFO[0m] ca.csr_generator — Saved CSR  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\richaj_csr.pem
+2026-03-22 19:31:17,394 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=richajaiswalhome@gmail.com,CN=richaj,OU=,O=abc,L=,ST=,C=IN
+2026-03-22 19:31:17,427 [[36mINFO[0m] audit.audit_log — Audit [38] CERT_ISSUED
+2026-03-22 19:31:17,428 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 442857769557207717769429234633961520732002908081 → C:\Users\richa\OneDrive\CYS\digital_ca\storage\certs\richaj_442857769557207717769429234633961520732002908081.pem
+2026-03-22 19:32:19,220 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:32:19,221 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:32:19,222 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:32:19,223 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:32:22,278 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:32:22,280 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:32:22,281 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:32:22,285 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:32:22,285 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:32:22,286 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:32:22,287 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:32:22,288 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:32:22.279969+05:30 (in 86399.991645 seconds)
+2026-03-22 19:32:22,288 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:32:25,460 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:32:25,462 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:32:25,462 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:32:25,463 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:32:28,255 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:32:28,257 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:32:28,257 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:32:28,260 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:32:28,261 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:32:28,261 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:32:28,262 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:32:28,262 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:32:28,263 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:32:28.256883+05:30 (in 86399.993646 seconds)
+2026-03-22 19:33:01,913 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:33:01,916 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:33:01,916 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:33:01,917 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:33:04,616 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:33:04,618 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:33:04,619 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:33:04,622 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:33:04,623 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:33:04,625 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:33:04,626 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:33:04,626 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:33:04.618278+05:30 (in 86399.991395 seconds)
+2026-03-22 19:33:04,626 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:38:04,327 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:38:04,329 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:38:04,329 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:38:04,330 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:38:07,109 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:38:07,111 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:38:07,112 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:38:07,115 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:38:07,116 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:38:07,116 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:38:07,118 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:38:07,119 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:38:07.111389+05:30 (in 86399.992421 seconds)
+2026-03-22 19:38:07,118 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:38:07,230 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:38:07,231 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:38:07,231 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:38:07,232 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:38:09,993 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:38:09,994 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:38:09,995 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:38:10,030 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:38:10,030 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:38:10,031 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:38:10,032 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:38:10,032 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:38:09.994316+05:30 (in 86399.961598 seconds)
+2026-03-22 19:38:10,032 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:38:26,820 [[31mERROR[0m] utils.email_sender — Failed to send email to 2023richajaiswal@gmail.com: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-22 19:38:26,880 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:38:26,880 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:38:26,881 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:38:26,881 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:38:29,812 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:38:29,814 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:38:29,815 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:38:29,817 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:38:29,818 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:38:29,818 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:38:29,819 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:38:29,820 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:38:29.814216+05:30 (in 86399.994021 seconds)
+2026-03-22 19:38:29,820 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:38:41,961 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:38:41,962 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:38:41,963 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:38:41,963 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:38:44,868 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:38:44,870 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:38:44,870 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:38:44,874 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:38:44,874 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:38:44,875 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:38:44,876 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:38:44,877 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:38:44.869853+05:30 (in 86399.992737 seconds)
+2026-03-22 19:38:44,876 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:38:46,735 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:38:46,736 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:38:46,736 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:38:46,737 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:38:49,674 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:38:49,676 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:38:49,677 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:38:49,680 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:38:49,680 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:38:49,680 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:38:49,682 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:38:49,682 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:38:49.676576+05:30 (in 86399.993919 seconds)
+2026-03-22 19:38:49,682 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:39:03,596 [[31mERROR[0m] utils.email_sender — Failed to send email to 2023richajaiswal@gmail.com: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-03-22 19:39:15,507 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:39:15,507 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:39:15,508 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:39:15,508 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:39:18,249 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:39:18,250 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:39:18,251 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:39:18,253 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:39:18,254 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:39:18,255 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:39:18,255 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:39:18,256 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:39:18.250315+05:30 (in 86399.993893 seconds)
+2026-03-22 19:39:18,256 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:39:46,669 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:39:46,670 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:39:46,670 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:39:46,670 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:39:49,402 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:39:49,403 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:39:49,404 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:39:49,407 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:39:49,408 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:39:49,408 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:39:49,409 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:39:49,410 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:39:49.403608+05:30 (in 86399.993645 seconds)
+2026-03-22 19:39:49,409 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:42:56,803 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:42:56,805 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:42:56,806 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:42:56,807 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:42:59,671 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:42:59,673 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:42:59,674 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:42:59,678 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:42:59,678 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:42:59,679 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:42:59,681 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:42:59,681 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:42:59,681 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:42:59.673305+05:30 (in 86399.991553 seconds)
+2026-03-22 19:42:59,790 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:42:59,791 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:42:59,792 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:42:59,793 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:43:02,602 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:43:02,604 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:43:02,605 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:43:02,609 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:43:02,610 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:43:02,611 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:43:02,612 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:43:02,613 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:43:02.604344+05:30 (in 86399.991364 seconds)
+2026-03-22 19:43:02,612 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:43:02,730 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:43:02,731 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:43:02,732 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:43:02,733 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:43:05,526 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:43:05,528 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:43:05,530 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:43:05,533 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:43:05,533 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:43:05,534 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:43:05,535 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:43:05,535 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:43:05.528567+05:30 (in 86399.992734 seconds)
+2026-03-22 19:43:05,536 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:43:16,347 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:43:16,347 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:43:16,347 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:43:16,348 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:43:19,212 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:43:19,213 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:43:19,214 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:43:19,217 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:43:19,218 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:43:19,218 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:43:19,219 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:43:19,220 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:43:19.213589+05:30 (in 86399.993333 seconds)
+2026-03-22 19:43:19,220 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:43:32,345 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:43:32,345 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:43:32,346 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:43:32,346 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:43:35,081 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:43:35,082 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:43:35,083 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:43:35,085 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:43:35,086 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:43:35,086 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:43:35,087 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:43:35,088 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:43:35.082396+05:30 (in 86399.994036 seconds)
+2026-03-22 19:43:35,088 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:44:02,097 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:44:02,098 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:44:02,098 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:44:02,099 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:44:04,744 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:44:04,746 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:44:04,748 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:44:04,750 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:44:04,751 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:44:04,751 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:44:04,752 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:44:04,752 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:44:04.746527+05:30 (in 86399.993577 seconds)
+2026-03-22 19:44:04,752 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:47:56,402 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:47:56,493 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 19:48:11,776 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:48:11,862 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 19:49:20,301 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:49:20,393 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 19:49:20,432 [[36mINFO[0m] ca.crl_manager — CRL saved → C:\Users\richa\OneDrive\CYS\digital_ca\storage\crl\ca.crl.pem  (8 revoked)
+2026-03-22 19:49:31,874 [[36mINFO[0m] audit.audit_log — Audit chain verified — 39 entries intact
+2026-03-22 19:53:24,220 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:53:24,304 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 19:56:16,857 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:56:16,882 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:56:16,883 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:56:16,884 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:56:19,957 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:56:19,958 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:56:19,959 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:56:19,962 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:56:19,964 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:56:19,965 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:56:19,967 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:56:19,968 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:56:19,968 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:56:19.958621+05:30 (in 86399.990025 seconds)
+2026-03-22 19:56:20,071 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:56:20,072 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:56:20,073 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:56:20,073 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:56:22,731 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:56:22,733 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:56:22,734 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:56:22,737 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:56:22,737 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:56:22,738 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:56:22,739 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:56:22,740 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:56:22.733510+05:30 (in 86399.993334 seconds)
+2026-03-22 19:56:22,739 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:57:13,442 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:57:13,454 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:57:13,455 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:57:13,456 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:57:16,487 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:57:16,490 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:57:16,491 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:57:16,494 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:57:16,494 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:57:16,495 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:57:16,496 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:57:16,497 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:57:16,497 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:57:16.490332+05:30 (in 86399.992814 seconds)
+2026-03-22 19:57:16,609 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:57:16,610 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:57:16,611 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:57:16,612 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:57:19,327 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:57:19,329 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:57:19,330 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:57:19,333 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:57:19,334 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:57:19,335 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:57:19,337 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:57:19,338 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:57:19.329546+05:30 (in 86399.991588 seconds)
+2026-03-22 19:57:19,337 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:57:23,821 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:57:23,822 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:57:23,823 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:57:23,824 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:57:26,803 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:57:26,805 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:57:26,806 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:57:26,808 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:57:26,809 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:57:26,809 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:57:26,811 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:57:26,812 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:57:26.805267+05:30 (in 86399.993349 seconds)
+2026-03-22 19:57:26,811 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:57:30,750 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:57:30,877 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 19:57:30,960 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:57:30,961 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:57:30,961 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:57:30,962 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:57:33,963 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:57:33,965 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:57:33,965 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:57:33,968 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:57:33,969 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:57:33,969 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:57:33,970 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:57:33,971 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:57:33.964983+05:30 (in 86399.994000 seconds)
+2026-03-22 19:57:33,970 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 19:57:40,355 [[36mINFO[0m] audit.audit_log — Audit chain verified — 39 entries intact
+2026-03-22 19:57:41,939 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 19:57:42,040 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 19:58:24,573 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 19:58:24,573 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:58:24,574 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 19:58:24,574 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 19:58:27,609 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 19:58:27,611 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:58:27,612 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 19:58:27,615 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 19:58:27,616 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 19:58:27,617 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 19:58:27,618 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 19:58:27,618 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 19:58:27.611630+05:30 (in 86399.992766 seconds)
+2026-03-22 19:58:27,619 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 20:07:53,615 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 20:07:53,718 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 20:15:09,123 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 20:15:09,225 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 20:15:14,057 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 20:15:14,159 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 20:15:49,433 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 20:15:49,525 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 20:15:49,536 [[36mINFO[0m] ca.crl_manager — CRL saved → C:\Users\richa\OneDrive\CYS\digital_ca\storage\crl\ca.crl.pem  (8 revoked)
+2026-03-22 20:20:51,393 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 20:20:51,484 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 20:20:51,713 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'RJ'
+2026-03-22 20:20:51,720 [[36mINFO[0m] ca.csr_generator — CSR built for subject: RJ
+2026-03-22 20:20:51,729 [[36mINFO[0m] ca.csr_generator — Saved key  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\rj_private_key.pem
+2026-03-22 20:20:51,730 [[36mINFO[0m] ca.csr_generator — Saved CSR  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\rj_csr.pem
+2026-03-22 20:20:51,734 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=RJ@gmail.com,CN=RJ,OU=,O=ABCD,L=,ST=,C=IN
+2026-03-22 20:20:51,766 [[36mINFO[0m] audit.audit_log — Audit [39] CERT_ISSUED
+2026-03-22 20:20:51,766 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 139159421258545277024927020201554636049100616408 → C:\Users\richa\OneDrive\CYS\digital_ca\storage\certs\rj_139159421258545277024927020201554636049100616408.pem
+2026-03-22 20:21:28,244 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 20:21:28,344 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 20:21:28,402 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'RJ'
+2026-03-22 20:21:28,405 [[36mINFO[0m] ca.csr_generator — CSR built for subject: RJ
+2026-03-22 20:21:28,411 [[36mINFO[0m] ca.csr_generator — Saved key  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\rj_private_key.pem
+2026-03-22 20:21:28,411 [[36mINFO[0m] ca.csr_generator — Saved CSR  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\rj_csr.pem
+2026-03-22 20:21:28,412 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=RJ@gmail.com,CN=RJ,OU=,O=ABCD,L=,ST=,C=IN
+2026-03-22 20:21:28,434 [[36mINFO[0m] audit.audit_log — Audit [40] CERT_ISSUED
+2026-03-22 20:21:28,434 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 15853612844943114924545608919394393993885168766 → C:\Users\richa\OneDrive\CYS\digital_ca\storage\certs\rj_15853612844943114924545608919394393993885168766.pem
+2026-03-22 20:21:58,985 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 20:21:59,087 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 20:34:30,129 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 20:34:30,223 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 20:35:22,025 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 20:35:22,124 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 20:36:23,550 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 20:36:23,634 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 20:36:23,733 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'richajaiswalhome'
+2026-03-22 20:36:23,736 [[36mINFO[0m] ca.csr_generator — CSR built for subject: richajaiswalhome
+2026-03-22 20:36:23,741 [[36mINFO[0m] ca.csr_generator — Saved key  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\richajaiswalhome_private_key.pem
+2026-03-22 20:36:23,742 [[36mINFO[0m] ca.csr_generator — Saved CSR  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\richajaiswalhome_csr.pem
+2026-03-22 20:36:23,743 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=richajaiswalhome@gmail.com,CN=richajaiswalhome,OU=,O=,L=,ST=,C=IN
+2026-03-22 20:36:23,764 [[36mINFO[0m] audit.audit_log — Audit [41] CERT_ISSUED
+2026-03-22 20:36:23,765 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 47141749359044994443289479454002240412712395366 → C:\Users\richa\OneDrive\CYS\digital_ca\storage\certs\richajaiswalhome_47141749359044994443289479454002240412712395366.pem
+2026-03-22 20:39:38,659 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 20:39:38,660 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 20:39:38,660 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 20:39:38,660 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 20:39:41,683 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 20:39:41,684 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 20:39:41,685 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 20:39:41,688 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 20:39:41,689 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 20:39:41,689 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 20:39:41,690 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 20:39:41,691 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 20:39:41.684707+05:30 (in 86399.993725 seconds)
+2026-03-22 20:39:41,690 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 20:40:49,165 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 20:40:49,259 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 20:53:44,990 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 20:53:44,990 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 20:53:44,990 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 20:53:44,991 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 20:53:46,189 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 20:53:46,190 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 20:53:46,191 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 20:53:46,192 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 20:53:46,192 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 20:53:46,192 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 20:53:46,193 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 20:53:46,193 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 20:53:46.190653+05:30 (in 86399.997207 seconds)
+2026-03-22 20:53:46,193 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 20:54:36,428 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 20:54:36,466 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 21:03:38,357 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:03:38,357 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:03:38,358 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:03:38,358 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:03:39,468 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:03:39,469 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:03:39,470 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:03:39,472 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:03:39,472 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:03:39,473 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:03:39,473 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:03:39,473 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:03:39,473 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:03:39.469884+05:30 (in 86399.996075 seconds)
+2026-03-22 21:03:43,184 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:03:43,184 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:03:43,185 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:03:43,185 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:03:44,375 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:03:44,376 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:03:44,377 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:03:44,378 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:03:44,378 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:03:44,379 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:03:44,379 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:03:44,379 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:03:44.376481+05:30 (in 86399.996726 seconds)
+2026-03-22 21:03:44,379 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:03:55,298 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:03:55,298 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:03:55,298 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:03:55,299 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:03:56,421 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:03:56,421 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:03:56,422 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:03:56,423 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:03:56,423 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:03:56,423 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:03:56,424 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:03:56,424 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:03:56.421864+05:30 (in 86399.997232 seconds)
+2026-03-22 21:03:56,424 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:04:16,077 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:04:16,077 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:04:16,077 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:04:16,078 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:04:17,221 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:04:17,222 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:04:17,222 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:04:17,223 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:04:17,223 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:04:17,223 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:04:17,224 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:04:17,224 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:04:17.222148+05:30 (in 86399.997643 seconds)
+2026-03-22 21:04:17,224 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:04:40,847 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:04:40,847 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:04:40,847 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:04:40,848 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:04:42,043 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:04:42,044 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:04:42,044 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:04:42,045 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:04:42,046 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:04:42,046 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:04:42,046 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:04:42,046 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:04:42.044133+05:30 (in 86399.997278 seconds)
+2026-03-22 21:04:42,046 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:04:42,154 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:04:42,154 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:04:42,155 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:04:42,155 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:04:43,281 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:04:43,282 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:04:43,282 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:04:43,283 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:04:43,284 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:04:43,284 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:04:43,284 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:04:43,284 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:04:43.282122+05:30 (in 86399.997336 seconds)
+2026-03-22 21:04:43,284 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:04:43,398 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:04:43,398 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:04:43,398 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:04:43,398 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:04:44,587 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:04:44,588 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:04:44,589 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:04:44,590 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:04:44,590 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:04:44,590 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:04:44,590 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:04:44,591 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:04:44.588615+05:30 (in 86399.997466 seconds)
+2026-03-22 21:04:44,591 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:05:04,383 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:05:04,385 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:05:04,385 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:05:04,385 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:05:05,741 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:05:05,742 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:05:05,742 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:05:05,744 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:05:05,744 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:05:05,745 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:05:05,746 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:05:05,746 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:05:05.742248+05:30 (in 86399.995753 seconds)
+2026-03-22 21:05:05,746 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:05:14,258 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:05:14,258 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:05:14,258 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:05:14,258 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:05:15,492 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:05:15,493 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:05:15,493 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:05:15,495 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:05:15,495 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:05:15,495 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:05:15,495 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:05:15,496 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:05:15.493469+05:30 (in 86399.997399 seconds)
+2026-03-22 21:05:15,495 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:05:29,899 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:05:29,899 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:05:29,899 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:05:29,899 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:05:31,307 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:05:31,308 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:05:31,309 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:05:31,310 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:05:31,310 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:05:31,310 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:05:31,311 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:05:31,311 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:05:31.308611+05:30 (in 86399.997038 seconds)
+2026-03-22 21:05:31,311 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:05:48,326 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:05:48,327 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:05:48,327 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:05:48,327 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:05:49,495 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:05:49,497 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:05:49,497 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:05:49,499 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:05:49,500 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:05:49,500 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:05:49,501 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:05:49,501 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:05:49.496924+05:30 (in 86399.995250 seconds)
+2026-03-22 21:05:49,501 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:05:54,089 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:05:54,090 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:05:54,090 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:05:54,090 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:05:55,653 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:05:55,654 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:05:55,655 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:05:55,656 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:05:55,656 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:05:55,656 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:05:55,657 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:05:55,657 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:05:55.654548+05:30 (in 86399.997090 seconds)
+2026-03-22 21:05:55,657 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:06:04,829 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:06:04,829 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:06:04,829 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:06:04,829 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:06:06,051 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:06:06,052 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:06:06,053 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:06:06,054 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:06:06,054 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:06:06,054 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:06:06,055 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:06:06,055 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:06:06.052612+05:30 (in 86399.997332 seconds)
+2026-03-22 21:06:06,055 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:06:36,237 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:06:36,243 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:06:36,243 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:06:36,243 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:06:37,476 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:06:37,477 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:06:37,477 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:06:37,479 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:06:37,479 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:06:37,479 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:06:37,480 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:06:37,480 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:06:37.477362+05:30 (in 86399.996824 seconds)
+2026-03-22 21:06:37,480 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:06:37,913 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:06:37,913 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:06:37,913 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:06:37,913 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:06:39,174 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:06:39,175 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:06:39,175 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:06:39,177 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:06:39,177 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:06:39,177 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:06:39,178 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:06:39,178 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:06:39.175063+05:30 (in 86399.996394 seconds)
+2026-03-22 21:06:39,178 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:06:41,240 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:06:41,240 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:06:41,240 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:06:41,240 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:06:42,643 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:06:42,644 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:06:42,644 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:06:42,646 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:06:42,646 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:06:42,646 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:06:42,646 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:06:42,647 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:06:42.644473+05:30 (in 86399.997372 seconds)
+2026-03-22 21:06:42,647 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:06:44,928 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:06:44,929 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:06:44,929 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:06:44,929 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:06:46,321 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:06:46,322 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:06:46,322 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:06:46,324 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:06:46,324 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:06:46,324 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:06:46,324 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:06:46,325 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:06:46.322043+05:30 (in 86399.996987 seconds)
+2026-03-22 21:06:46,324 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:06:49,277 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:06:49,278 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:06:49,278 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:06:49,278 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:06:50,780 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:06:50,781 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:06:50,781 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:06:50,783 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:06:50,784 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:06:50,784 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:06:50,784 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:06:50,785 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:06:50.781290+05:30 (in 86399.996275 seconds)
+2026-03-22 21:06:50,784 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:06:52,960 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:06:52,960 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:06:52,960 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:06:52,961 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:06:54,349 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:06:54,350 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:06:54,350 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:06:54,351 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:06:54,352 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:06:54,352 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:06:54,352 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:06:54,352 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:06:54.350290+05:30 (in 86399.997356 seconds)
+2026-03-22 21:06:54,352 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:07:10,576 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:07:10,577 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:07:10,577 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:07:10,577 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:07:11,730 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:07:11,731 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:07:11,731 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:07:11,733 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:07:11,733 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:07:11,733 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:07:11,734 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:07:11,734 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:07:11.731234+05:30 (in 86399.996724 seconds)
+2026-03-22 21:07:11,734 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:08:41,448 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 21:08:41,489 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 21:08:41,525 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'richajaiswalhome'
+2026-03-22 21:08:41,538 [[36mINFO[0m] ca.csr_generator — CSR built for subject: richajaiswalhome
+2026-03-22 21:08:41,541 [[36mINFO[0m] ca.csr_generator — Saved key  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\richajaiswalhome_private_key.pem
+2026-03-22 21:08:41,541 [[36mINFO[0m] ca.csr_generator — Saved CSR  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\richajaiswalhome_csr.pem
+2026-03-22 21:08:41,543 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=richajaiswalhome@gmail.com,CN=richajaiswalhome,OU=,O=,L=,ST=,C=IN
+2026-03-22 21:08:47,502 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 21:08:47,549 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 21:08:47,586 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'richajaiswalhome'
+2026-03-22 21:08:47,587 [[36mINFO[0m] ca.csr_generator — CSR built for subject: richajaiswalhome
+2026-03-22 21:08:47,590 [[36mINFO[0m] ca.csr_generator — Saved key  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\richajaiswalhome_private_key.pem
+2026-03-22 21:08:47,590 [[36mINFO[0m] ca.csr_generator — Saved CSR  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\richajaiswalhome_csr.pem
+2026-03-22 21:08:47,591 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: 1.2.840.113549.1.9.1=richajaiswalhome@gmail.com,CN=richajaiswalhome,OU=,O=abcd,L=,ST=,C=IN
+2026-03-22 21:09:27,129 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:09:27,131 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:09:27,131 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:09:27,132 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:09:29,245 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:09:29,247 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:09:29,248 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:09:29,250 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:09:29,250 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:09:29,251 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:09:29,252 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:09:29,252 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:09:29,252 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:09:29.247148+05:30 (in 86399.994515 seconds)
+2026-03-22 21:09:29,363 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:09:29,363 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:09:29,363 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:09:29,363 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:09:31,318 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:09:31,320 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:09:31,320 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:09:31,322 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:09:31,323 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:09:31,323 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:09:31,324 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:09:31,324 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:09:31.320068+05:30 (in 86399.995171 seconds)
+2026-03-22 21:09:31,324 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:09:38,933 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:09:38,933 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:09:38,933 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:09:38,934 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:09:41,079 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:09:41,080 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:09:41,081 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:09:41,082 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:09:41,083 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:09:41,083 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:09:41,083 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:09:41,084 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:09:41.080565+05:30 (in 86399.996325 seconds)
+2026-03-22 21:09:41,084 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:10:04,261 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:10:04,262 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:10:04,262 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:10:04,262 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:10:08,564 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:10:08,565 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:10:08,565 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:10:08,566 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:10:08,567 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:10:08,567 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:10:08,568 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:10:08,568 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:10:08.565048+05:30 (in 86399.996693 seconds)
+2026-03-22 21:10:08,568 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:10:13,803 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:10:13,804 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:10:13,804 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:10:13,804 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:10:15,447 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:10:15,449 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:10:15,450 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:10:15,452 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:10:15,452 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:10:15,453 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:10:15,454 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:10:15,454 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:10:15,454 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:10:15.449157+05:30 (in 86399.994650 seconds)
+2026-03-22 21:10:15,478 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 21:10:15,542 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 21:10:15,598 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'richajaiswal'
+2026-03-22 21:10:15,601 [[36mINFO[0m] ca.csr_generator — CSR built for subject: richajaiswal
+2026-03-22 21:10:15,604 [[36mINFO[0m] ca.csr_generator — Saved key  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\richajaiswal_private_key.pem
+2026-03-22 21:10:15,604 [[36mINFO[0m] ca.csr_generator — Saved CSR  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\richajaiswal_csr.pem
+2026-03-22 21:10:15,606 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: O=abcd,1.2.840.113549.1.9.1=richajaiswalhome@gmail.com,CN=richajaiswal,C=IN
+2026-03-22 21:10:15,621 [[36mINFO[0m] audit.audit_log — Audit [42] CERT_ISSUED
+2026-03-22 21:10:15,621 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 637356699749428645154741111145704103339591658993 → C:\Users\richa\OneDrive\CYS\digital_ca\storage\certs\richajaiswal_637356699749428645154741111145704103339591658993.pem
+2026-03-22 21:11:36,872 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:11:36,878 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:11:36,878 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:11:36,879 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:11:38,610 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:11:38,611 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:11:38,612 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:11:38,613 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:11:38,614 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:11:38,615 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:11:38,615 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:11:38,616 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:11:38,616 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:11:38.611287+05:30 (in 86399.995045 seconds)
+2026-03-22 21:11:38,724 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:11:38,724 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:11:38,724 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:11:38,724 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:11:40,228 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:11:40,229 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:11:40,229 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:11:40,231 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:11:40,231 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:11:40,232 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:11:40,232 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:11:40,232 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:11:40.229213+05:30 (in 86399.996376 seconds)
+2026-03-22 21:11:40,232 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:11:53,424 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:11:53,424 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:11:53,424 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:11:53,425 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:11:55,124 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:11:55,125 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:11:55,126 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:11:55,127 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:11:55,128 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:11:55,128 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:11:55,129 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:11:55,129 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:11:55.125534+05:30 (in 86399.996249 seconds)
+2026-03-22 21:11:55,129 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:12:17,469 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:12:17,469 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:12:17,469 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:12:17,470 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:12:19,417 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:12:19,418 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:12:19,419 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:12:19,421 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:12:19,422 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:12:19,422 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:12:19,424 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:12:19,424 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:12:19.418809+05:30 (in 86399.994506 seconds)
+2026-03-22 21:12:19,424 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:12:25,494 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:12:25,494 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:12:25,495 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:12:25,495 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:12:27,189 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:12:27,191 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:12:27,192 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:12:27,193 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:12:27,194 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:12:27,194 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:12:27,195 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:12:27,195 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:12:27,195 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:12:27.191505+05:30 (in 86399.995651 seconds)
+2026-03-22 21:12:27,307 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:12:27,308 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:12:27,308 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:12:27,308 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:12:29,105 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:12:29,107 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:12:29,108 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:12:29,110 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:12:29,111 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:12:29,111 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:12:29,112 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:12:29,113 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:12:29,113 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:12:29.107185+05:30 (in 86399.993876 seconds)
+2026-03-22 21:13:09,637 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:13:09,637 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:13:09,638 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:13:09,638 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:13:11,509 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:13:11,510 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:13:11,511 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:13:11,513 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:13:11,514 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:13:11,515 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:13:11,515 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:13:11,516 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:13:11.510828+05:30 (in 86399.994554 seconds)
+2026-03-22 21:13:11,516 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:13:20,124 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:13:20,125 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:13:20,125 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:13:20,125 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:13:22,071 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:13:22,072 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:13:22,073 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:13:22,074 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:13:22,075 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:13:22,075 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:13:22,076 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:13:22,076 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:13:22.072558+05:30 (in 86399.995937 seconds)
+2026-03-22 21:13:22,076 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:13:46,702 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:13:46,703 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:13:46,703 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:13:46,703 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:13:48,477 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:13:48,478 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:13:48,479 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:13:48,480 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:13:48,481 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:13:48,481 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:13:48,482 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:13:48,482 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:13:48.478690+05:30 (in 86399.996189 seconds)
+2026-03-22 21:13:48,482 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:15:44,339 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 21:15:44,395 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 21:15:44,463 [[36mINFO[0m] ca.csr_generator — Generated 2048-bit RSA key for 'rj'
+2026-03-22 21:15:44,467 [[36mINFO[0m] ca.csr_generator — CSR built for subject: rj
+2026-03-22 21:15:44,470 [[36mINFO[0m] ca.csr_generator — Saved key  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\rj_private_key.pem
+2026-03-22 21:15:44,470 [[36mINFO[0m] ca.csr_generator — Saved CSR  → C:\Users\richa\OneDrive\CYS\digital_ca\storage\csr\rj_csr.pem
+2026-03-22 21:15:44,471 [[36mINFO[0m] ca.cert_issuer — CSR signature verified for: O=lmn,1.2.840.113549.1.9.1=richajaiswalhome@gmail.com,CN=rj,C=IN
+2026-03-22 21:15:44,492 [[36mINFO[0m] audit.audit_log — Audit [43] CERT_ISSUED
+2026-03-22 21:15:44,492 [[36mINFO[0m] ca.cert_issuer — Certificate issued — serial 508096065956030307112765846410927522589283808426 → C:\Users\richa\OneDrive\CYS\digital_ca\storage\certs\rj_508096065956030307112765846410927522589283808426.pem
+2026-03-22 21:44:21,920 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:44:21,921 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:44:21,922 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:44:21,922 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:44:24,574 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:44:24,576 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:44:24,577 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:44:24,578 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:44:24,578 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:44:24,578 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:44:24,579 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:44:24,579 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:44:24.576459+05:30 (in 86399.996680 seconds)
+2026-03-22 21:44:24,579 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:44:24,686 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:44:24,686 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:44:24,686 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:44:24,687 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:44:26,022 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:44:26,023 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:44:26,024 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:44:26,025 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:44:26,026 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:44:26,026 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:44:26,027 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:44:26,027 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:44:26,027 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:44:26.023480+05:30 (in 86399.995922 seconds)
+2026-03-22 21:45:34,756 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 21:45:34,799 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 21:45:53,580 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 21:45:53,613 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 21:53:25,496 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:53:25,496 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:53:25,496 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:53:25,497 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:53:26,808 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:53:26,809 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:53:26,810 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:53:26,811 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:53:26,811 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:53:26,811 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:53:26,811 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:53:26,812 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:53:26.809650+05:30 (in 86399.997545 seconds)
+2026-03-22 21:53:26,812 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:53:27,252 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:53:27,252 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:53:27,252 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:53:27,253 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:53:28,449 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:53:28,449 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:53:28,450 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:53:28,451 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:53:28,451 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:53:28,451 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:53:28,452 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:53:28,452 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:53:28.449772+05:30 (in 86399.997203 seconds)
+2026-03-22 21:53:28,452 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:53:33,250 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:53:33,250 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:53:33,250 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:53:33,250 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:53:34,609 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:53:34,610 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:53:34,610 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:53:34,611 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:53:34,612 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:53:34,612 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:53:34,612 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:53:34,613 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:53:34.610359+05:30 (in 86399.997309 seconds)
+2026-03-22 21:53:34,612 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:53:55,235 [[36mINFO[0m] audit.audit_log — Audit chain verified — 44 entries intact
+2026-03-22 21:53:59,221 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:53:59,221 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:53:59,222 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:53:59,222 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:54:00,524 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:54:00,525 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:54:00,525 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:54:00,527 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:54:00,527 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:54:00,527 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:54:00,527 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:54:00,528 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:54:00.525588+05:30 (in 86399.997544 seconds)
+2026-03-22 21:54:00,527 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:54:53,349 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:54:53,350 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:54:53,350 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:54:53,350 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:54:54,650 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:54:54,651 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:54:54,651 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:54:54,652 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:54:54,653 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:54:54,653 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:54:54,654 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:54:54,654 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:54:54.651241+05:30 (in 86399.996807 seconds)
+2026-03-22 21:54:54,654 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:54:55,081 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 21:54:55,081 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:54:55,082 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 21:54:55,082 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.
+2026-03-22 21:54:56,465 [DEBUG] tzlocal — Looking up time zone info from registry
+2026-03-22 21:54:56,466 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:54:56,466 [[36mINFO[0m] apscheduler.scheduler — Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-22 21:54:56,468 [[36mINFO[0m] apscheduler.scheduler — Added job "expiry_check_job" to job store "default"
+2026-03-22 21:54:56,468 [[36mINFO[0m] apscheduler.scheduler — Added job "auto_renew_job" to job store "default"
+2026-03-22 21:54:56,468 [[36mINFO[0m] apscheduler.scheduler — Scheduler started
+2026-03-22 21:54:56,469 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 21:54:56,469 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:54:56.466231+05:30 (in 86399.996830 seconds)
+2026-03-22 21:54:56,469 [[36mINFO[0m] automation.scheduler — PKI automation scheduler started.
+2026-03-22 21:54:57,844 [[36mINFO[0m] audit.audit_log — Audit chain verified — 44 entries intact
+2026-03-22 21:55:04,230 [[36mINFO[0m] audit.audit_log — Audit chain verified — 44 entries intact
+2026-03-22 21:56:43,178 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 21:56:43,236 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 22:01:00,120 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 22:01:00,168 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 22:01:04,469 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 22:01:04,537 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 22:06:59,610 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 22:06:59,646 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 22:07:02,718 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 22:07:02,720 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 21:54:56.466663+05:30 (in 85673.746614 seconds)
+2026-03-22 22:07:02,719 [[36mINFO[0m] apscheduler.executors.default — Running job "expiry_check_job (trigger: interval[1 day, 0:00:00], next run at: 2026-03-23 22:07:02 IST)" (scheduled at 2026-03-22 22:07:02.718731+05:30)
+2026-03-22 22:07:02,725 [[33mWARNING[0m] automation.scheduler — EXPIRY_WARNING serial=637356699749428645154741111145704103339591658993 cn=richajaiswal days_left=1
+2026-03-22 22:07:02,726 [[36mINFO[0m] automation.scheduler — Expiry check complete — 4 active certs scanned.
+2026-03-22 22:07:02,726 [[36mINFO[0m] apscheduler.executors.default — Job "expiry_check_job (trigger: interval[1 day, 0:00:00], next run at: 2026-03-23 22:07:02 IST)" executed successfully
+2026-03-22 22:07:03,877 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 22:07:03,878 [DEBUG] apscheduler.scheduler — Next wakeup is due at 2026-03-23 22:07:02.718731+05:30 (in 86398.840489 seconds)
+2026-03-22 22:07:03,878 [[36mINFO[0m] apscheduler.executors.default — Running job "auto_renew_job (trigger: interval[1 day, 0:00:00], next run at: 2026-03-23 22:07:03 IST)" (scheduled at 2026-03-22 22:07:03.877540+05:30)
+2026-03-22 22:07:03,882 [[36mINFO[0m] automation.scheduler — Auto-renew job complete — 0 certs renewed.
+2026-03-22 22:07:03,882 [[36mINFO[0m] apscheduler.executors.default — Job "auto_renew_job (trigger: interval[1 day, 0:00:00], next run at: 2026-03-23 22:07:03 IST)" executed successfully
+2026-03-22 22:07:03,942 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 22:07:03,977 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 22:07:05,091 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 22:07:05,126 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=HOD,OU=IT Security,O=OSCI,L=Chennai,ST=Tamil Nadu,C=In
+2026-03-22 22:07:10,236 [[36mINFO[0m] apscheduler.scheduler — Scheduler has been shut down
+2026-03-22 22:07:10,237 [DEBUG] apscheduler.scheduler — Looking for jobs to run
+2026-03-22 22:07:10,237 [DEBUG] apscheduler.scheduler — No jobs; waiting until a job is added
+2026-03-22 22:07:10,237 [[36mINFO[0m] automation.scheduler — PKI automation scheduler stopped.

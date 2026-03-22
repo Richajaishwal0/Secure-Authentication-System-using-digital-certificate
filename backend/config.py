@@ -5,7 +5,7 @@ STORAGE_DIR = os.path.join(BASE_DIR, "storage")
 
 CA_CONFIG = {
     # X.509 Subject fields
-    "country":          "India",
+    "country":          "IN",
     "state":            "TamilNadu",
     "locality":         "ABC",
     "org":              "MyCA Organization",
@@ -47,8 +47,18 @@ INTERMEDIATE_CONFIG = {
     "cert_path":        os.path.join(STORAGE_DIR, "intermediate_certificate.pem"),
 }
 
+# SendGrid configuration for certificate delivery emails
+SENDGRID_CONFIG = {
+    "enabled":    os.getenv("SENDGRID_ENABLED",    "false").lower() == "true",
+    "api_key":    os.getenv("SENDGRID_API_KEY",    ""),
+    "from_email": os.getenv("SENDGRID_FROM_EMAIL", ""),
+}
+
 # OCSP responder URL embedded in issued certificates
 OCSP_URL = os.getenv("OCSP_URL", "http://localhost:8000/ocsp")
+
+# CRL distribution point URL embedded in issued certificates
+CRL_URL = os.getenv("CRL_URL", "http://localhost:8000/api/crl")
 
 # LDAP configuration (optional — set env vars to enable)
 LDAP_CONFIG = {

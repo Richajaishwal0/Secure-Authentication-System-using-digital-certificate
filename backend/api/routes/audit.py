@@ -29,3 +29,13 @@ def verify_audit_chain():
     audit  = AuditLog(CA_CONFIG["audit_log_path"])
     intact = audit.verify_chain()
     return {"chain_intact": intact}
+
+
+@router.delete("/audit/clear")
+def clear_audit_log():
+    import json, os
+    path = CA_CONFIG["audit_log_path"]
+    if os.path.exists(path):
+        with open(path, "w") as f:
+            json.dump([], f)
+    return {"cleared": True}

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { api } from '../api'
+import { GitBranch, FileText, Building2 } from 'lucide-react'
 
 const TEMPLATES = ['tls_server', 'client_auth', 'email_signing', 'code_signing']
 const DEFAULTS  = { name: '', email: '', template: 'tls_server', san: '', days: '365' }
@@ -67,23 +68,23 @@ export default function IntermediateCA() {
       </div>
 
       <div className="card">
-        <div className="card-title"><span className="card-title-icon">🔗</span>PKI Hierarchy</div>
+        <div className="card-title" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><GitBranch size={15} /> PKI Hierarchy</div>
         <div className="card-divider" />
         <div className="info-box">
-          <span className="info-box-icon">🏛️</span>
+          <Building2 size={14} style={{ flexShrink: 0 }} />
           The Root CA stays offline. The Intermediate CA handles day-to-day issuance.
           If the Intermediate is compromised, the Root can revoke it without replacing the trust anchor.
         </div>
         <div className="btn-row" style={{ marginTop: 0 }}>
           <button className="btn btn-accent" onClick={handleInit} disabled={!!loading}>
-            {loading === 'init' ? <><span className="btn-spinner" /> Checking…</> : '🔗  Init Intermediate CA'}
+            {loading === 'init' ? <><span className="btn-spinner" /> Checking…</> : <><GitBranch size={14} style={{ marginRight: 6 }} />Init Intermediate CA</>}
           </button>
         </div>
         {initResult && <pre className={`result-box ${initStatus}`}>{initResult}</pre>}
       </div>
 
       <div className="card">
-        <div className="card-title"><span className="card-title-icon">📜</span>Issue via Intermediate CA</div>
+        <div className="card-title" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><FileText size={15} /> Issue via Intermediate CA</div>
         <div className="card-divider" />
         <div className="form-grid">
           {[['Full Name *','name','text'],['Email *','email','email'],['Validity (days)','days','number'],['SAN (comma-separated)','san','text']].map(([l,k,t]) => (
@@ -101,7 +102,7 @@ export default function IntermediateCA() {
         </div>
         <div className="btn-row">
           <button className="btn btn-success" onClick={handleIssue} disabled={!!loading}>
-            {loading === 'issue' ? <><span className="btn-spinner" /> Issuing…</> : '📜  Issue via Intermediate'}
+            {loading === 'issue' ? <><span className="btn-spinner" /> Issuing…</> : <><FileText size={14} style={{ marginRight: 6 }} />Issue via Intermediate</>}
           </button>
         </div>
         {issueResult && <pre className={`result-box ${issueStatus}`}>{issueResult}</pre>}

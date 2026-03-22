@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { api } from '../api'
+import { ShieldOff, AlertTriangle } from 'lucide-react'
 
 const REASONS = [
   'unspecified', 'key_compromise', 'ca_compromise',
@@ -39,10 +40,10 @@ export default function RevokeCert() {
         <div className="page-desc">Permanently revoke a certificate by serial number. The CRL will be rebuilt immediately.</div>
       </div>
       <div className="card">
-        <div className="card-title"><span className="card-title-icon">🚫</span>Revoke Certificate</div>
+        <div className="card-title" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><ShieldOff size={15} /> Revoke Certificate</div>
         <div className="card-divider" />
         <div className="info-box" style={{ background: 'rgba(239,68,68,0.07)', borderColor: 'rgba(239,68,68,0.2)', color: '#fca5a5' }}>
-          <span className="info-box-icon">⚠️</span>
+          <AlertTriangle size={14} style={{ flexShrink: 0, marginRight: 6 }} />
           This action is irreversible. Once revoked, the certificate will fail all future verification checks.
         </div>
         <div className="form-grid">
@@ -60,7 +61,7 @@ export default function RevokeCert() {
         </div>
         <div className="btn-row">
           <button className="btn btn-danger" onClick={handleRevoke} disabled={loading}>
-            {loading ? <><span className="btn-spinner" /> Revoking…</> : '🚫  Revoke Certificate'}
+            {loading ? <><span className="btn-spinner" /> Revoking…</> : <><ShieldOff size={14} style={{ marginRight: 6 }} />Revoke Certificate</>}
           </button>
         </div>
         {result && <pre className={`result-box ${status}`}>{result}</pre>}

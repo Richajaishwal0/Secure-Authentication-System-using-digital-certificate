@@ -1,15 +1,19 @@
 import { useEffect, useState } from 'react'
 import { api } from '../api'
+import {
+  RefreshCw, Trash2, ShieldCheck, ShieldOff, CheckCircle2,
+  Building2, GitBranch, FileText, Link, AlertTriangle
+} from 'lucide-react'
 
 const EVENT_STYLES = {
-  CERT_ISSUED:                  { color: '#4ade80', bg: 'rgba(34,197,94,0.12)',   icon: '📜' },
-  CERT_REVOKED:                 { color: '#f87171', bg: 'rgba(239,68,68,0.12)',   icon: '🚫' },
-  CERT_VERIFIED:                { color: '#67e8f9', bg: 'rgba(6,182,212,0.12)',   icon: '✅' },
-  CA_INITIALIZED:               { color: '#a78bfa', bg: 'rgba(124,58,237,0.12)', icon: '🏛️' },
-  INTERMEDIATE_CA_INITIALIZED:  { color: '#a78bfa', bg: 'rgba(124,58,237,0.12)', icon: '🔗' },
+  CERT_ISSUED:                  { color: '#4ade80', bg: 'rgba(34,197,94,0.12)',   Icon: FileText },
+  CERT_REVOKED:                 { color: '#f87171', bg: 'rgba(239,68,68,0.12)',   Icon: ShieldOff },
+  CERT_VERIFIED:                { color: '#67e8f9', bg: 'rgba(6,182,212,0.12)',   Icon: ShieldCheck },
+  CA_INITIALIZED:               { color: '#a78bfa', bg: 'rgba(124,58,237,0.12)', Icon: Building2 },
+  INTERMEDIATE_CA_INITIALIZED:  { color: '#a78bfa', bg: 'rgba(124,58,237,0.12)', Icon: GitBranch },
 }
 
-const DEFAULT_STYLE = { color: '#94a3b8', bg: 'rgba(148,163,184,0.1)', icon: '📋' }
+const DEFAULT_STYLE = { color: '#94a3b8', bg: 'rgba(148,163,184,0.1)', Icon: FileText }
 
 export default function AuditLog() {
   const [entries, setEntries] = useState([])
@@ -42,7 +46,20 @@ export default function AuditLog() {
           <div className="page-title">Audit Log</div>
           <div className="page-desc">Every CA operation is recorded and cryptographically chained — tampering is detectable.</div>
         </div>
-        <button className="btn btn-secondary btn-sm" onClick={load}>↻ Refresh</button>
+        <div style={{ display: 'flex', gap: '0.6rem' }}>
+          <button className="btn btn-secondary btn-sm" onClick={load} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <RefreshCw size={13} /> Refresh
+          </button>
+          <button
+            className="btn btn-sm"
+            style={{ background: 'rgba(239,68,68,0.15)', border: '1px solid rgba(239,68,68,0.35)', color: '#f87171', display: 'flex', alignItems: 'center', gap: '6px' }}
+            onClick={async () => {
+              if (!window.confirm('Clear all audit log entries? This cannot be undone.')) return
+              await api.clearAudit()
+              load()
+            }}
+          ><Trash2 size={13} /> Clear All</button>
+        </div>
       </div>
 
       {/* Chain integrity banner */}
@@ -53,7 +70,7 @@ export default function AuditLog() {
           borderRadius: '12px', padding: '16px 20px', marginBottom: '1.5rem',
           display: 'flex', alignItems: 'center', gap: '14px',
         }}>
-          <span style={{ fontSize: '1.8rem' }}>{intact ? '🔗' : '⚠️'}</span>
+          <span style={{ display: 'flex', alignItems: 'center' }}>{intact ? <Link size={28} color='#4ade80' /> : <AlertTriangle size={28} color='#f87171' />}</span>
           <div style={{ flex: 1 }}>
             <div style={{ color: intact ? '#4ade80' : '#f87171', fontWeight: 700, fontSize: '14px' }}>
               Chain Integrity: {intact ? 'INTACT' : 'TAMPERED'}
@@ -95,7 +112,7 @@ export default function AuditLog() {
               color: filter === t ? (t === 'all' ? '#c4b5fd' : s.color) : 'var(--text-muted)',
               borderRadius: '20px', padding: '4px 12px', cursor: 'pointer', fontSize: '11px', fontWeight: 600,
             }}>
-              {t === 'all' ? 'All Events' : `${s.icon} ${t.replace(/_/g, ' ')}`}
+              {t === 'all' ? 'All Events' : <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}><s.Icon size={11} />{t.replace(/_/g, ' ')}</span>}
             </button>
           )
         })}
@@ -132,8 +149,8 @@ export default function AuditLog() {
                   </div>
 
                   {/* Event badge */}
-                  <span style={{ background: s.bg, color: s.color, border: `1px solid ${s.color}33`, borderRadius: '20px', padding: '3px 10px', fontSize: '11px', fontWeight: 700, flexShrink: 0 }}>
-                    {s.icon} {e.event.replace(/_/g, ' ')}
+                  <span style={{ background: s.bg, color: s.color, border: `1px solid ${s.color}33`, borderRadius: '20px', padding: '3px 10px', fontSize: '11px', fontWeight: 700, flexShrink: 0, display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                    <s.Icon size={11} /> {e.event.replace(/_/g, ' ')}
                   </span>
 
                   {/* Subject / name */}

@@ -1,7 +1,9 @@
+import { Lock, Globe, Mail, Code2, Lightbulb } from 'lucide-react'
+
 const TEMPLATES = [
   {
     name: 'client_auth',
-    icon: '👤',
+    Icon: Lock,
     description: 'End-user client authentication and email protection',
     days: 365,
     key_usage: ['Digital Signature', 'Key Encipherment', 'Content Commitment'],
@@ -10,7 +12,7 @@ const TEMPLATES = [
   },
   {
     name: 'tls_server',
-    icon: '🌐',
+    Icon: Globe,
     description: 'TLS/HTTPS server certificate with Subject Alternative Names',
     days: 365,
     key_usage: ['Digital Signature', 'Key Encipherment'],
@@ -19,7 +21,7 @@ const TEMPLATES = [
   },
   {
     name: 'email_signing',
-    icon: '✉️',
+    Icon: Mail,
     description: 'S/MIME email signing and encryption certificate',
     days: 730,
     key_usage: ['Digital Signature', 'Key Encipherment', 'Data Encipherment', 'Content Commitment'],
@@ -28,7 +30,7 @@ const TEMPLATES = [
   },
   {
     name: 'code_signing',
-    icon: '💻',
+    Icon: Code2,
     description: 'Software and firmware code signing certificate',
     days: 365,
     key_usage: ['Digital Signature', 'Content Commitment'],
@@ -50,10 +52,12 @@ export default function Templates() {
           <div className="card" key={t.name} style={{ marginBottom: 0 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
               <div style={{
-                width: 40, height: 40, borderRadius: 10, fontSize: 20,
+                width: 40, height: 40, borderRadius: 10,
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 background: `${t.color}22`, border: `1px solid ${t.color}44`,
-              }}>{t.icon}</div>
+              }}>
+                <t.Icon size={20} color={t.color} />
+              </div>
               <div>
                 <div style={{ fontWeight: 700, color: '#fff', fontSize: 14 }}>{t.name}</div>
                 <div style={{ fontSize: 11, color: 'var(--text-muted)' }}>{t.days} days default</div>
@@ -79,7 +83,7 @@ export default function Templates() {
       </div>
 
       <div className="card" style={{ marginTop: 16 }}>
-        <div className="card-title"><span className="card-title-icon">💡</span>Usage</div>
+        <div className="card-title" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Lightbulb size={15} /> Usage</div>
         <div className="card-divider" />
         <p className="desc" style={{ marginBottom: 0 }}>
           Select a template in the <strong style={{ color: 'var(--text)' }}>Issue Cert</strong> tab, or pass it via the REST API:

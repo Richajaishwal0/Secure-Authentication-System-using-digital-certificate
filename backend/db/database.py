@@ -32,12 +32,28 @@ SessionLocal = sessionmaker(bind=engine, autocommit=False, autoflush=False)
 
 
 def init_db() -> None:
-    """Create all tables if they don't exist yet."""
-    # Ensure the storage directory exists before SQLite tries to open the file
+    """Create all tables if they don't exist yet, and apply any missing column migrations."""
     if DATABASE_URL.startswith("sqlite:///"):
         db_path = DATABASE_URL[len("sqlite:///"):]
         os.makedirs(os.path.dirname(db_path), exist_ok=True)
     Base.metadata.create_all(bind=engine)
+    _migrate()
+
+
+def _migrate() -> None:
+    """Add any columns that exist in models but are missing from the live DB."""
+    migrations = [
+        ("certificates", "private_key_pem", "TEXT"),
+    ]
+    with engine.connect() as conn:
+        for table, column, col_type in migrations:
+            try:
+                conn.execute(__import__('sqlalchemy').text(
+                    f"ALTER TABLE {table} ADD COLUMN {column} {col_type}"
+                ))
+                conn.commit()
+            except Exception:
+                pass  # column already exists — safe to ignore
 
 
 def get_db() -> Session:

@@ -1,3 +1,6 @@
+# Environment variables
+python-dotenv>=1.0.0
+
 # Core cryptography
 cryptography>=42.0.0
 

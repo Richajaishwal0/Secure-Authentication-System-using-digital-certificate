@@ -35,6 +35,7 @@ class Certificate(Base):
     not_before    = Column(DateTime(timezone=True), nullable=False)
     not_after     = Column(DateTime(timezone=True), nullable=False)
     pem           = Column(Text, nullable=False)                 # full PEM text
+    private_key_pem = Column(Text, nullable=True)               # requester's private key (unencrypted PEM)
     created_at    = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
 
     revocation    = relationship("RevokedCert", back_populates="certificate", uselist=False)
@@ -119,6 +120,19 @@ class RenewalLog(Base):
     common_name = Column(String(256))
     trigger     = Column(String(32), default="auto")   # auto | manual
     renewed_at  = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
+
+
+class User(Base):
+    """Admin and employee accounts for login."""
+    __tablename__ = "users"
+
+    id           = Column(Integer, primary_key=True, autoincrement=True)
+    username     = Column(String(128), unique=True, nullable=False, index=True)
+    password_hash= Column(String(128), nullable=False)   # SHA-256 hex
+    role         = Column(String(32), nullable=False)    # admin | employee
+    full_name    = Column(String(256), default="")
+    email        = Column(String(256), default="")
+    created_at   = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
 
 
 class AcmeChallenge(Base):

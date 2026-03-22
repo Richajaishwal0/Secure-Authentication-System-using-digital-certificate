@@ -117,19 +117,25 @@ class CSRGenerator:
 
     def _build_subject(self) -> x509.Name:
         s = self.subject
-        return x509.Name([
-            x509.NameAttribute(NameOID.COUNTRY_NAME,             s["country"]),
-            x509.NameAttribute(NameOID.STATE_OR_PROVINCE_NAME,   s["state"]),
-            x509.NameAttribute(NameOID.LOCALITY_NAME,            s["locality"]),
-            x509.NameAttribute(NameOID.ORGANIZATION_NAME,        s["org"]),
-            x509.NameAttribute(NameOID.ORGANIZATIONAL_UNIT_NAME, s["org_unit"]),
-            x509.NameAttribute(NameOID.COMMON_NAME,              s["common_name"]),
-            x509.NameAttribute(NameOID.EMAIL_ADDRESS,            s["email"]),
-        ])
+        attrs = [
+            x509.NameAttribute(NameOID.COUNTRY_NAME,   s["country"]),
+            x509.NameAttribute(NameOID.COMMON_NAME,    s["common_name"]),
+            x509.NameAttribute(NameOID.EMAIL_ADDRESS,  s["email"]),
+        ]
+        # Only add optional fields if they have a non-empty value
+        if s.get("state"):
+            attrs.insert(1, x509.NameAttribute(NameOID.STATE_OR_PROVINCE_NAME, s["state"]))
+        if s.get("locality"):
+            attrs.insert(2, x509.NameAttribute(NameOID.LOCALITY_NAME, s["locality"]))
+        if s.get("org"):
+            attrs.append(x509.NameAttribute(NameOID.ORGANIZATION_NAME, s["org"]))
+        if s.get("org_unit"):
+            attrs.append(x509.NameAttribute(NameOID.ORGANIZATIONAL_UNIT_NAME, s["org_unit"]))
+        return x509.Name(attrs)
 
     @staticmethod
     def _validate_subject(subject: dict) -> None:
-        required = {"common_name", "country", "state", "locality", "org", "org_unit", "email"}
+        required = {"common_name", "country", "email"}
         missing = required - subject.keys()
         if missing:
             raise ValueError(f"Missing subject fields: {missing}")

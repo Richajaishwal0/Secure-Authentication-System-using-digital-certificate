@@ -2,9 +2,20 @@ import axios from 'axios'
 
 const http = axios.create({ baseURL: '/' })
 
+// Attach token to every request if present
+http.interceptors.request.use(cfg => {
+  const token = sessionStorage.getItem('ca_token')
+  if (token) cfg.headers['Authorization'] = `Bearer ${token}`
+  return cfg
+})
+
 export const api = {
-  // CA
+  // Auth
+  login:         (data)   => http.post('/api/auth/login', data),
+  logout:        ()       => http.post('/api/auth/logout'),
+  me:            ()       => http.get('/api/auth/me'),
   initCA:        ()       => http.post('/api/ca/init'),
+  regenerateCA:  (data)   => http.post('/api/ca/regenerate', data),
   caStatus:      ()       => http.get('/api/ca/status'),
 
   // Certificates
@@ -17,6 +28,7 @@ export const api = {
     return http.post('/api/certs/verify', fd)
   },
   revokeCert:    (data)   => http.post('/api/certs/revoke', data),
+  deleteCert:    (serial) => http.delete(`/api/certs/${serial}`),
 
   // CRL
   getCRL:        ()       => http.get('/api/crl'),
@@ -24,6 +36,7 @@ export const api = {
 
   // Audit
   getAudit:      ()       => http.get('/api/audit'),
+  clearAudit:    ()       => http.delete('/api/audit/clear'),
 
   // OCSP
   ocspStatus:    (serial) => http.get(`/ocsp/status/${serial}`),
@@ -44,6 +57,20 @@ export const api = {
   upsertPolicy:  (data)   => http.post('/api/policy/', data),
   deletePolicy:  (tmpl)   => http.delete(`/api/policy/${tmpl}`),
   triggerJob:    (job)    => http.post(`/api/policy/trigger/${job}`),
+
+  // Settings
+  getSmtp:       ()       => http.get('/api/settings/smtp'),
+  saveSmtp:      (data)   => http.post('/api/settings/smtp', data),
+  testSmtp:      (data)   => http.post('/api/settings/smtp/test', data),
+
+  // Send certificate
+  sendCert:      (data)   => http.post('/api/certs/send', data),
+
+  // Download as PKCS#12 (.p12) bundle
+  downloadP12:   (serial, password) => http.get(`/api/certs/${serial}/download/p12`, {
+    params:       { password },
+    responseType: 'blob',
+  }),
 
   // Self-service requests
   submitRequest: (data)   => http.post('/api/requests/', data),
