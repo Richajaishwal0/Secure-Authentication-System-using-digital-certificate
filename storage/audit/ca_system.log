@@ -377,3 +377,5 @@
 2026-03-21 12:40:05,825 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
 2026-03-21 12:40:05,862 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US
 2026-03-21 12:40:05,873 [[36mINFO[0m] ca.crl_manager — CRL saved → C:\Users\richa\OneDrive\CYS\digital_ca\storage\crl\ca.crl.pem  (5 revoked)
+2026-03-22 16:15:58,401 [[36mINFO[0m] ca.ca_setup — Existing CA found — loading from disk.
+2026-03-22 16:15:58,491 [[36mINFO[0m] ca.ca_setup — CA loaded. Subject: 1.2.840.113549.1.9.1=ca-admin@myca.local,CN=MyCA Root Certificate Authority,OU=IT Security,O=MyCA Organization,L=San Francisco,ST=California,C=US

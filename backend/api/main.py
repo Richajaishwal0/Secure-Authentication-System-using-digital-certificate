@@ -1,0 +1,59 @@
+"""
+api/main.py — FastAPI application entry point.
+
+Run with:
+    uvicorn api.main:app --reload --port 8000
+
+Endpoints:
+    POST   /api/certs/issue
+    GET    /api/certs/{serial}
+    GET    /api/certs/
+    POST   /api/certs/verify
+    POST   /api/certs/revoke
+    GET    /api/crl
+    GET    /api/audit
+    POST   /ocsp          (OCSP responder)
+    POST   /acme/order
+    GET    /acme/challenge/{token}
+    POST   /acme/finalize/{order_id}
+"""
+
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from contextlib import asynccontextmanager
+
+from db.database import init_db
+from api.routes import certs, crl, audit, ocsp, acme, ca
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    init_db()
+    yield
+
+
+app = FastAPI(
+    title="Digital Certificate Authority API",
+    description="PKI prototype — RSA-2048 · X.509 v3 · SHA-256 · OCSP · ACME",
+    version="2.0.0",
+    lifespan=lifespan,
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.include_router(ca.router,     prefix="/api/ca",    tags=["CA"])
+app.include_router(certs.router,  prefix="/api/certs", tags=["Certificates"])
+app.include_router(crl.router,    prefix="/api",       tags=["CRL"])
+app.include_router(audit.router,  prefix="/api",       tags=["Audit"])
+app.include_router(ocsp.router,   prefix="",           tags=["OCSP"])
+app.include_router(acme.router,   prefix="/acme",      tags=["ACME"])
+
+
+@app.get("/", tags=["Health"])
+def health():
+    return {"status": "ok", "service": "Digital Certificate Authority", "version": "2.0.0"}
