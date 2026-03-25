@@ -63,9 +63,6 @@ export const api = {
   saveSmtp:      (data)   => http.post('/api/settings/smtp', data),
   testSmtp:      (data)   => http.post('/api/settings/smtp/test', data),
 
-  // Send certificate
-  sendCert:      (data)   => http.post('/api/certs/send', data),
-
   // Download as PKCS#12 (.p12) bundle
   downloadP12:   (serial, password) => http.get(`/api/certs/${serial}/download/p12`, {
     params:       { password },

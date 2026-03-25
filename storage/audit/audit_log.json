@@ -1,1 +1,87 @@
-[]
+[
+  {
+    "seq": 0,
+    "timestamp": "2026-03-23T08:36:49.624931+00:00",
+    "event": "CERT_ISSUED",
+    "data": {
+      "subject": "1.2.840.113549.1.9.1=richajaiswalhome@gmail.com,CN=richajaiswalhome,C=IN",
+      "serial": 696628319901275848905425828995506901420184566382,
+      "template": "code_signing",
+      "valid_from": "2026-03-23T08:36:49+00:00",
+      "valid_until": "2027-03-23T08:36:49+00:00",
+      "saved_to": "C:\\Users\\richa\\OneDrive\\CYS\\digital_ca\\storage\\certs\\richajaiswalhome_696628319901275848905425828995506901420184566382.pem"
+    },
+    "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "hash": "0e2bd7bc6e305570076d79d81332e483cef1686313d910062b551d07a51d9501"
+  },
+  {
+    "seq": 1,
+    "timestamp": "2026-03-23T08:39:32.064965+00:00",
+    "event": "CERT_REVOKED",
+    "data": {
+      "serial": 47141749359044994443289479454002240412712395366,
+      "reason": "unspecified",
+      "revoked_at": "2026-03-23T08:39:32.052782+00:00"
+    },
+    "prev_hash": "0e2bd7bc6e305570076d79d81332e483cef1686313d910062b551d07a51d9501",
+    "hash": "57ce40b807c53044a1870eb3778a166ed94a7944d22678603a26e59eb426a185"
+  },
+  {
+    "seq": 2,
+    "timestamp": "2026-03-25T02:54:51.939624+00:00",
+    "event": "CERT_ISSUED",
+    "data": {
+      "subject": "1.2.840.113549.1.9.1=richajaiswalhome@gmail.com,CN=richajaiswalhome,C=IN",
+      "serial": 247764306732488548439064894442810996554904957683,
+      "template": "client_auth",
+      "valid_from": "2026-03-25T02:54:51+00:00",
+      "valid_until": "2027-03-25T02:54:51+00:00",
+      "saved_to": "C:\\Users\\richa\\OneDrive\\CYS\\digital_ca\\storage\\certs\\richajaiswalhome_247764306732488548439064894442810996554904957683.pem"
+    },
+    "prev_hash": "57ce40b807c53044a1870eb3778a166ed94a7944d22678603a26e59eb426a185",
+    "hash": "dc512dc3b09e5b80eecf5445e0efedd87408f349235de832daa3aca2497a2078"
+  },
+  {
+    "seq": 3,
+    "timestamp": "2026-03-25T02:56:59.637634+00:00",
+    "event": "CERT_SENT",
+    "data": {
+      "serial": "15853612844943114924545608919394393993885168766",
+      "common_name": "RJ",
+      "sent_to": "RJ@gmail.com",
+      "message": "Hi,\n\nPlease find your digital certificate attached below.\n\nSerial: 15853612844943114924545608919394393993885168766\nValid Until: 2027-03-22\nTemplate: tls_server\n\nTo use this certificate, save the PEM content to a .pem file.\n\nRegards,\nIT Admin"
+    },
+    "prev_hash": "dc512dc3b09e5b80eecf5445e0efedd87408f349235de832daa3aca2497a2078",
+    "hash": "442220a1ed64b3ad43ce57625fc49466a104312444b13d6e2d46b4601ee4a951"
+  },
+  {
+    "seq": 4,
+    "timestamp": "2026-03-25T03:05:22.745377+00:00",
+    "event": "CERT_VERIFIED",
+    "data": {
+      "serial": 15853612844943114924545608919394393993885168766,
+      "subject": "1.2.840.113549.1.9.1=RJ@gmail.com,CN=RJ,OU=,O=ABCD,L=,ST=,C=IN",
+      "valid": true,
+      "checks": {
+        "signature": true,
+        "expiry": true,
+        "not_revoked": true
+      },
+      "reason": ""
+    },
+    "prev_hash": "442220a1ed64b3ad43ce57625fc49466a104312444b13d6e2d46b4601ee4a951",
+    "hash": "6c4cb5e58f31ecd606c9ea90c5ea4c9c384a1057788826e9afcc7b22bb4ef0a9"
+  },
+  {
+    "seq": 5,
+    "timestamp": "2026-03-25T03:05:56.540292+00:00",
+    "event": "CERT_REVOKED",
+    "data": {
+      "serial": 15853612844943114924545608919394393993885168766,
+      "reason": "cessation_of_operation",
+      "revoked_at": "2026-03-25T03:05:56.528216+00:00"
+    },
+    "prev_hash": "6c4cb5e58f31ecd606c9ea90c5ea4c9c384a1057788826e9afcc7b22bb4ef0a9",
+    "hash": "9eb0b3b9c067533b26693e54f2bb7db39b7e75b5b9ccafd6e397b49b29c451b2"
+  }
+]

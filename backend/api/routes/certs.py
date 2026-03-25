@@ -223,6 +223,7 @@ def download_p12(serial: str, password: str = Query(default="changeme"), db: Ses
     )
 
 
+@router.post("/verify")
 async def verify_certificate(file: UploadFile = File(...), db: Session = Depends(get_db)):
     pem_bytes = await file.read()
     from cryptography import x509 as _x509
@@ -266,21 +267,10 @@ def send_certificate(req: SendRequest, db: Session = Depends(get_db)):
         "message":     req.message,
     })
 
-    from utils.email_sender import send_certificate_email
-    email_result = send_certificate_email(
-        to_email        = req.email,
-        to_name         = cert.common_name,
-        message         = req.message,
-        pem             = cert.pem,
-        private_key_pem = cert.private_key_pem,
-        cert_serial     = cert.serial,
-        template        = cert.template,
-        not_after       = cert.not_after.isoformat() if cert.not_after else "",
-    )
-
+    # Email functionality disabled - return certificate data directly
     return {
-        "sent":            email_result["sent"],
-        "email_error":     email_result.get("error"),
+        "sent":            False,
+        "email_error":     "Email functionality is currently disabled. Download the certificate manually.",
         "serial":          req.serial,
         "common_name":     cert.common_name,
         "sent_to":         req.email,
